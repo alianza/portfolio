@@ -11,7 +11,7 @@
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
     "start": "npm run build && npm run dev",
-    "build-css": "node-sass --include-path scss css/styles.scss css/styles.css",
+    "build-css": "node-sass --include-path scss css/main_dev.scss css/main.css",
     "watch-scss": "nodemon -e scss -x \"npm run build-css\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
