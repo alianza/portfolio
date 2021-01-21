@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+
+  & .menu {
+    float: right;
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 0 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
