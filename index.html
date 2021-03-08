@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
+  <title>Jan-Willem van Bremen</title>
+  <meta name="description" content="Portfolio website Jan-Willem van Bremen - Software Engineer">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:title" content="">
@@ -25,57 +25,67 @@
 <body>
 
 <nav id="navbar">
-  <div class="logo">
-    <h1>J.W.</h1>
+  <div id="logo">
+    <h1 onclick="scrollToTop()">J.W.</h1>
   </div>
-  <div class="menu">
-    <a href="#about_me">About me</a>
-    <a href="#experiences">Experiences</a>
-    <a href="#curriculum_vitae">Curriculum Vitae</a>
-    <a href="#contact">Contact</a>
+  <div id="menu">
+    <span onclick="handleMenuClick(this)" data-link-to="about_me">About me</span>
+    <span onclick="handleMenuClick(this)" data-link-to="experiences">Experiences</span>
+    <span onclick="openCV()" data-link-to="curriculum_vitae">Curriculum Vitae</span>
+    <span onclick="handleMenuClick(this)" data-link-to="contact">Contact</span>
   </div>
+  <div id="mobile_menu" onclick="showMenu()"><h1>☰</h1></div>
 </nav>
 
-<header id="header">
+<video id="cover" src="img/VID_20210228_161035292.mp4" autoplay muted loop playsinline></video>
 
-</header>
-
-<section id="about_me">
-  <div class="container">
-    <div class="col">
-      <img class="img_small" src="tile.png">
-      <h3>Hello</h3>
+<div id="content">
+  <section id="about_me">
+    <h1>About me!</h1>
+    <div class="container">
+      <div class="col">
+        <img class="img" src="img/photo.png">
+        <h3>Hello</h3>
+      </div>
+      <div class="col">
+        <img class="img" src="tile.png">
+        <h3>Hello</h3>
+      </div>
+      <div class="col">
+        <img class="img" src="tile.png">
+        <h3>Hello</h3>
+      </div>
     </div>
-    <div class="col">
-      <img class="img_small" src="tile.png">
-      <h3>Hello</h3>
+  </section>
+
+  <section id="experiences">
+    <div class="container">
+      <div class="col">
+        <img class="img" src="tile.png">
+        <h3>Hello</h3>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="experiences"></section>
+  <section id="curriculum_vitae">
+    <div class="container">
+      <div class="col">
+        <img class="img" src="tile.png">
+        <h3>Hello</h3>
+      </div>
+    </div>
+  </section>
 
-<section id="curriculum_vitae"></section>
+  <section id="contact">
 
-<section id="contact"></section>
+  </section>
+
+</div>
 
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
 <script src="js/plugins.js"></script>
 <script type="module" src="js/main.js"></script>
 
-<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-<script>
-  window.ga = function () {
-    ga.q.push(arguments)
-  };
-  ga.q = [];
-  ga.l = +new Date;
-  ga('create', 'UA-XXXXX-Y', 'auto');
-  ga('set', 'anonymizeIp', true);
-  ga('set', 'transport', 'beacon');
-  ga('send', 'pageview')
-</script>
-<script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
