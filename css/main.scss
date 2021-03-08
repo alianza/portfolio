@@ -132,6 +132,22 @@ $transition_out: .35s;
   }
 }
 
+#footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+
+  & div {
+    display: inline-block;
+  }
+
+  & span {
+    padding: 0 .5em;
+  }
+
+  width: 100%;
+}
+
 @media screen and (max-width: $small) {
   #navbar {
 
