@@ -1,0 +1,165 @@
+@import "boilerplate";
+
+/* ==========================================================================
+   Begin Author's custom styles
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+// Dimensions
+$navbar_height: 5em;
+$navbar_collapsed_height: 3em;
+
+// Screen sizes
+$small: 480px;
+$medium: 900px;
+
+// Transition timings
+$transition_in: .1s;
+$transition_out: .35s;
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  position: fixed;
+  width: 100%;
+  background-color: #222;
+  color: whitesmoke;
+  max-height: $navbar_height;
+  top: 0;
+  box-shadow: black 0 0 12px;
+  transition: max-height $transition_out;
+
+  &.collapsed {
+    max-height: $navbar_collapsed_height;
+  }
+
+  &.shown {
+    transition: max-height $transition_out;
+    max-height: 500px;
+
+    #menu {
+      transition: opacity $transition_out;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  & #logo {
+    cursor: pointer;
+    transition: transform $transition_out;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform $transition_in;
+    }
+  }
+
+  & #menu {
+    text-align: right;
+    flex-basis: 100%;
+    transition: opacity 1s;
+
+    span, a {
+      color: whitesmoke;
+      cursor: pointer;
+      text-decoration: underline solid transparent;
+      transition: text-decoration-color $transition_out;
+      white-space: nowrap;
+      padding: 0 1em;
+
+      &:hover {
+        text-decoration-color: whitesmoke;
+        transition: text-decoration-color $transition_in;
+      }
+    }
+  }
+
+  #mobile_menu {
+    display: none;
+    cursor: pointer;
+    transition: transform $transition_out;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: transform $transition_in;
+    }
+  }
+}
+
+#cover {
+  margin: $navbar_height auto auto;
+  width: 100%;
+  height: calc(100vh - #{$navbar_height});
+  object-fit: cover;
+  box-shadow: #222 0px -32px 0px 0px, rgba(0, 0, 0, .2) 0 0 6px;
+  pointer-events: none;
+}
+
+#content {
+  max-width: 1200px;
+  margin: auto;
+
+  section {
+    padding: 1em;
+
+    .container {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+
+      & .col {
+        padding: 1em;
+        flex-grow: 1;
+        flex-basis: 250px;
+
+        & .img {
+          width: 100%;
+          object-fit: cover;
+          aspect-ratio: 1/1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $small) {
+  #navbar {
+
+    #menu {
+      transition: opacity $transition_in;
+      opacity: 0;
+      pointer-events: none;
+      width: auto;
+
+      span {
+        display: block;
+      }
+    }
+
+    #mobile_menu {
+      display: inherit;
+    }
+  }
+
+  #content {
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+/* ==========================================================================
+   End Author's custom styles
+   ========================================================================== */
+
+@import "helpers";
