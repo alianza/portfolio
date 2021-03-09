@@ -44,45 +44,60 @@
 
 <div id="content">
   <section id="about_me">
-    <h1>About me!</h1>
     <div class="container">
-      <div class="col">
-        <img class="img" src="img/photo.png">
-        <h3>Hello</h3>
-      </div>
-      <div class="col">
-        <img class="img" src="tile.png">
-        <h3>Hello</h3>
-      </div>
-      <div class="col">
-        <img class="img" src="tile.png">
-        <h3>Hello</h3>
+      <h1>About me!</h1>
+      <div class="wrapper">
+        <div class="col">
+          <img class="img" src="img/photo.png">
+          <h3>Hello</h3>
+        </div>
+        <div class="col">
+          <img class="img" src="tile.png">
+          <h3>Hello</h3>
+        </div>
+        <div class="col">
+          <img class="img" src="tile.png">
+          <h3>Hello</h3>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="experiences">
     <div class="container">
-      <div class="col">
-        <img class="img" src="tile.png">
-        <h3>Hello</h3>
-      </div>
-    </div>
-  </section>
-
-  <section id="curriculum_vitae">
-    <div class="container">
-      <div class="col">
-        <img class="img" src="tile.png">
-        <h3>Hello</h3>
+      <h1>Experiences</h1>
+      <div class="wrapper">
+        <div class="col">
+          <img class="img" src="tile.png">
+          <h3>Hello</h3>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <div class="container">
-      <div class="col">
-        <a href="mailto:janwillemvanbremen@live.nl">Mail!</a>
+      <h1>Contact me!</h1>
+      <div class="wrapper">
+        <div class="col">
+          <h3>Send me a message directly!</h3>
+
+          <form class="contact_form" name="contact" method="POST" data-netlify="true">
+            <div class="contact_form__left">
+              <input type="text" placeholder="Name" name="name"/>
+              <input type="email" placeholder="E-mail" name="email"/>
+            </div>
+            <div class="contact_form__right">
+              <textarea type="text" placeholder="Message" name="message"></textarea>
+            </div>
+            <div class="contact_form__bottom">
+              <button type="submit">Send</button>
+            </div>
+          </form>
+
+          <h3>Email me!</h3>
+          <a href="mailto:janwillemvanbremen@live.nl">Mail!</a>
+        </div>
       </div>
     </div>
   </section>

@@ -10,6 +10,10 @@
 $navbar_height: 5em;
 $navbar_collapsed_height: 3em;
 
+// Element max sizes
+$full_page_width: 1000px;
+$container_max_width: 768px;
+
 // Screen sizes
 $small: 480px;
 $medium: 900px;
@@ -105,29 +109,86 @@ $transition_out: .35s;
 }
 
 #content {
-  max-width: 1200px;
   margin: auto;
 
   section {
-    padding: 1em;
 
     .container {
-      width: 100%;
-      margin-right: auto;
-      margin-left: auto;
-      display: flex;
-      flex-wrap: wrap;
+      padding: 1em;
+      max-width: $full_page_width;
+      margin: auto;
 
-      & .col {
-        padding: 1em;
-        flex-grow: 1;
-        flex-basis: 250px;
+      .wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
 
-        & .img {
-          width: 100%;
-          object-fit: cover;
-          aspect-ratio: 1/1;
+        & .col {
+          padding: 1em;
+          flex-grow: 1;
+          flex-basis: 250px;
+
+          & .img {
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+          }
         }
+      }
+    }
+  }
+}
+
+#contact {
+  .container {
+    max-width: $container_max_width;
+  }
+
+  & .contact_form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: -1em;
+
+    &__left {
+      flex-grow: 1;
+      padding: 1em;
+
+      & input {
+        display: block;
+        width: 100%;
+        border: none;
+        box-shadow: rgb(0 0 0 / 50%) 0 0 6px;
+        border-radius: 2px;
+        padding: .2em;
+
+        &:first-of-type {
+          margin-bottom: 1em;
+        }
+      }
+    }
+
+    &__right {
+      flex-grow: 1;
+      padding: 1em;
+
+      & textarea {
+        width: 100%;
+        height: 100%;
+        border: none;
+        box-shadow: rgb(0 0 0 / 50%) 0 0 6px;
+        border-radius: 2px;
+        padding: .2em;
+        display: inline-block;
+      }
+    }
+
+    &__bottom {
+      flex-basis: 100%;
+
+      button {
+        margin: 0 auto;
+        display: block;
       }
     }
   }
@@ -137,6 +198,8 @@ $transition_out: .35s;
   display: flex;
   justify-content: space-between;
   padding: 1em;
+  background-color: #222;
+  color: whitesmoke;
 
   & div {
     display: inline-block;
