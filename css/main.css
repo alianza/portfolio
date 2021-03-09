@@ -283,6 +283,9 @@ button:active, .button:active {
     display: inherit;
   }
 
+  #content section .container {
+    padding: 0.2em;
+  }
   #content h1 {
     text-align: center;
   }
