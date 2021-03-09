@@ -29,7 +29,7 @@ function scrollToTop() {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-window.onscroll = function() {
+window.onscroll = function () {
   if (!navBar.classList.contains('shown')) {
     if (window.scrollY > topOffsetBig) {
       if (!navIsCollapsed) {
