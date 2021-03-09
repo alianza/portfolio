@@ -106,8 +106,9 @@ textarea {
   max-height: 500px;
 }
 #navbar.shown #menu {
-  transition: opacity 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
   opacity: 1;
+  transform: translateX(0px);
   pointer-events: all;
 }
 #navbar #logo {
@@ -194,8 +195,9 @@ textarea {
 
 @media screen and (max-width: 480px) {
   #navbar #menu {
-    transition: opacity 0.1s;
+    transition: opacity 0.1s, transform 0.1s;
     opacity: 0;
+    transform: translateX(50px);
     pointer-events: none;
     width: auto;
   }

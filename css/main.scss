@@ -46,8 +46,9 @@ $transition_out: .35s;
     max-height: 500px;
 
     #menu {
-      transition: opacity $transition_out;
+      transition: opacity $transition_out, transform $transition_out;
       opacity: 1;
+      transform: translateX(0px);
       pointer-events: all;
     }
   }
@@ -152,8 +153,9 @@ $transition_out: .35s;
   #navbar {
 
     #menu {
-      transition: opacity $transition_in;
+      transition: opacity $transition_in, transform $transition_in;;
       opacity: 0;
+      transform: translateX(50px);
       pointer-events: none;
       width: auto;
 
