@@ -173,13 +173,13 @@ $transition_out: .35s;
       padding: 1em;
 
       & textarea {
+        display: inline-block;
         width: 100%;
         height: 100%;
         border: none;
         box-shadow: rgb(0 0 0 / 50%) 0 0 6px;
         border-radius: 2px;
         padding: .2em;
-        display: inline-block;
       }
     }
 
@@ -189,6 +189,16 @@ $transition_out: .35s;
       button {
         margin: 0 auto;
         display: block;
+        border: none;
+        padding: 1em;
+        cursor: pointer;
+        transition: transform .35s, box-shadow .35s;
+
+        &:hover {
+          transform: translateY(-6px);
+          transition: transform .1s, box-shadow .1s;
+          box-shadow: black 0 6px;
+        }
       }
     }
   }

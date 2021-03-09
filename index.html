@@ -82,7 +82,7 @@
         <div class="col">
           <h3>Send me a message directly!</h3>
 
-          <form class="contact_form" name="contact" method="POST" data-netlify="true">
+          <form class="contact_form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
             <div class="contact_form__left">
               <input type="text" placeholder="Name" name="name"/>
               <input type="email" placeholder="E-mail" name="email"/>
@@ -92,6 +92,7 @@
             </div>
             <div class="contact_form__bottom">
               <button type="submit">Send</button>
+              <div data-netlify-recaptcha="true"></div>
             </div>
           </form>
 
