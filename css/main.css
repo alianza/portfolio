@@ -84,6 +84,24 @@ textarea {
   font-family: "Roboto", sans-serif;
 }
 
+button, .button {
+  background-color: #efefef;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  transition: transform 0.35s, box-shadow 0.35s;
+}
+button:hover, .button:hover {
+  transform: translateY(-6px);
+  transition: transform 0.1s, box-shadow 0.1s;
+  box-shadow: black 0 6px;
+}
+button:active, .button:active {
+  transform: translateY(-2px);
+  box-shadow: black 0 2px;
+  outline: none;
+}
+
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -178,59 +196,61 @@ textarea {
   object-fit: cover;
   aspect-ratio: 1/1;
 }
-
-#contact .container {
+#content #contact .container {
   max-width: 768px;
 }
-#contact .contact_form {
+#content #contact .container .wrapper {
+  display: block;
+}
+#content #contact .container .wrapper .contact_form {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: -1em;
 }
-#contact .contact_form__left {
+#content #contact .container .wrapper .contact_form__left {
   flex-grow: 1;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-#contact .contact_form__left input {
+#content #contact .container .wrapper .contact_form__left input {
   display: block;
   width: 100%;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px;
   border-radius: 2px;
-  padding: 0.2em;
+  padding: 0.5em;
 }
-#contact .contact_form__left input:first-of-type {
+#content #contact .container .wrapper .contact_form__left input:first-of-type {
   margin-bottom: 1em;
 }
-#contact .contact_form__right {
+#content #contact .container .wrapper .contact_form__right {
   flex-grow: 1;
   padding: 1em;
 }
-#contact .contact_form__right textarea {
+#content #contact .container .wrapper .contact_form__right textarea {
   display: inline-block;
   width: 100%;
   height: 100%;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px;
   border-radius: 2px;
-  padding: 0.2em;
+  padding: 0.5em;
 }
-#contact .contact_form__bottom {
+#content #contact .container .wrapper .contact_form__bottom {
   flex-basis: 100%;
 }
-#contact .contact_form__bottom button {
+#content #contact .container .wrapper .contact_form__bottom button {
   margin: 0 auto;
   display: block;
-  border: none;
-  padding: 1em;
-  cursor: pointer;
-  transition: transform 0.35s, box-shadow 0.35s;
 }
-#contact .contact_form__bottom button:hover {
-  transform: translateY(-6px);
-  transition: transform 0.1s, box-shadow 0.1s;
-  box-shadow: black 0 6px;
+#content #contact .container .wrapper .contact_form__bottom .g-recaptcha {
+  margin-top: 1em;
+}
+#content #contact .container .wrapper .contact_form__bottom .g-recaptcha div {
+  margin: 0 auto;
 }
 
 #footer {

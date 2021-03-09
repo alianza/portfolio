@@ -84,21 +84,21 @@
 
           <form class="contact_form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
             <div class="contact_form__left">
-              <input type="text" placeholder="Name" name="name"/>
-              <input type="email" placeholder="E-mail" name="email"/>
+              <input type="text" placeholder="Name" name="name" required/>
+              <input type="email" placeholder="E-mail" name="email" required/>
             </div>
             <div class="contact_form__right">
-              <textarea type="text" placeholder="Message" name="message"></textarea>
+              <textarea rows="5" type="text" placeholder="Message" name="message" required></textarea>
             </div>
             <div class="contact_form__bottom">
               <button type="submit">Send</button>
               <div data-netlify-recaptcha="true"></div>
             </div>
           </form>
-
-          <h3>Email me!</h3>
-          <a href="mailto:janwillemvanbremen@live.nl">Mail!</a>
         </div>
+<div class="col">
+          <h3>Or, E-mail me directly! @ <a href="mailto:janwillemvanbremen@live.nl">janwillemvanbremen@live.nl</a></h3>
+</div>
       </div>
     </div>
   </section>
