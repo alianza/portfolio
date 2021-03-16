@@ -6,6 +6,10 @@ const topOffsetSmall = 48;
 // Elems
 const navBar = document.getElementById('navbar');
 
+// Files
+CVEnglish = require('/img/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf')
+CVDutch = require('/img/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf')
+
 document.querySelectorAll(".menu a").forEach(item => {
   item.addEventListener('click', handleMenuClick);
 })
@@ -17,10 +21,10 @@ function handleMenuClick(elem) {
 
 function openCV() {
   if (confirm("Open English version?")) {
-    window.open('img/Curriculum%20Vitae%20Jan-Willem%20van%20Bremen%20500779265%20-%20English.pdf', '_blank', 'fullscreen=yes');
+    window.open(CVEnglish, '_blank', 'fullscreen=yes');
   } else {
     if (confirm("Open Dutch version?")) {
-      window.open('img/Curriculum%20Vitae%20Jan-Willem%20van%20Bremen%20500779265.pdf', '_blank', 'fullscreen=yes');
+      window.open(CVDutch, '_blank', 'fullscreen=yes');
     }
   }
 }
