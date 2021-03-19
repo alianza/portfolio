@@ -1,4 +1,4 @@
-const navHeight = document.getElementById('navbar').offsetHeight;
+// const navHeight = document.getElementById('navbar').offsetHeight;
 let navIsCollapsed = false;
 const topOffsetBig = 80;
 const topOffsetSmall = 48;
@@ -9,10 +9,6 @@ const navBar = document.getElementById('navbar');
 // Files
 CVEnglish = require('/img/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf')
 CVDutch = require('/img/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf')
-
-document.querySelectorAll(".menu a").forEach(item => {
-  item.addEventListener('click', handleMenuClick);
-})
 
 function handleMenuClick(elem) {
   const targetElem = document.getElementById(elem.dataset.linkTo);
@@ -67,8 +63,10 @@ function buildDialogContents(projectName) {
 function openDialog(projectName) {
   console.log(projectName)
   buildDialogContents(projectName);
-  document.body.style.overflow = 'hidden';
-  document.getElementById('dialog').classList.add('active');
+  setTimeout(() => {
+    document.getElementById('dialog').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }, 100);
 }
 
 function closeDialog() {
