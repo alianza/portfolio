@@ -37,12 +37,14 @@
   <div id="mobile_menu" onclick="showMenu()"><h1>☰</h1></div>
 </nav>
 
-<video id="cover" autoplay muted loop playsinline>
-  <source src="img/VID-20210228-161035292.webm" type="video/webm">
-  <source src="img/VID-20210228-161035292.mp4" type="video/mp4">
-</video>
+<header id="cover"  >
+  <video autoplay muted loop playsinline>
+    <source src="img/VID-20210228-161035292.webm" type="video/webm">
+    <source src="img/VID-20210228-161035292.mp4" type="video/mp4">
+  </video>
+</header>
 
-<div id="content">
+<main id="content">
   <section id="about_me">
     <div class="container">
       <h1>About me!</h1>
@@ -67,31 +69,38 @@
     <div class="container">
       <h1>Experiences</h1>
       <div class="wrapper">
-        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="pokedexreact" data-tech="react" data-team="solo">
+        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="pokedexreact" data-tech="react"
+             data-team="solo">
           <img class="img" src="/img/projects/pokedexreact.png">
           <h3>PokéDex - React</h3>
         </div>
-        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="pokedexvue" data-tech="vue" data-team="solo">
+        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="pokedexvue" data-tech="vue"
+             data-team="solo">
           <img class="img" src="/img/projects/pokedexreact.png">
           <h3>PokéDex - Vue</h3>
         </div>
-        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="monumental" data-tech="android" data-team="solo">
+        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="monumental" data-tech="android"
+             data-team="solo">
           <img class="img" src="tile.png">
           <h3>Monumental - Android</h3>
         </div>
-        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="vittles" data-tech="android" data-team="team">
+        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="vittles" data-tech="android"
+             data-team="team">
           <img class="img" src="tile.png">
           <h3>Vittles - Android</h3>
         </div>
-        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="pokedexandroid" data-tech="android" data-team="team">
+        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="pokedexandroid"
+             data-tech="android" data-team="team">
           <img class="img" src="tile.png">
           <h3>PokéDex - Android</h3>
         </div>
-        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="timewizard" data-tech="php" data-team="team">
+        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="timewizard" data-tech="php"
+             data-team="team">
           <img class="img" src="tile.png">
           <h3>TimeWizard - PHP</h3>
         </div>
-        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="fys" data-tech="java" data-team="team">
+        <div class="col clickable" onclick="openDialog(this.dataset.name)" data-name="fys" data-tech="java"
+             data-team="team">
           <img class="img" src="tile.png">
           <h3>Faster Your Seatbelts - Java(FX)</h3>
         </div>
@@ -126,7 +135,7 @@
       </div>
     </div>
   </section>
-</div>
+</main>
 
 <footer id="footer">
   <span>Jan-Willem van Bremen</span>

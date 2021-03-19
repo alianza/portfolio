@@ -149,12 +149,15 @@ button, .button {
 }
 
 #cover {
-  margin: $navbar_height auto auto;
-  width: 100%;
-  height: calc(100vh - #{$navbar_height});
-  object-fit: cover;
-  box-shadow: $main_color 0px -32px 0px 0px, rgba(0, 0, 0, .2) 0 0 6px;
-  pointer-events: none;
+
+  video {
+    margin: $navbar_height auto auto;
+    width: 100%;
+    height: calc(100vh - #{$navbar_height});
+    object-fit: cover;
+    box-shadow: $main_color 0px -32px 0px 0px, rgba(0, 0, 0, .2) 0 0 6px;
+    pointer-events: none;
+  }
 }
 
 #content {
@@ -212,6 +215,19 @@ button, .button {
             text-decoration: underline solid transparent;
             transition: text-decoration-color $transition_out;
           }
+        }
+      }
+    }
+  }
+
+  #about_me {
+
+    .container {
+
+      .wrapper {
+
+        .col {
+          max-width: none;
         }
       }
     }
