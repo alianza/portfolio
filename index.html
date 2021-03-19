@@ -38,7 +38,7 @@
 </nav>
 
 <header id="cover"  >
-  <video autoplay muted loop playsinline>
+  <video id="video" autoplay muted loop playsinline>
     <source src="img/VID-20210228-161035292.webm" type="video/webm">
     <source src="img/VID-20210228-161035292.mp4" type="video/mp4">
   </video>
@@ -148,10 +148,11 @@
 </footer>
 
 <div id="dialog">
-  <div class="backdrop" onclick="closeDialog()"></div>
-  <div class="content">
-    <div class="container">
-      <h1 class="title">Project Title</h1>
+  <div class="dialog__backdrop" onclick="closeDialog()"></div>
+  <div class="dialog__content-wrapper">
+    <div onclick="closeDialog()" class="dialog__close-button">✖</div>
+    <div class="dialog__container">
+      <div class="dialog__content"></div>
     </div>
   </div>
 </div>

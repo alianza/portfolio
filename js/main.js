@@ -1,3 +1,8 @@
+const fs = require('fs');
+const unified = require('unified')
+const markdown = require('remark-parse')
+const html = require('remark-html')
+
 // const navHeight = document.getElementById('navbar').offsetHeight;
 let navIsCollapsed = false;
 const topOffsetBig = 80;
@@ -57,20 +62,27 @@ function showMenu() {
 }
 
 function buildDialogContents(projectName) {
-    document.querySelectorAll('#dialog .title')[0].innerHTML = projectName;
+  unified()
+    .use(markdown)
+    .use(html)
+    .process(fs.readFileSync('./img/markdown/pokedexreact.md'), function (err, file) {
+      if (err) throw err;
+      console.log(String(file));
+      document.querySelectorAll('.dialog__content')[0].innerHTML = String(file);
+    });
 }
 
 function openDialog(projectName) {
   console.log(projectName)
   buildDialogContents(projectName);
+  document.body.classList.add('scroll_disabled');
   setTimeout(() => {
     document.getElementById('dialog').classList.add('active');
-    document.body.style.overflow = 'hidden';
   }, 100);
 }
 
 function closeDialog() {
-  document.body.style.overflow = 'auto';
+  document.body.classList.remove('scroll_disabled');
   document.getElementById('dialog').classList.remove('active');
 }
 
@@ -78,7 +90,7 @@ function isDialogOpen() {
   return document.getElementById('dialog').classList.contains('active');
 }
 
-document.getElementById('cover').playbackRate = .5;
+document.getElementById('video').playbackRate = .5;
 
 window.handleMenuClick = handleMenuClick;
 window.openCV = openCV;
