@@ -62,10 +62,11 @@ function showMenu() {
 }
 
 function buildDialogContents(projectName) {
+  console.log(projectName);
   unified()
     .use(markdown)
     .use(html)
-    .process(fs.readFileSync('./img/markdown/pokedexreact.md'), function (err, file) {
+    .process(fs.readFileSync('./static/markdown/pokedexreact.md'), function (err, file) {
       if (err) throw err;
       console.log(String(file));
       document.querySelectorAll('.dialog__content')[0].innerHTML = String(file);

@@ -221,7 +221,7 @@ button, .button {
     transition: all 0.35s ease-in-out;
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
     left: 1.5em;
-    background-image: url(../img/logos/tech/android.png); }
+    background-image: url(../static/logos/tech/android.png); }
   #content #experiences .col[data-tech="vue"]:before {
     content: "";
     background-size: cover;
@@ -233,7 +233,7 @@ button, .button {
     transition: all 0.35s ease-in-out;
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
     left: 1.5em;
-    background-image: url(../img/logos/tech/vue.png); }
+    background-image: url(../static/logos/tech/vue.png); }
   #content #experiences .col[data-tech="react"]:before {
     content: "";
     background-size: cover;
@@ -245,7 +245,7 @@ button, .button {
     transition: all 0.35s ease-in-out;
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
     left: 1.5em;
-    background-image: url(../img/logos/tech/react.png); }
+    background-image: url(../static/logos/tech/react.png); }
   #content #experiences .col[data-tech="php"]:before {
     content: "";
     background-size: cover;
@@ -257,7 +257,7 @@ button, .button {
     transition: all 0.35s ease-in-out;
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
     left: 1.5em;
-    background-image: url(../img/logos/tech/php.png); }
+    background-image: url(../static/logos/tech/php.png); }
   #content #experiences .col[data-tech="java"]:before {
     content: "";
     background-size: cover;
@@ -269,7 +269,7 @@ button, .button {
     transition: all 0.35s ease-in-out;
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
     left: 1.5em;
-    background-image: url(../img/logos/tech/java.png); }
+    background-image: url(../static/logos/tech/java.png); }
   #content #experiences .col[data-team="solo"]:after {
     content: "";
     background-size: cover;
@@ -281,7 +281,7 @@ button, .button {
     transition: all 0.35s ease-in-out;
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
     right: 1.5em;
-    background-image: url(../img/logos/team/solo.png); }
+    background-image: url(../static/logos/team/solo.png); }
   #content #experiences .col[data-team="team"]:after {
     content: "";
     background-size: cover;
@@ -293,7 +293,7 @@ button, .button {
     transition: all 0.35s ease-in-out;
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
     right: 1.5em;
-    background-image: url(../img/logos/team/team.png); }
+    background-image: url(../static/logos/team/team.png); }
   #content #contact .container {
     max-width: 768px; }
     #content #contact .container .wrapper {
@@ -396,6 +396,22 @@ button, .button {
     max-height: 85%;
     overflow: auto;
     overflow-x: hidden; }
+    #dialog .dialog__content-wrapper img {
+      box-shadow: rgba(0, 0, 0, 0.2) 0 0 12px;
+      width: 100%;
+      border-radius: 1em; }
+      #dialog .dialog__content-wrapper img.icon {
+        width: auto;
+        height: 32px;
+        box-shadow: none;
+        margin-left: .2em;
+        border-radius: 0;
+        cursor: pointer;
+        transition: transform 0.35s, filter 0.35s; }
+        #dialog .dialog__content-wrapper img.icon:hover {
+          transform: scale(1.1);
+          filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
+          transition: transform 0.1s, filter 0.1s; }
     #dialog .dialog__content-wrapper::-webkit-scrollbar-thumb {
       border-radius: 0 .5em .5em 0; }
   #dialog .dialog__container {

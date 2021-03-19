@@ -250,37 +250,37 @@ button, .button {
 
     .col[data-tech="android"]:before {
       @include tech-logo;
-      background-image: url(../img/logos/tech/android.png);
+      background-image: url(../static/logos/tech/android.png);
     }
 
     .col[data-tech="vue"]:before {
       @include tech-logo;
-      background-image: url(../img/logos/tech/vue.png);
+      background-image: url(../static/logos/tech/vue.png);
     }
 
     .col[data-tech="react"]:before {
       @include tech-logo;
-      background-image: url(../img/logos/tech/react.png);
+      background-image: url(../static/logos/tech/react.png);
     }
 
     .col[data-tech="php"]:before {
       @include tech-logo;
-      background-image: url(../img/logos/tech/php.png);
+      background-image: url(../static/logos/tech/php.png);
     }
 
     .col[data-tech="java"]:before {
       @include tech-logo;
-      background-image: url(../img/logos/tech/java.png);
+      background-image: url(../static/logos/tech/java.png);
     }
 
     .col[data-team="solo"]:after {
       @include team-logo;
-      background-image: url(../img/logos/team/solo.png);
+      background-image: url(../static/logos/team/solo.png);
     }
 
     .col[data-team="team"]:after {
       @include team-logo;
-      background-image: url(../img/logos/team/team.png);
+      background-image: url(../static/logos/team/team.png);
     }
   }
 
@@ -433,6 +433,28 @@ button, .button {
       max-height: 85%;
       overflow: auto;
       overflow-x: hidden;
+
+      img {
+        box-shadow: rgba(0, 0, 0, .2) 0 0 12px;
+        width: 100%;
+        border-radius: 1em;
+
+        &.icon {
+          width: auto;
+          height: 32px;
+          box-shadow: none;
+          margin-left: .2em;
+          border-radius: 0;
+          cursor: pointer;
+          transition: transform $transition_out, filter $transition_out;
+
+          &:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, .2));
+            transition: transform $transition_in, filter $transition_in;
+          }
+        }
+      }
 
       &::-webkit-scrollbar-thumb {
         border-radius: 0 .5em .5em 0;

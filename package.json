@@ -8,7 +8,7 @@
   "license": "",
   "author": "",
   "scripts": {
-    "build": "parcel build index.html",
+    "build": "parcel build --no-content-hash index.html",
     "dev": "parcel index.html --open",
     "start": "npm run build && npm run dev",
     "build-css": "node-sass --include-path scss css/main.scss css/main.css",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.5.1",
     "sass": "^1.32.5"
   },
   "dependencies": {
