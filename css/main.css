@@ -12,8 +12,7 @@
 html {
   color: #222;
   font-size: 1em;
-  line-height: 1.4;
-}
+  line-height: 1.4; }
 
 /*
  * Remove text-shadow in selection highlight:
@@ -26,13 +25,11 @@ html {
  */
 ::-moz-selection {
   background: #b3d4fc;
-  text-shadow: none;
-}
+  text-shadow: none; }
 
 ::selection {
   background: #b3d4fc;
-  text-shadow: none;
-}
+  text-shadow: none; }
 
 /*
  * A better looking default horizontal rule
@@ -43,8 +40,7 @@ hr {
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /*
  * Remove the gap between audio, canvas, iframes,
@@ -57,8 +53,7 @@ iframe,
 img,
 svg,
 video {
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 /*
  * Remove default fieldset styles.
@@ -66,41 +61,35 @@ video {
 fieldset {
   border: 0;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /*
  * Allow only vertical resizing of textareas.
  */
 textarea {
-  resize: vertical;
-}
+  resize: vertical; }
 
 /* ==========================================================================
    Begin Author's custom styles
    ========================================================================== */
 * {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-}
+  font-family: 'Roboto', sans-serif; }
 
 button, .button {
   background-color: #efefef;
   border: none;
   padding: 1em;
   cursor: pointer;
-  transition: transform 0.35s, box-shadow 0.35s;
-}
-button:hover, .button:hover {
-  transform: translateY(-6px);
-  transition: transform 0.1s, box-shadow 0.1s;
-  box-shadow: black 0 6px;
-}
-button:active, .button:active {
-  transform: translateY(-2px);
-  box-shadow: black 0 2px;
-  outline: none;
-}
+  transition: transform .35s, box-shadow .35s; }
+  button:hover, .button:hover {
+    transform: translateY(-6px);
+    transition: transform .1s, box-shadow .1s;
+    box-shadow: black 0 6px; }
+  button:active, .button:active {
+    transform: translateY(-2px);
+    box-shadow: black 0 2px;
+    outline: none; }
 
 #navbar {
   display: flex;
@@ -115,55 +104,44 @@ button:active, .button:active {
   top: 0;
   box-shadow: black 0 0 12px;
   transition: max-height 0.35s;
-  z-index: 2;
-}
-#navbar.collapsed {
-  max-height: 3em;
-}
-#navbar.shown {
-  transition: max-height 0.35s;
-  max-height: 500px;
-}
-#navbar.shown #menu {
-  transition: opacity 0.35s, transform 0.35s;
-  opacity: 1;
-  transform: translateX(0px);
-  pointer-events: all;
-}
-#navbar #logo {
-  cursor: pointer;
-  transition: transform 0.35s;
-}
-#navbar #logo:hover {
-  transform: scale(1.1);
-  transition: transform 0.1s;
-}
-#navbar #menu {
-  text-align: right;
-  flex-basis: 100%;
-  transition: opacity 1s;
-}
-#navbar #menu span, #navbar #menu a {
-  color: whitesmoke;
-  cursor: pointer;
-  text-decoration: underline solid transparent;
-  transition: text-decoration-color 0.35s;
-  white-space: nowrap;
-  padding: 0 1em;
-}
-#navbar #menu span:hover, #navbar #menu a:hover {
-  text-decoration-color: whitesmoke;
-  transition: text-decoration-color 0.1s;
-}
-#navbar #mobile_menu {
-  display: none;
-  cursor: pointer;
-  transition: transform 0.35s;
-}
-#navbar #mobile_menu:hover {
-  transform: scale(1.2);
-  transition: transform 0.1s;
-}
+  z-index: 2; }
+  #navbar.collapsed {
+    max-height: 3em; }
+  #navbar.shown {
+    transition: max-height 0.35s;
+    max-height: 500px; }
+    #navbar.shown #menu {
+      transition: opacity 0.35s, transform 0.35s;
+      opacity: 1;
+      transform: translateX(0px);
+      pointer-events: all; }
+  #navbar #logo {
+    cursor: pointer;
+    transition: transform 0.35s; }
+    #navbar #logo:hover {
+      transform: scale(1.1);
+      transition: transform 0.1s; }
+  #navbar #menu {
+    text-align: right;
+    flex-basis: 100%;
+    transition: opacity 1s; }
+    #navbar #menu span, #navbar #menu a {
+      color: whitesmoke;
+      cursor: pointer;
+      text-decoration: underline solid transparent;
+      transition: text-decoration-color 0.35s;
+      white-space: nowrap;
+      padding: 0 1em; }
+      #navbar #menu span:hover, #navbar #menu a:hover {
+        text-decoration-color: whitesmoke;
+        transition: text-decoration-color 0.1s; }
+  #navbar #mobile_menu {
+    display: none;
+    cursor: pointer;
+    transition: transform 0.35s; }
+    #navbar #mobile_menu:hover {
+      transform: scale(1.2);
+      transition: transform 0.1s; }
 
 #cover {
   margin: 5em auto auto;
@@ -171,218 +149,179 @@ button:active, .button:active {
   height: calc(100vh - 5em);
   object-fit: cover;
   box-shadow: #222 0px -32px 0px 0px, rgba(0, 0, 0, 0.2) 0 0 6px;
-  pointer-events: none;
-}
+  pointer-events: none; }
 
 #content {
-  margin: auto;
-}
-#content section .container {
-  padding: 1em;
-  max-width: 1000px;
-  margin: auto;
-}
-#content section .container .wrapper {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-#content section .container .wrapper .col {
-  position: relative;
-  padding: 1em;
-  flex-grow: 1;
-  flex-basis: 250px;
-  max-width: 350px;
-}
-#content section .container .wrapper .col.clickable {
-  transition: transform 0.35s ease-in-out;
-}
-#content section .container .wrapper .col.clickable:hover {
-  transition: transform 0.1s ease-in-out;
-  transform: scale(1.05);
-  cursor: pointer;
-}
-#content section .container .wrapper .col.clickable:hover h3 {
-  transition: text-decoration-color 0.1s;
-  text-decoration-color: currentColor;
-}
-#content section .container .wrapper .col.clickable:active {
-  transition: transform 0.1s;
-  transform: scale(0.99);
-}
-#content section .container .wrapper .col .img {
-  width: 100%;
-  object-fit: cover;
-  aspect-ratio: 1/1;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 0 12px;
-  border-radius: 1em;
-  transition: transform 0.35s ease-in-out;
-}
-#content section .container .wrapper .col h3 {
-  text-decoration: underline solid transparent;
-  transition: text-decoration-color 0.35s;
-}
-#content #experiences .col h3 {
-  text-align: center;
-}
-#content #experiences .col[data-tech=android]:before {
-  content: "";
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 48px;
-  height: 48px;
-  top: 1.5em;
-  position: absolute;
-  z-index: 1;
-  transition: all 0.35s ease-in-out;
-  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
-  left: 1.5em;
-  background-image: url(../img/logos/tech/android.png);
-}
-#content #experiences .col[data-tech=vue]:before {
-  content: "";
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 48px;
-  height: 48px;
-  top: 1.5em;
-  position: absolute;
-  z-index: 1;
-  transition: all 0.35s ease-in-out;
-  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
-  left: 1.5em;
-  background-image: url(../img/logos/tech/vue.png);
-}
-#content #experiences .col[data-tech=react]:before {
-  content: "";
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 48px;
-  height: 48px;
-  top: 1.5em;
-  position: absolute;
-  z-index: 1;
-  transition: all 0.35s ease-in-out;
-  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
-  left: 1.5em;
-  background-image: url(../img/logos/tech/react.png);
-}
-#content #experiences .col[data-tech=php]:before {
-  content: "";
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 48px;
-  height: 48px;
-  top: 1.5em;
-  position: absolute;
-  z-index: 1;
-  transition: all 0.35s ease-in-out;
-  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
-  left: 1.5em;
-  background-image: url(../img/logos/tech/php.png);
-}
-#content #experiences .col[data-tech=java]:before {
-  content: "";
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 48px;
-  height: 48px;
-  top: 1.5em;
-  position: absolute;
-  z-index: 1;
-  transition: all 0.35s ease-in-out;
-  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
-  left: 1.5em;
-  background-image: url(../img/logos/tech/java.png);
-}
-#content #experiences .col[data-team=solo]:after {
-  content: "";
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 48px;
-  height: 48px;
-  top: 1.5em;
-  position: absolute;
-  z-index: 1;
-  transition: all 0.35s ease-in-out;
-  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
-  right: 1.5em;
-  background-image: url(../img/logos/team/solo.png);
-}
-#content #experiences .col[data-team=team]:after {
-  content: "";
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 48px;
-  height: 48px;
-  top: 1.5em;
-  position: absolute;
-  z-index: 1;
-  transition: all 0.35s ease-in-out;
-  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
-  right: 1.5em;
-  background-image: url(../img/logos/team/team.png);
-}
-#content #contact .container {
-  max-width: 768px;
-}
-#content #contact .container .wrapper {
-  display: block;
-}
-#content #contact .container .wrapper .col {
-  max-width: none;
-}
-#content #contact .container .wrapper .contact_form {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: -1em;
-}
-#content #contact .container .wrapper .contact_form__left {
-  flex-grow: 1;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-#content #contact .container .wrapper .contact_form__left input {
-  display: block;
-  width: 100%;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px;
-  border-radius: 2px;
-  padding: 0.5em;
-}
-#content #contact .container .wrapper .contact_form__left input:first-of-type {
-  margin-bottom: 1em;
-}
-#content #contact .container .wrapper .contact_form__right {
-  flex-grow: 1;
-  padding: 1em;
-}
-#content #contact .container .wrapper .contact_form__right textarea {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px;
-  border-radius: 2px;
-  padding: 0.5em;
-}
-#content #contact .container .wrapper .contact_form__bottom {
-  flex-basis: 100%;
-}
-#content #contact .container .wrapper .contact_form__bottom button {
-  margin: 0 auto;
-  display: block;
-}
-#content #contact .container .wrapper .contact_form__bottom .g-recaptcha {
-  margin-top: 1em;
-}
-#content #contact .container .wrapper .contact_form__bottom .g-recaptcha div {
-  margin: 0 auto;
-}
+  margin: auto; }
+  #content section .container {
+    padding: 1em;
+    max-width: 1000px;
+    margin: auto; }
+    #content section .container .wrapper {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
+      #content section .container .wrapper .col {
+        position: relative;
+        padding: 1em;
+        flex-grow: 1;
+        flex-basis: 250px;
+        max-width: 350px; }
+        #content section .container .wrapper .col.clickable {
+          transition: transform 0.35s ease-in-out; }
+          #content section .container .wrapper .col.clickable:hover {
+            transition: transform 0.1s ease-in-out;
+            transform: scale(1.05);
+            cursor: pointer; }
+            #content section .container .wrapper .col.clickable:hover h3 {
+              transition: text-decoration-color 0.1s;
+              text-decoration-color: currentColor; }
+          #content section .container .wrapper .col.clickable:active {
+            transition: transform 0.1s;
+            transform: scale(0.99); }
+        #content section .container .wrapper .col .img {
+          width: 100%;
+          object-fit: cover;
+          aspect-ratio: 1/1;
+          box-shadow: rgba(0, 0, 0, 0.2) 0 0 12px;
+          border-radius: 1em;
+          transition: transform 0.35s ease-in-out; }
+        #content section .container .wrapper .col h3 {
+          text-decoration: underline solid transparent;
+          transition: text-decoration-color 0.35s; }
+  #content #experiences .col h3 {
+    text-align: center; }
+  #content #experiences .col[data-tech="android"]:before {
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+    top: 1.5em;
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
+    left: 1.5em;
+    background-image: url(../img/logos/tech/android.png); }
+  #content #experiences .col[data-tech="vue"]:before {
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+    top: 1.5em;
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
+    left: 1.5em;
+    background-image: url(../img/logos/tech/vue.png); }
+  #content #experiences .col[data-tech="react"]:before {
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+    top: 1.5em;
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
+    left: 1.5em;
+    background-image: url(../img/logos/tech/react.png); }
+  #content #experiences .col[data-tech="php"]:before {
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+    top: 1.5em;
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
+    left: 1.5em;
+    background-image: url(../img/logos/tech/php.png); }
+  #content #experiences .col[data-tech="java"]:before {
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+    top: 1.5em;
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
+    left: 1.5em;
+    background-image: url(../img/logos/tech/java.png); }
+  #content #experiences .col[data-team="solo"]:after {
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+    top: 1.5em;
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
+    right: 1.5em;
+    background-image: url(../img/logos/team/solo.png); }
+  #content #experiences .col[data-team="team"]:after {
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+    top: 1.5em;
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
+    right: 1.5em;
+    background-image: url(../img/logos/team/team.png); }
+  #content #contact .container {
+    max-width: 768px; }
+    #content #contact .container .wrapper {
+      display: block; }
+      #content #contact .container .wrapper .col {
+        max-width: none; }
+      #content #contact .container .wrapper .contact_form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: -1em; }
+        #content #contact .container .wrapper .contact_form__left {
+          flex-grow: 1;
+          padding: 1em;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between; }
+          #content #contact .container .wrapper .contact_form__left input {
+            display: block;
+            width: 100%;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px;
+            border-radius: 2px;
+            padding: .5em; }
+            #content #contact .container .wrapper .contact_form__left input:first-of-type {
+              margin-bottom: 1em; }
+        #content #contact .container .wrapper .contact_form__right {
+          flex-grow: 1;
+          padding: 1em; }
+          #content #contact .container .wrapper .contact_form__right textarea {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px;
+            border-radius: 2px;
+            padding: .5em; }
+        #content #contact .container .wrapper .contact_form__bottom {
+          flex-basis: 100%; }
+          #content #contact .container .wrapper .contact_form__bottom button {
+            margin: 0 auto;
+            display: block; }
+          #content #contact .container .wrapper .contact_form__bottom .g-recaptcha {
+            margin-top: 1em; }
+            #content #contact .container .wrapper .contact_form__bottom .g-recaptcha div {
+              margin: 0 auto; }
 
 #footer {
   display: flex;
@@ -390,14 +329,47 @@ button:active, .button:active {
   padding: 1em;
   background-color: #222;
   color: whitesmoke;
-  width: 100%;
-}
-#footer div {
-  display: inline-block;
-}
-#footer span {
-  padding: 0 0.5em;
-}
+  width: 100%; }
+  #footer div {
+    display: inline-block; }
+  #footer span {
+    padding: 0 .5em; }
+
+#dialog {
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none; }
+  #dialog.active {
+    opacity: 1;
+    pointer-events: all; }
+  #dialog .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+    cursor: pointer; }
+  #dialog .content {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f5f5f5;
+    width: 75%;
+    height: auto;
+    border-radius: .5em;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    max-height: 90%;
+    overflow: auto;
+    overflow-x: hidden; }
+    #dialog .content .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em; }
 
 @media screen and (max-width: 480px) {
   #navbar #menu {
@@ -405,22 +377,16 @@ button:active, .button:active {
     opacity: 0;
     transform: translateX(50px);
     pointer-events: none;
-    width: auto;
-  }
-  #navbar #menu span {
-    display: block;
-  }
+    width: auto; }
+    #navbar #menu span {
+      display: block; }
   #navbar #mobile_menu {
-    display: inherit;
-  }
-
+    display: inherit; }
   #content section .container {
-    padding: 0.2em;
-  }
+    padding: .2em; }
   #content h1 {
-    text-align: center;
-  }
-}
+    text-align: center; } }
+
 /* ==========================================================================
    End Author's custom styles
    ========================================================================== */
@@ -432,8 +398,7 @@ Helper classes
  */
 .hidden,
 [hidden] {
-  display: none !important;
-}
+  display: none !important; }
 
 /*
  * Hide only visually, but have it available for screen readers:
@@ -453,8 +418,7 @@ Helper classes
   position: absolute;
   white-space: nowrap;
   width: 1px;
-  /* 1 */
-}
+  /* 1 */ }
 
 /*
  * Extends the .sr-only class to allow the element
@@ -469,15 +433,13 @@ Helper classes
   overflow: visible;
   position: static;
   white-space: inherit;
-  width: auto;
-}
+  width: auto; }
 
 /*
  * Hide visually and from screen readers, but maintain layout
  */
 .invisible {
-  visibility: hidden;
-}
+  visibility: hidden; }
 
 /*
  * Clearfix: contain floats
@@ -493,12 +455,10 @@ Helper classes
 .clearfix::before,
 .clearfix::after {
   content: " ";
-  display: table;
-}
+  display: table; }
 
 .clearfix::after {
-  clear: both;
-}
+  clear: both; }
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
@@ -506,11 +466,11 @@ Helper classes
    Modify as content requires.
    ========================================================================== */
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
+  /* Style adjustments for viewports that meet the condition */ }
+
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
+  /* Style adjustments for high resolution devices */ }
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -518,71 +478,47 @@ Helper classes
    ========================================================================== */
 @media print {
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     background: #fff !important;
     color: #000 !important;
     /* Black prints faster */
     box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
+    text-shadow: none !important; }
   a,
-a:visited {
-    text-decoration: underline;
-  }
-
+  a:visited {
+    text-decoration: underline; }
   a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
+    content: " (" attr(href) ")"; }
   abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
+    content: " (" attr(title) ")"; }
   /*
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
   a[href^="#"]::after,
-a[href^="javascript:"]::after {
-    content: "";
-  }
-
+  a[href^="javascript:"]::after {
+    content: ""; }
   pre {
-    white-space: pre-wrap !important;
-  }
-
+    white-space: pre-wrap !important; }
   pre,
-blockquote {
+  blockquote {
     border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
+    page-break-inside: avoid; }
   /*
    * Printing Tables:
    * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
    */
   thead {
-    display: table-header-group;
-  }
-
+    display: table-header-group; }
   tr,
-img {
-    page-break-inside: avoid;
-  }
-
+  img {
+    page-break-inside: avoid; }
   p,
-h2,
-h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
   h2,
-h3 {
-    page-break-after: avoid;
-  }
-}
-
-/*# sourceMappingURL=main.css.map */
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; } }

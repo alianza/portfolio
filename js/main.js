@@ -17,6 +17,10 @@ document.querySelectorAll(".menu a").forEach(item => {
 function handleMenuClick(elem) {
   const targetElem = document.getElementById(elem.dataset.linkTo);
   window.scrollTo({top: targetElem.offsetTop - topOffsetSmall, behavior: 'smooth'});
+
+  if (isDialogOpen()) {
+    closeDialog();
+  }
 }
 
 function openCV() {
@@ -56,9 +60,31 @@ function showMenu() {
   }
 }
 
+function buildDialogContents(projectName) {
+    document.querySelectorAll('#dialog .title')[0].innerHTML = projectName;
+}
+
+function openDialog(projectName) {
+  console.log(projectName)
+  buildDialogContents(projectName);
+  document.body.style.overflow = 'hidden';
+  document.getElementById('dialog').classList.add('active');
+}
+
+function closeDialog() {
+  document.body.style.overflow = 'auto';
+  document.getElementById('dialog').classList.remove('active');
+}
+
+function isDialogOpen() {
+  return document.getElementById('dialog').classList.contains('active');
+}
+
 document.getElementById('cover').playbackRate = .5;
 
 window.handleMenuClick = handleMenuClick;
 window.openCV = openCV;
 window.scrollToTop = scrollToTop;
 window.showMenu = showMenu;
+window.openDialog = openDialog;
+window.closeDialog = closeDialog;
