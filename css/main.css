@@ -139,7 +139,6 @@ button, .button {
       transition: transform 0.1s; }
   #navbar #menu {
     text-align: right;
-    flex-basis: 100%;
     transition: opacity 1s; }
     #navbar #menu span, #navbar #menu a {
       color: whitesmoke;

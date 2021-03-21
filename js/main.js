@@ -63,13 +63,14 @@ function showMenu() {
 
 function buildDialogContents(projectName) {
   console.log(projectName);
-  unified()
-    .use(markdown)
-    .use(html)
+  unified().use(markdown).use(html)
     .process(fs.readFileSync('./static/markdown/pokedexreact.md'), function (err, file) {
       if (err) throw err;
-      console.log(String(file));
-      document.querySelectorAll('.dialog__content')[0].innerHTML = String(file);
+      let doc = document.createRange().createContextualFragment(file.toString());
+      doc.querySelectorAll('[alt="icon"]').forEach(e => {
+        e.classList.add(e.getAttribute('alt'));
+      });
+      document.querySelectorAll('.dialog__content')[0].appendChild(doc)
     });
 }
 
