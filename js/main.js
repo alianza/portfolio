@@ -12,8 +12,8 @@ const topOffsetSmall = 48;
 const navBar = document.getElementById('navbar');
 
 // Files
-CVEnglish = require('/img/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf')
-CVDutch = require('/img/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf')
+const CVEnglish = require('/img/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf')
+const CVDutch = require('/img/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf')
 
 function handleMenuClick(elem) {
   const targetElem = document.getElementById(elem.dataset.linkTo);
@@ -34,11 +34,17 @@ function openCV() {
   }
 }
 
+function onLogoClick() {
+  window.history.pushState(null, null, window.location.origin);
+  closeDialog();
+  scrollToTop();
+}
+
 function scrollToTop() {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-window.onscroll = function () {
+function collapseNavBar() {
   if (!navBar.classList.contains('shown')) {
     if (window.scrollY > topOffsetBig) {
       if (!navIsCollapsed) {
@@ -52,6 +58,10 @@ window.onscroll = function () {
       navIsCollapsed = false;
     }
   }
+}
+
+window.onscroll = function () {
+  collapseNavBar();
 };
 
 function showMenu() {
@@ -62,21 +72,32 @@ function showMenu() {
 }
 
 function buildDialogContents(projectName) {
-  console.log(projectName);
+  let file = fs.readFileSync('./static/markdown/404.md');
+  switch(projectName) {
+    case 'pokedexreact': file = fs.readFileSync('./static/markdown/pokedexreact.md');
+      break;
+    case 'pokedexvue': file = fs.readFileSync('./static/markdown/pokedexvue.md');
+      break;
+    case 'monumental': file = fs.readFileSync('./static/markdown/monumental.md');
+      break;
+  }
+
   unified().use(markdown).use(html)
-    .process(fs.readFileSync('./static/markdown/pokedexreact.md'), function (err, file) {
+    .process(file, function (err, file) {
       if (err) throw err;
       let doc = document.createRange().createContextualFragment(file.toString());
       doc.querySelectorAll('[alt="icon"]').forEach(e => {
         e.classList.add(e.getAttribute('alt'));
+        });
+      document.getElementById('dialog-content').innerHTML = '';
+      document.getElementById('dialog-content').appendChild(doc);
+      document.querySelectorAll('.dialog__content-wrapper')[0].scrollTop = 0;
       });
-      document.querySelectorAll('.dialog__content')[0].appendChild(doc)
-    });
 }
 
 function openDialog(projectName) {
-  console.log(projectName)
   buildDialogContents(projectName);
+  window.history.replaceState(null, projectName, '/' + projectName);
   document.body.classList.add('scroll_disabled');
   setTimeout(() => {
     document.getElementById('dialog').classList.add('active');
@@ -84,6 +105,7 @@ function openDialog(projectName) {
 }
 
 function closeDialog() {
+  window.history.replaceState(null, null, window.location.origin);
   document.body.classList.remove('scroll_disabled');
   document.getElementById('dialog').classList.remove('active');
 }
@@ -92,10 +114,32 @@ function isDialogOpen() {
   return document.getElementById('dialog').classList.contains('active');
 }
 
-document.getElementById('video').playbackRate = .5;
+function openDialogFromPathname(pathname) {
+  if (pathname !== '/') {
+    openDialog(window.location.pathname.replace('/', ''));
+  } else {
+    closeDialog();
+  }
+}
+
+function init() {
+  document.getElementById('video').playbackRate = .5;
+
+  openDialogFromPathname(window.location.pathname);
+
+  collapseNavBar();
+
+  window.onpopstate = function(event) {
+    console.log(event.path[0].location.pathname);
+    openDialogFromPathname(event.path[0].location.pathname);
+  };
+}
+
+init();
 
 window.handleMenuClick = handleMenuClick;
 window.openCV = openCV;
+window.onLogoClick = onLogoClick;
 window.scrollToTop = scrollToTop;
 window.showMenu = showMenu;
 window.openDialog = openDialog;

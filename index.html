@@ -19,14 +19,14 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#222">
 </head>
 
 <body>
 
 <nav id="navbar">
   <div id="logo">
-    <h1 onclick="scrollToTop()">J.W.</h1>
+    <h1 onclick="onLogoClick()">J.W.</h1>
   </div>
   <div id="menu">
     <span onclick="handleMenuClick(this)" data-link-to="about_me">About me</span>
@@ -152,7 +152,7 @@
   <div class="dialog__content-wrapper">
     <div onclick="closeDialog()" class="dialog__close-button">✖</div>
     <div class="dialog__container">
-      <div class="dialog__content"></div>
+      <div class="dialog__content" id="dialog-content"></div>
     </div>
   </div>
 </div>
