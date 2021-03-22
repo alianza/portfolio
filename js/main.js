@@ -73,6 +73,7 @@ function showMenu() {
 
 function buildDialogContents(projectName) {
   let file = fs.readFileSync('./static/markdown/404.md');
+
   switch(projectName) {
     case 'pokedexreact': file = fs.readFileSync('./static/markdown/pokedexreact.md');
       break;
@@ -97,7 +98,7 @@ function buildDialogContents(projectName) {
 
 function openDialog(projectName) {
   buildDialogContents(projectName);
-  window.history.replaceState(null, projectName, '/' + projectName);
+  if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName); }
   document.body.classList.add('scroll_disabled');
   setTimeout(() => {
     document.getElementById('dialog').classList.add('active');
@@ -105,7 +106,7 @@ function openDialog(projectName) {
 }
 
 function closeDialog() {
-  window.history.replaceState(null, null, window.location.origin);
+  if (window.location.pathname !== '/') { window.history.pushState(null, null, window.location.origin) }
   document.body.classList.remove('scroll_disabled');
   document.getElementById('dialog').classList.remove('active');
 }
@@ -130,7 +131,6 @@ function init() {
   collapseNavBar();
 
   window.onpopstate = function(event) {
-    console.log(event.path[0].location.pathname);
     openDialogFromPathname(event.path[0].location.pathname);
   };
 }
