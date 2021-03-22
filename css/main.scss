@@ -94,7 +94,7 @@ button, .button {
   top: 0;
   box-shadow: black 0 0 12px;
   transition: max-height $transition_out;
-  z-index: 2;
+  z-index: 4;
 
   &.collapsed {
     max-height: $navbar_collapsed_height;
@@ -123,7 +123,11 @@ button, .button {
   }
 
   & #menu {
-    text-align: right;
+    display: flex;
+    max-width: 480px;
+    flex-basis: 100%;
+    width: 100%;
+    justify-content: space-around;
     transition: opacity 1s;
 
     span, a {
@@ -132,7 +136,6 @@ button, .button {
       text-decoration: underline solid transparent;
       transition: text-decoration-color $transition_out;
       white-space: nowrap;
-      padding: 0 1em;
 
       &:hover {
         text-decoration-color: whitesmoke;
@@ -145,6 +148,7 @@ button, .button {
     display: none;
     cursor: pointer;
     transition: transform $transition_out;
+    margin-left: 1em;
 
     &:hover {
       transform: scale(1.2);
@@ -247,40 +251,7 @@ button, .button {
       }
     }
 
-    .col[data-tech="android"]:before {
-      @include tech-logo;
-      background-image: url(../static/logos/tech/android.png);
-    }
-
-    .col[data-tech="vue"]:before {
-      @include tech-logo;
-      background-image: url(../static/logos/tech/vue.png);
-    }
-
-    .col[data-tech="react"]:before {
-      @include tech-logo;
-      background-image: url(../static/logos/tech/react.png);
-    }
-
-    .col[data-tech="php"]:before {
-      @include tech-logo;
-      background-image: url(../static/logos/tech/php.png);
-    }
-
-    .col[data-tech="java"]:before {
-      @include tech-logo;
-      background-image: url(../static/logos/tech/java.png);
-    }
-
-    .col[data-team="solo"]:after {
-      @include team-logo;
-      background-image: url(../static/logos/team/solo.png);
-    }
-
-    .col[data-team="team"]:after {
-      @include team-logo;
-      background-image: url(../static/logos/team/team.png);
-    }
+    @import 'icon_bindings';
   }
 
   #contact {
@@ -432,11 +403,18 @@ button, .button {
       max-height: 85%;
       overflow: auto;
       overflow-x: hidden;
+      max-width: 1200px;
 
       img {
         box-shadow: rgba(0, 0, 0, .2) 0 0 12px;
         width: 100%;
         border-radius: 1em;
+
+        &:not(.icon) {
+          display: block;
+          margin: 0 auto;
+          max-width: fit-content;
+        }
 
         &.icon {
           width: auto;
@@ -483,14 +461,12 @@ button, .button {
       transform: translateX(50px);
       pointer-events: none;
       width: auto;
-
-      span {
-        display: block;
-      }
+      flex-direction: column;
+      align-items: flex-end;
     }
 
     #mobile_menu {
-      display: inherit;
+      display: block;
     }
   }
 
