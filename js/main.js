@@ -2,6 +2,8 @@ const fs = require('fs');
 const unified = require('unified')
 const markdown = require('remark-parse')
 const html = require('remark-html')
+const hljs = require('highlight.js');
+import 'highlight.js/styles/xcode.css';
 
 // const navHeight = document.getElementById('navbar').offsetHeight;
 let navIsCollapsed = false;
@@ -60,10 +62,6 @@ function collapseNavBar() {
   }
 }
 
-window.onscroll = function () {
-  collapseNavBar();
-};
-
 function showMenu() {
   navBar.classList.toggle('shown');
   if (!navBar.classList.contains('shown')) {
@@ -74,12 +72,15 @@ function showMenu() {
 function buildDialogContents(projectName) {
   let file = fs.readFileSync('./static/markdown/404.md');
 
-  switch(projectName) {
-    case 'pokedexreact': file = fs.readFileSync('./static/markdown/pokedexreact.md');
+  switch (projectName) {
+    case 'pokedexreact':
+      file = fs.readFileSync('./static/markdown/pokedexreact.md');
       break;
-    case 'pokedexvue': file = fs.readFileSync('./static/markdown/pokedexvue.md');
+    case 'pokedexvue':
+      file = fs.readFileSync('./static/markdown/pokedexvue.md');
       break;
-    case 'monumental': file = fs.readFileSync('./static/markdown/monumental.md');
+    case 'monumental':
+      file = fs.readFileSync('./static/markdown/monumental.md');
       break;
   }
 
@@ -89,11 +90,12 @@ function buildDialogContents(projectName) {
       let doc = document.createRange().createContextualFragment(file.toString());
       doc.querySelectorAll('[alt="icon"]').forEach(e => {
         e.classList.add(e.getAttribute('alt'));
-        });
+      });
       document.getElementById('dialog-content').innerHTML = '';
       document.getElementById('dialog-content').appendChild(doc);
       document.querySelectorAll('.dialog__content-wrapper')[0].scrollTop = 0;
-      });
+      hljs.highlightAll();
+    });
 }
 
 function openDialog(projectName) {
@@ -106,7 +108,7 @@ function openDialog(projectName) {
 }
 
 function closeDialog() {
-  if (window.location.pathname !== '/') { window.history.pushState(null, null, window.location.origin) }
+  if (window.location.pathname !== '/') { window.history.pushState(null, null, window.location.origin); }
   document.body.classList.remove('scroll_disabled');
   document.getElementById('dialog').classList.remove('active');
 }
@@ -126,11 +128,15 @@ function openDialogFromPathname(pathname) {
 function init() {
   document.getElementById('video').playbackRate = .5;
 
+  window.onscroll = function () {
+    collapseNavBar();
+  };
+
   openDialogFromPathname(window.location.pathname);
 
   collapseNavBar();
 
-  window.onpopstate = function(event) {
+  window.onpopstate = function (event) {
     openDialogFromPathname(event.path[0].location.pathname);
   };
 }

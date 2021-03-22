@@ -85,8 +85,10 @@ textarea {
 /* ==========================================================================
    Begin Author's custom styles
    ========================================================================== */
-body.scroll_disabled {
-  overflow: hidden; }
+body {
+  overflow-x: hidden; }
+  body.scroll_disabled {
+    overflow: hidden; }
 
 * {
   box-sizing: border-box;
@@ -186,7 +188,7 @@ button, .button {
         padding: 1em;
         flex-grow: 1;
         flex-basis: 250px;
-        max-width: 350px; }
+        max-width: 450px; }
         #content section .container .wrapper .col.clickable {
           transition: transform 0.35s ease-in-out; }
           #content section .container .wrapper .col.clickable:hover {
@@ -445,6 +447,10 @@ button, .button {
     padding: .2em; }
   #content h1 {
     text-align: center; } }
+
+@media only screen and (max-width: 600px) {
+  #dialog .dialog__content-wrapper {
+    width: 90%; } }
 
 /* ==========================================================================
    End Author's custom styles
