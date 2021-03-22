@@ -1,4 +1,4 @@
-# PokéDex - React
+# PokéDex - Vue
 
 ![Homepage](../projects/pokedexreact.png)
 
@@ -11,8 +11,8 @@ The goal of this project was to teach myself the workings of the *ReactJS* frame
 
 ## Technologies
 
-- ReactJS [![icon](../logos/tech/react.png)](https://reactjs.org/)
-- React-Router [![icon](../logos/tech/react-router.png)](https://reactrouter.com/)
+- VueJS [![icon](../logos/tech/vue.png)](https://vuejs.org/)
+- Vue-Router [![icon](../logos/tech/vue-router.png)](https://router.vuejs.org/)
 - Sass [![icon](../logos/tech/sass.png)](https://sass-lang.com/)
 
 ---
@@ -40,7 +40,6 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 ---
 
 ## Code Snippets
-The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, consice and powerful code.
 
 ```
   loadTypes = () => {
@@ -51,5 +50,3 @@ The following are some code snippets of pieces of code I'm proud of from this pr
     });
   }
 ```
-
-
