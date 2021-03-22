@@ -1,20 +1,14 @@
-const unified = require('unified');
-const markdown = require('remark-parse');
-const html = require('remark-html');
 const hljs = require('highlight.js');
+const marked = require('marked');
 import 'highlight.js/styles/xcode.css';
 
-// const navHeight = document.getElementById('navbar').offsetHeight;
+// Variables
 let navIsCollapsed = false;
 const topOffsetBig = 80;
 const topOffsetSmall = 48;
 
-// Elems
+// Elements
 const navBar = document.getElementById('navbar');
-
-// Files
-const CVEnglish = require('/img/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf')
-const CVDutch = require('/img/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf')
 
 function handleMenuClick(elem) {
   const targetElem = document.getElementById(elem.dataset.linkTo);
@@ -27,10 +21,20 @@ function handleMenuClick(elem) {
 
 function openCV() {
   if (confirm("Open English version?")) {
-    window.open(CVEnglish, '_blank', 'fullscreen=yes');
+    fetch(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf`).then(response => {
+      response.blob().then( blob => {
+        const fileURL = URL.createObjectURL(blob);
+        window.open(fileURL);
+      });
+    });
   } else {
     if (confirm("Open Dutch version?")) {
-      window.open(CVDutch, '_blank', 'fullscreen=yes');
+      fetch(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf`).then(response => {
+        response.blob().then( blob => {
+          const fileURL = URL.createObjectURL(blob);
+          window.open(fileURL);
+        });
+      });
     }
   }
 }
@@ -80,13 +84,12 @@ function buildDialogContent (data) {
 
 function getDialogContent(projectName) {
   fetch(`/markdown/${projectName}.md`).then(response => response.text() ).then(data => {
-      unified().use(markdown).use(html).process(data).then(data => {
+        data = marked(data);
         if (data.toString().includes('<!doctype html>')) {
           getDialogContent('404');
         } else {
           buildDialogContent(data);
         }
-      })
     }).catch((error) => { console.error('Error:', error); });
 }
 
@@ -115,7 +118,7 @@ function openDialogFromPathname(pathname) {
 
 function onProjectClick(projectName) {
     getDialogContent(projectName);
-    if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName); };
+    if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName); }
 }
 
 function init() {
