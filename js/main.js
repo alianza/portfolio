@@ -1,7 +1,6 @@
-const fs = require('fs');
-const unified = require('unified')
-const markdown = require('remark-parse')
-const html = require('remark-html')
+const unified = require('unified');
+const markdown = require('remark-parse');
+const html = require('remark-html');
 const hljs = require('highlight.js');
 import 'highlight.js/styles/xcode.css';
 
@@ -69,42 +68,31 @@ function showMenu() {
   }
 }
 
-function buildDialogContents(projectName) {
-  let file = fs.readFileSync('./static/markdown/404.md');
-
-  switch (projectName) {
-    case 'pokedexreact':
-      file = fs.readFileSync('./static/markdown/pokedexreact.md');
-      break;
-    case 'pokedexvue':
-      file = fs.readFileSync('./static/markdown/pokedexvue.md');
-      break;
-    case 'monumental':
-      file = fs.readFileSync('./static/markdown/monumental.md');
-      break;
-  }
-
-  unified().use(markdown).use(html)
-    .process(file, function (err, file) {
-      if (err) throw err;
-      let doc = document.createRange().createContextualFragment(file.toString());
-      doc.querySelectorAll('[alt="icon"]').forEach(e => {
-        e.classList.add(e.getAttribute('alt'));
-      });
-      document.getElementById('dialog-content').innerHTML = '';
-      document.getElementById('dialog-content').appendChild(doc);
-      document.querySelectorAll('.dialog__content-wrapper')[0].scrollTop = 0;
-      hljs.highlightAll();
-    });
+function buildDialogContent (data) {
+  let doc = document.createRange().createContextualFragment(data.toString());
+  doc.querySelectorAll('[alt="icon"]').forEach(e => { e.classList.add(e.getAttribute('alt')); });
+  document.getElementById('dialog-content').innerHTML = '';
+  document.getElementById('dialog-content').appendChild(doc);
+  document.querySelectorAll('.dialog__content-wrapper')[0].scrollTop = 0;
+  hljs.highlightAll();
+  openDialog();
 }
 
-function openDialog(projectName) {
-  buildDialogContents(projectName);
-  if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName); }
+function getDialogContent(projectName) {
+  fetch(`/markdown/${projectName}.md`).then(response => response.text() ).then(data => {
+      unified().use(markdown).use(html).process(data).then(data => {
+        if (data.toString().includes('<!doctype html>')) {
+          getDialogContent('404');
+        } else {
+          buildDialogContent(data);
+        }
+      })
+    }).catch((error) => { console.error('Error:', error); });
+}
+
+function openDialog() {
   document.body.classList.add('scroll_disabled');
-  setTimeout(() => {
-    document.getElementById('dialog').classList.add('active');
-  }, 100);
+  document.getElementById('dialog').classList.add('active');
 }
 
 function closeDialog() {
@@ -119,18 +107,21 @@ function isDialogOpen() {
 
 function openDialogFromPathname(pathname) {
   if (pathname !== '/') {
-    openDialog(window.location.pathname.replace('/', ''));
+    getDialogContent(window.location.pathname.replace('/', ''));
   } else {
     closeDialog();
   }
 }
 
+function onProjectClick(projectName) {
+    getDialogContent(projectName);
+    if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName); };
+}
+
 function init() {
   document.getElementById('video').playbackRate = .5;
 
-  window.onscroll = function () {
-    collapseNavBar();
-  };
+  window.onscroll = function () { collapseNavBar(); };
 
   openDialogFromPathname(window.location.pathname);
 
@@ -148,5 +139,5 @@ window.openCV = openCV;
 window.onLogoClick = onLogoClick;
 window.scrollToTop = scrollToTop;
 window.showMenu = showMenu;
-window.openDialog = openDialog;
 window.closeDialog = closeDialog;
+window.onProjectClick = onProjectClick;
