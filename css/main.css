@@ -120,7 +120,7 @@ button, .button {
   top: 0;
   box-shadow: black 0 0 12px;
   transition: max-height 0.35s;
-  z-index: 2; }
+  z-index: 4; }
   #navbar.collapsed {
     max-height: 3em; }
   #navbar.shown {
@@ -138,22 +138,26 @@ button, .button {
       transform: scale(1.1);
       transition: transform 0.1s; }
   #navbar #menu {
-    text-align: right;
+    display: flex;
+    max-width: 480px;
+    flex-basis: 100%;
+    width: 100%;
+    justify-content: space-around;
     transition: opacity 1s; }
     #navbar #menu span, #navbar #menu a {
       color: whitesmoke;
       cursor: pointer;
       text-decoration: underline solid transparent;
       transition: text-decoration-color 0.35s;
-      white-space: nowrap;
-      padding: 0 1em; }
+      white-space: nowrap; }
       #navbar #menu span:hover, #navbar #menu a:hover {
         text-decoration-color: whitesmoke;
         transition: text-decoration-color 0.1s; }
   #navbar #mobile_menu {
     display: none;
     cursor: pointer;
-    transition: transform 0.35s; }
+    transition: transform 0.35s;
+    margin-left: 1em; }
     #navbar #mobile_menu:hover {
       transform: scale(1.2);
       transition: transform 0.1s; }
@@ -394,11 +398,16 @@ button, .button {
     z-index: 3;
     max-height: 85%;
     overflow: auto;
-    overflow-x: hidden; }
+    overflow-x: hidden;
+    max-width: 1200px; }
     #dialog .dialog__content-wrapper img {
       box-shadow: rgba(0, 0, 0, 0.2) 0 0 12px;
       width: 100%;
       border-radius: 1em; }
+      #dialog .dialog__content-wrapper img:not(.icon) {
+        display: block;
+        margin: 0 auto;
+        max-width: fit-content; }
       #dialog .dialog__content-wrapper img.icon {
         width: auto;
         height: 32px;
@@ -427,11 +436,11 @@ button, .button {
     opacity: 0;
     transform: translateX(50px);
     pointer-events: none;
-    width: auto; }
-    #navbar #menu span {
-      display: block; }
+    width: auto;
+    flex-direction: column;
+    align-items: flex-end; }
   #navbar #mobile_menu {
-    display: inherit; }
+    display: block; }
   #content section .container {
     padding: .2em; }
   #content h1 {

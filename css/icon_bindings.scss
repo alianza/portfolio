@@ -1,0 +1,34 @@
+.col[data-tech="android"]:before {
+  @include tech-logo;
+  background-image: url(../static/logos/tech/android.png);
+}
+
+.col[data-tech="vue"]:before {
+  @include tech-logo;
+  background-image: url(../static/logos/tech/vue.png);
+}
+
+.col[data-tech="react"]:before {
+  @include tech-logo;
+  background-image: url(../static/logos/tech/react.png);
+}
+
+.col[data-tech="php"]:before {
+  @include tech-logo;
+  background-image: url(../static/logos/tech/php.png);
+}
+
+.col[data-tech="java"]:before {
+  @include tech-logo;
+  background-image: url(../static/logos/tech/java.png);
+}
+
+.col[data-team="solo"]:after {
+  @include team-logo;
+  background-image: url(../static/logos/team/solo.png);
+}
+
+.col[data-team="team"]:after {
+  @include team-logo;
+  background-image: url(../static/logos/team/team.png);
+}
