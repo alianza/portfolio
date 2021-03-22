@@ -85,8 +85,10 @@ textarea {
 /*
  * Highlight.js nested code font
  */
-.hljs span {
-  font-family: Consolas, serif; }
+.hljs {
+  font-family: Consolas, monospace; }
+  .hljs * {
+    font-family: Consolas, monospace; }
 
 /* ==========================================================================
    Begin Author's custom styles
