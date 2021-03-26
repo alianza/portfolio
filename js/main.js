@@ -1,6 +1,9 @@
-const hljs = require('highlight.js');
+const hljs = require('highlight.js/lib/core');  // require only the core library
 const marked = require('marked');
 import 'highlight.js/styles/xcode.css';
+
+// Init
+hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript')); // separately require languages
 
 // Variables
 let navIsCollapsed = false;
