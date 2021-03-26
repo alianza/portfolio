@@ -75,6 +75,14 @@ function showMenu() {
   }
 }
 
+function showLoader()  {
+  document.getElementById('loader').classList.add('active');
+}
+
+function hideLoader()  {
+  document.getElementById('loader').classList.remove('active');
+}
+
 function buildDialogContent (data) {
   let doc = document.createRange().createContextualFragment(data.toString());
   doc.querySelectorAll('[alt="icon"]').forEach(e => { e.classList.add(e.getAttribute('alt')); });
@@ -86,17 +94,19 @@ function buildDialogContent (data) {
 }
 
 function getDialogContent(projectName) {
+  showLoader();
   fetch(`/markdown/${projectName}.md`).then(response => response.text() ).then(data => {
         data = marked(data);
-        if (data.toString().includes('<!doctype html>')) {
-          getDialogContent('404');
-        } else {
+        if (!data.toString().includes('<!doctype html>')) {
           buildDialogContent(data);
+        } else {
+          getDialogContent('404');
         }
-    }).catch((error) => { console.error('Error:', error); });
+  }).catch((error) => { console.error('Error:', error); });
 }
 
 function openDialog() {
+  hideLoader();
   document.body.classList.add('scroll_disabled');
   document.getElementById('dialog').classList.add('active');
 }
