@@ -86,6 +86,7 @@ textarea {
  * Highlight.js nested code font
  */
 .hljs {
+  border-radius: .5em;
   font-family: Consolas, monospace; }
   .hljs * {
     font-family: Consolas, monospace; }
