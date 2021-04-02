@@ -1,3 +1,5 @@
+// Tech Logo's
+
 .col[data-tech="android"]:before {
   @include tech-logo;
   background-image: url(../static/logos/tech/android.png);
@@ -22,6 +24,8 @@
   @include tech-logo;
   background-image: url(../static/logos/tech/java.png);
 }
+
+// Team Logo's
 
 .col[data-team="solo"]:after {
   @include team-logo;

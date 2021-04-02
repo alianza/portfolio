@@ -370,11 +370,24 @@ button, .button {
   background-color: $main_color;
   color: whitesmoke;
 
-  & div {
+  .social_media {
     display: inline-block;
+
+    a {
+        color: whitesmoke;
+        cursor: pointer;
+        text-decoration: underline solid transparent;
+        transition: text-decoration-color $transition_out;
+        white-space: nowrap;
+
+        &:hover {
+          text-decoration-color: whitesmoke;
+          transition: text-decoration-color $transition_in;
+        }
+    }
   }
 
-  & span {
+  & a, span {
     padding: 0 .5em;
   }
 
@@ -439,6 +452,12 @@ button, .button {
       overflow-x: hidden;
       max-width: 1200px;
 
+      p.flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+
       img {
         box-shadow: rgba(0, 0, 0, .2) 0 0 12px;
         width: 100%;
@@ -448,6 +467,13 @@ button, .button {
           display: block;
           margin: 0 auto;
           max-width: fit-content;
+
+          &.flex {
+            min-width: 250px;
+            margin: 1em;
+            flex-basis: 0;
+            flex-grow: 1;
+          }
         }
 
         &.icon {
