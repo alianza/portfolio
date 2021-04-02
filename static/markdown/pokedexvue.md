@@ -1,6 +1,6 @@
 # PokéDex - Vue
 
-![Homepage](../projects/pokedexreact.png)
+![homepage](../projects/pokedexvue/pokedexvue.png)
 
 As you know by now I like to experiment with the [*PokéApi*](https://pokeapi.co/). This project is the third Pokémon related application I have built.
 This time built using the [*ReactJS*](https://reactjs.org/) web framework. This was my first ever *ReactJS* application I have created.
@@ -31,16 +31,29 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 
 ---
 
+## Screens
+
+Below are some screenshots of the Pokédex Vue application
+
+![flex screenshot](../projects/pokedexvue/pokedexvue_1.png)
+![flex screenshot](../projects/pokedexvue/pokedexvue_2.png)
+
+---
+
 ## Used Techniques
 
 - [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [react-router-transition](https://github.com/maisano/react-router-transition)
+- [Vue-fragment](https://github.com/Thunberg087/vue-fragment)
 - [NodeJS](https://nodejs.org/)
+- [JSON](https://json.org/)
 
 ---
 
 ## Code Snippets
+The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, consice and powerful code.
 
+**Retrieving Pokémon types**\
+Retrieving remote Pokémon types from the _PokéApi_ using the PokémonService interface and assigning it to the current state.
 ```
   loadTypes = () => {
       Loader.showLoader();
@@ -49,4 +62,43 @@ The biggest file is for styling, and the largest component is 173 lines of code.
       Loader.hideLoader();
     });
   }
+```
+
+**Pokémon Service**\
+Part of the Pokémon Service interface for retrieving data from the PokéAPI with for getting Pokémons, types and paged Pokémons.
+
+```
+const PokemonService = {
+    baseUrl: "https://pokeapi.co/api/v2",
+    basePageLimit: 20,
+    totalNumberOfPokemon: 0,
+
+    doLoad(url) { // Base method for doing http Get requests
+        if (!url.includes(this.baseUrl)) { url = this.baseUrl + url; }
+
+        return fetch(url).then(response => {
+            if (response.status === 404) { return ''; }
+            if (response.status === 200) { return response.json(); }})
+            .then(data => {
+                return data}).catch(e => { console.log('Error', e) });
+    },
+
+    getPokemons() {
+        return this.doLoad('/pokemon').then(jsonData => { return jsonData; }).catch(e => { console.log('Error', e) });
+    },
+
+    getPagedPokemons(offset) {
+        return this.doLoad(`/pokemon?offset=${offset}&limit=${this.basePageLimit}`).then(jsonData => { return jsonData; }).catch(e => { console.log('Error', e) });
+    },
+
+    getPokemon(pokemonName) {
+        return this.doLoad(`/pokemon/${pokemonName}`).then(jsonData => { return jsonData; }).catch(e => { console.log('Error', e) });
+    },
+
+    getTypes() {
+        return this.doLoad('/type/').then(jsonData => { return jsonData; }).catch(e => { console.log('Error', e) });
+    },
+}
+
+export default PokemonService;
 ```

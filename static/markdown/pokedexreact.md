@@ -1,6 +1,6 @@
 # PokéDex - React
 
-![Homepage](../projects/pokedexreact.png)
+![homepage](../projects/pokedexreact/pokedexreact.png)
 
 As you know by now I like to experiment with the [*PokéApi*](https://pokeapi.co/). This project is the third Pokémon related application I have built.
 This time built using the [*ReactJS*](https://reactjs.org/) web framework. This was my first ever *ReactJS* application I have created.
@@ -28,6 +28,13 @@ On top of that every Pokémon can be _'Caught'_ from the detail page which when 
 The Application is fully routed so deeplinking to any page is supported. The UI is fully responsive and all css is writtes in Sass.
 _'Caught'_ Pokémons are saved in local storage so loading is fast and persistent. All API endpoints have separated interfaces, so the architecture is loosely coupled.
 The biggest file is for styling, and the largest component is 173 lines of code.
+
+---
+
+## Screens
+
+![flex screenshot](../projects/pokedexreact/pokedexreact_1.png)
+![flex screenshot](../projects/pokedexreact/pokedexreact_2.png)
 
 ---
 

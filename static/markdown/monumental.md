@@ -1,19 +1,15 @@
-# PokéDex - Vue
+# Monumental - Android
 
-![Homepage](../projects/pokedexreact.png)
+![homepage](../projects/monumental/monumental.png)
 
-As you know by now I like to experiment with the [*PokéApi*](https://pokeapi.co/). This project is the third Pokémon related application I have built.
-This time built using the [*ReactJS*](https://reactjs.org/) web framework. This was my first ever *ReactJS* application I have created.
-I have developed the application by myself over the span of a few days. After that I kept tweaking and adding some more features to it off and on for a couple more months.
-The goal of this project was to teach myself the workings of the *ReactJS* framework.
+
 
 ---
 
 ## Technologies
 
-- VueJS [![icon](../logos/tech/vue.png)](https://vuejs.org/)
-- Vue-Router [![icon](../logos/tech/vue-router.png)](https://router.vuejs.org/)
-- Sass [![icon](../logos/tech/sass.png)](https://sass-lang.com/)
+- Android Framework [![icon](../logos/tech/android.png)](https://developer.android.com/)
+- Kotlin programming language [![icon](../logos/tech/kotlin.png)](https://kotlinlang.org/)
 
 ---
 
@@ -31,11 +27,18 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 
 ---
 
+## Screens
+
+![flex screenshot](../projects/monumental/monumental_1.png)
+![flex screenshot](../projects/monumental/monumental_2.png)
+![flex screenshot](../projects/monumental/monumental_3.png)
+
+---
+
 ## Used Techniques
 
-- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [react-router-transition](https://github.com/maisano/react-router-transition)
-- [NodeJS](https://nodejs.org/)
+- [MVVM](https://developer.android.com/jetpack/guide)
+- [MVVM](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 
 ---
 
