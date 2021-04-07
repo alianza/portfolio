@@ -1,6 +1,7 @@
 const hljs = require('highlight.js/lib/core');  // require only the core library
 const marked = require('marked');
 import 'highlight.js/styles/xcode.css';
+import Accordion from './accordion';
 
 // Init
 hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript')); // separately require languages
@@ -80,26 +81,24 @@ function hideLoader()  {
 }
 
 function buildDialogContent (data) {
-  let doc = document.createRange().createContextualFragment(data.toString());
-  doc.querySelectorAll('[alt]:not([alt=""])').forEach(e => { e.classList.add(e.getAttribute('alt').split(' ')[0]); });
-  document.getElementById('dialog-content').innerHTML = '';
-  document.getElementById('dialog-content').appendChild(doc);
-  document.querySelectorAll('.dialog__content-wrapper')[0].scrollTop = 0;
-  console.log(document.querySelectorAll('#dialog-content img.flex').forEach( e => { e.parentElement.classList.add('flex'); }));
-  hljs.highlightAll();
+  const doc = document.createRange().createContextualFragment(data.toString()); // Create HTML fragment from HTML string
+  doc.querySelectorAll('[alt]:not([alt=""])').forEach(e => { e.classList.add(e.getAttribute('alt').split(' ')[0]); }); // set classnames from first alt attribute value
+  doc.querySelectorAll('img.flex').forEach( e => { e.parentElement.classList.add('flex'); }); // Set flex attribute for flex images parent
+  doc.querySelectorAll('details').forEach((e) => { new Accordion(e); }); // Set Accordion animation for all details tags
+  document.getElementById('dialog-content').innerHTML = ''; // Clear dialog
+  document.getElementById('dialog-content').appendChild(doc); // Fill dialog with data
+  document.querySelector('.dialog__content-wrapper').scrollTop = 0; // Scroll dialog to top
+  hljs.highlightAll(); // Highlight code blocks with Highlight.js
   openDialog();
   collapseNavBar();
 }
 
 function getDialogContent(projectName) {
   showLoader();
-  fetch(`/markdown/${projectName}.md`).then(response => response.text()).then(data => {
-        data = marked(data);
-        if (!data.toString().includes('<!doctype html>')) {
-          buildDialogContent(data);
-        } else {
-          getDialogContent('404');
-        }
+  fetch(`/markdown/${projectName}.md`).then(response => response.text()).then(data => { // Get markdown for project
+    data = marked(data); // Convert markdown to HTML
+    if (!data.toString().includes('<!doctype html>')) { buildDialogContent(data); } // If successful
+        else { getDialogContent('404'); } // Else retrieve 404 page
   }).catch((error) => { console.error('Error:', error); });
 }
 
