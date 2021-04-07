@@ -42,6 +42,7 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 
 <details>
   <summary>Code Snippets</summary>
+<div>
 
 ```
   loadTypes = () => {
@@ -52,12 +53,13 @@ The biggest file is for styling, and the largest component is 173 lines of code.
     });
   }
 ```
+</div>
 </details>
 
 ---
 
 ## Check out the project
 
-- [APK Download](https://google.com/)
+[<button>APK Download</button>](https://google.com/)
 
 ---

@@ -47,7 +47,9 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 
 ---
 
-## Code Snippets
+<details>
+  <summary>Code Snippets</summary>
+<div>
 The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, consice and powerful code.
 
 **Retrieving Pokémon types**\
@@ -94,3 +96,13 @@ const CatchService = {
     }
 }
 ```
+</div>
+</details>
+
+---
+
+## Check out the project
+
+[<button>Visit Site</button>](https://pokedexreact.jwvbremen.nl/)
+
+---
