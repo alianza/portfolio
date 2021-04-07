@@ -81,6 +81,11 @@ button, .button {
     box-shadow: black 0 2px;
     outline: none;
   }
+
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
 }
 
 #loader {
@@ -451,6 +456,7 @@ button, .button {
       overflow: auto;
       overflow-x: hidden;
       max-width: 1200px;
+      margin-top: 1em;
 
       p.flex {
         display: flex;
@@ -544,10 +550,18 @@ button, .button {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   #dialog .dialog {
     &__content-wrapper {
       width: 90%;
+
+      h1, h2, h3, h4, h5, h6, summary, #screens {
+        text-align: center;
+      }
+
+      button {
+        width: 100%;
+      }
     }
   }
 }
