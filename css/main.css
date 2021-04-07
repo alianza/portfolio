@@ -91,6 +91,14 @@ textarea {
   .hljs * {
     font-family: Consolas, monospace; }
 
+/*
+ * Details tag cursor
+ */
+details summary {
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold; }
+
 /* ==========================================================================
    Begin Author's custom styles
    ========================================================================== */

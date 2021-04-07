@@ -2,8 +2,6 @@
 
 ![homepage](../projects/monumental/monumental.png)
 
-
-
 ---
 
 ## Technologies
@@ -42,7 +40,8 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 
 ---
 
-## Code Snippets
+<details>
+  <summary>Code Snippets</summary>
 
 ```
   loadTypes = () => {
@@ -53,3 +52,12 @@ The biggest file is for styling, and the largest component is 173 lines of code.
     });
   }
 ```
+</details>
+
+---
+
+## Check out the project
+
+- [APK Download](https://google.com/)
+
+---
