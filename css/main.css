@@ -97,7 +97,8 @@ textarea {
 details summary {
   cursor: pointer;
   font-size: 1.5em;
-  font-weight: bold; }
+  font-weight: bold;
+  padding: .5em 0; }
 
 /* ==========================================================================
    Begin Author's custom styles
@@ -125,6 +126,9 @@ button, .button {
     transform: translateY(-2px);
     box-shadow: black 0 2px;
     outline: none; }
+  button a, .button a {
+    text-decoration: none;
+    color: currentColor; }
 
 #loader {
   transition: visibility .5s, opacity 0.5s;
@@ -454,7 +458,8 @@ button, .button {
     max-height: 85%;
     overflow: auto;
     overflow-x: hidden;
-    max-width: 1200px; }
+    max-width: 1200px;
+    margin-top: 1em; }
     #dialog .dialog__content-wrapper p.flex {
       display: flex;
       flex-wrap: wrap;
@@ -510,9 +515,13 @@ button, .button {
   #content h1 {
     text-align: center; } }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   #dialog .dialog__content-wrapper {
-    width: 90%; } }
+    width: 90%; }
+    #dialog .dialog__content-wrapper h1, #dialog .dialog__content-wrapper h2, #dialog .dialog__content-wrapper h3, #dialog .dialog__content-wrapper h4, #dialog .dialog__content-wrapper h5, #dialog .dialog__content-wrapper h6, #dialog .dialog__content-wrapper summary, #dialog .dialog__content-wrapper #screens {
+      text-align: center; }
+    #dialog .dialog__content-wrapper button {
+      width: 100%; } }
 
 @keyframes spin {
   0% {
