@@ -8,6 +8,7 @@
 
 - Android Framework [![icon](../logos/tech/android.png)](https://developer.android.com/)
 - Kotlin programming language [![icon](../logos/tech/kotlin.png)](https://kotlinlang.org/)
+- Firebase [![icon](../logos/tech/firebase.png)](https://firebase.google.com/)
 
 ---
 
@@ -51,6 +52,12 @@ taken in which the landmark was detected can be viewed again.
 
 - [MVVM Architecture](https://developer.android.com/jetpack/guide)
 - [Room Persistence Library](https://developer.android.com/training/data-storage/room)
+- [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines)
+- [Kotlin Coroutines](https://developer.chrome.com/docs/android/custom-tabs/overview/)
+- [Picasso Library](https://developer.chrome.com/docs/android/custom-tabs/overview/)
+- [Glide Library](https://developer.chrome.com/docs/android/custom-tabs/overview/)
+- [Firebase ML Kit Landmark Recognition](https://firebase.google.com/docs/ml-kit/recognize-landmarks)
+- [PinchToZoom](https://github.com/martinwithaar/PinchToZoom)
 
 ---
 
