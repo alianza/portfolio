@@ -4,7 +4,7 @@
 
 ---
 
-## Technologies
+## Technologies & Frameworks
 
 - Android Framework [![icon](../logos/tech/android.png)](https://developer.android.com/)
 - Kotlin programming language [![icon](../logos/tech/kotlin.png)](https://kotlinlang.org/)
@@ -13,15 +13,28 @@
 
 ## Features
 
-The application features a sleek design that is very responsive. It boasts a slide in/out menu that floats over the UI on mobile devices.
-The application allows you to brows through pages of Pokémons on the homepage. Also you are able to browse pokémons by type and see a random Pokémon from the API.
-Every Pokémon can be opened and viewed in detail with its detail page. There the Pokémon's profile, types and statistics are displayed.
-From here you are also able to view other Pokémons from the same type(s).
-On top of that every Pokémon can be _'Caught'_ from the detail page which when you do this will show up in the _'My Pokémons'_ list.
+More and more people go on far away ventures to foreign countries to see the world.
+Traveling is expensive, and a lot to organize, because of that many people travel without a
+dedicated guide to show them around and give information about the local landmarks
+wherever they might be visiting. The vision for the Monumental Android application is to give
+tourists anywhere in the world that travel without a guide the ability to get information about
+landmarks by taking a picture of it. Next to that they will be able to keep track of what
+landmarks they have visited and add them to their journey so that they are able to later look
+back on all the landmarks they have visited.
 
-The Application is fully routed so deeplinking to any page is supported. The UI is fully responsive and all css is writtes in Sass.
-_'Caught'_ Pokémons are saved in local storage so loading is fast and persistent. All API endpoints have separated interfaces, so the architecture is loosely coupled.
-The biggest file is for styling, and the largest component is 173 lines of code.
+Within the application a user will be able to take a picture using a live camera preview or
+choose an existing picture from the phone’s storage. When a picture is taken or chosen the
+application immediately gives a response if one or more landmarks have been detected
+within the image. If one or more landmarks are detected in the image the application allows
+the user to see the names of the landmarks. Users also have the ability to gather more
+information about the found landmark(s) by performing a search for it from within the
+application.
+
+Users are also able to create journeys. Pictures of landmarks they take can be added to their
+journeys which they are able to reference again later. That way users can see their past
+journeys and what landmarks they have visited there. When a landmark is opened the picture
+taken in which the landmark was detected can be viewed again.
+
 
 ---
 
@@ -30,13 +43,14 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 ![flex screenshot](../projects/monumental/monumental_1.png)
 ![flex screenshot](../projects/monumental/monumental_2.png)
 ![flex screenshot](../projects/monumental/monumental_3.png)
+<video class="flex" autoplay muted loop playsinline controls src="../projects/monumental/monumental_demo.mp4"></video>
 
 ---
 
-## Used Techniques
+## Techniques & Libraries
 
-- [MVVM](https://developer.android.com/jetpack/guide)
-- [MVVM](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [MVVM Architecture](https://developer.android.com/jetpack/guide)
+- [Room Persistence Library](https://developer.android.com/training/data-storage/room)
 
 ---
 
@@ -60,6 +74,7 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 
 ## Check out the project
 
+[<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/Monumental)
 [<button>APK Download</button>](https://google.com/)
 
 ---

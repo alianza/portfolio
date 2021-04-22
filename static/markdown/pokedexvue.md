@@ -9,7 +9,7 @@ The goal of this project was to teach myself the workings of the *VueJS* framewo
 
 ---
 
-## Technologies
+## Technologies & Frameworks
 
 - VueJS [![icon](../logos/tech/vue.png)](https://vuejs.org/)
 - Vue-Router [![icon](../logos/tech/vue-router.png)](https://router.vuejs.org/)
@@ -36,7 +36,7 @@ API endpoints have separated interfaces, so the architecture is loosely coupled.
 
 ---
 
-## Used Techniques
+## Techniques & Libraries
 
 - [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - [Vue-fragment](https://github.com/Thunberg087/vue-fragment)
@@ -109,6 +109,7 @@ export default PokemonService;
 
 ## Check out the project
 
+[<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/pokedex_vue)
 [<button>Visit Site</button>](https://pokedexvue.jwvbremen.nl/)
 
 ---

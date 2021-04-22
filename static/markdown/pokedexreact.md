@@ -9,7 +9,7 @@ The goal of this project was to teach myself the workings of the *ReactJS* frame
 
 ---
 
-## Technologies
+## Technologies & Frameworks
 
 - ReactJS [![icon](../logos/tech/react.png)](https://reactjs.org/)
 - React-Router [![icon](../logos/tech/react-router.png)](https://reactrouter.com/)
@@ -38,7 +38,7 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 
 ---
 
-## Used Techniques
+## Techniques & Libraries
 
 - [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - [react-router-transition](https://github.com/maisano/react-router-transition)
@@ -103,6 +103,7 @@ const CatchService = {
 
 ## Check out the project
 
+[<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/pokedex_react)
 [<button>Visit Site</button>](https://pokedexreact.jwvbremen.nl/)
 
 ---
