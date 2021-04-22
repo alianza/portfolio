@@ -50,7 +50,6 @@ $button_color: #efefef;
 }
 
 body {
-  overflow-x: hidden;
 
   &.scroll_disabled {
     overflow: hidden;
@@ -139,7 +138,7 @@ button, .button {
     max-height: $navbar_collapsed_height;
   }
 
-  &.shown {
+  &.open {
     transition: max-height $transition_out;
     max-height: 500px;
 
@@ -456,7 +455,6 @@ button, .button {
       overflow: auto;
       overflow-x: hidden;
       max-width: 1200px;
-      margin-top: 1em;
 
       p.flex {
         display: flex;
@@ -464,7 +462,7 @@ button, .button {
         justify-content: space-evenly;
       }
 
-      img {
+      img, video {
         box-shadow: rgba(0, 0, 0, .2) 0 0 12px;
         width: 100%;
         border-radius: 1em;
@@ -479,6 +477,7 @@ button, .button {
             margin: 1em;
             flex-basis: 0;
             flex-grow: 1;
+            max-width: 350px;
           }
         }
 

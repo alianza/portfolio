@@ -103,10 +103,8 @@ details summary {
 /* ==========================================================================
    Begin Author's custom styles
    ========================================================================== */
-body {
-  overflow-x: hidden; }
-  body.scroll_disabled {
-    overflow: hidden; }
+body.scroll_disabled {
+  overflow: hidden; }
 
 * {
   box-sizing: border-box;
@@ -173,10 +171,10 @@ button, .button {
   z-index: 4; }
   #navbar.collapsed {
     max-height: 3em; }
-  #navbar.shown {
+  #navbar.open {
     transition: max-height 0.35s;
     max-height: 500px; }
-    #navbar.shown #menu {
+    #navbar.open #menu {
       transition: opacity 0.35s, transform 0.35s;
       opacity: 1;
       transform: translateX(0px);
@@ -458,26 +456,26 @@ button, .button {
     max-height: 85%;
     overflow: auto;
     overflow-x: hidden;
-    max-width: 1200px;
-    margin-top: 1em; }
+    max-width: 1200px; }
     #dialog .dialog__content-wrapper p.flex {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly; }
-    #dialog .dialog__content-wrapper img {
+    #dialog .dialog__content-wrapper img, #dialog .dialog__content-wrapper video {
       box-shadow: rgba(0, 0, 0, 0.2) 0 0 12px;
       width: 100%;
       border-radius: 1em; }
-      #dialog .dialog__content-wrapper img:not(.icon) {
+      #dialog .dialog__content-wrapper img:not(.icon), #dialog .dialog__content-wrapper video:not(.icon) {
         display: block;
         margin: 0 auto;
         max-width: fit-content; }
-        #dialog .dialog__content-wrapper img:not(.icon).flex {
+        #dialog .dialog__content-wrapper img:not(.icon).flex, #dialog .dialog__content-wrapper video:not(.icon).flex {
           min-width: 250px;
           margin: 1em;
           flex-basis: 0;
-          flex-grow: 1; }
-      #dialog .dialog__content-wrapper img.icon {
+          flex-grow: 1;
+          max-width: 350px; }
+      #dialog .dialog__content-wrapper img.icon, #dialog .dialog__content-wrapper video.icon {
         width: auto;
         height: 32px;
         box-shadow: none;
@@ -485,7 +483,7 @@ button, .button {
         border-radius: 0;
         cursor: pointer;
         transition: transform 0.35s, filter 0.35s; }
-        #dialog .dialog__content-wrapper img.icon:hover {
+        #dialog .dialog__content-wrapper img.icon:hover, #dialog .dialog__content-wrapper video.icon:hover {
           transform: scale(1.1);
           filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
           transition: transform 0.1s, filter 0.1s; }
