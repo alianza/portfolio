@@ -7,18 +7,20 @@ import Accordion from './accordion';
 hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript')); // separately require languages
 
 // Variables
-let navIsCollapsed = false;
 const topOffsetBig = 80;
 const topOffsetSmall = 48;
 
 // Elements
 const navBar = document.getElementById('navbar');
+const loader = document.getElementById('loader');
+const dialog = document.getElementById('dialog');
+const dialogContent = document.getElementById('dialog-content');
 
 window.handleMenuClick = function handleMenuClick(elem) {
   const targetElem = document.getElementById(elem.dataset.linkTo);
   window.scrollTo({top: targetElem.offsetTop - topOffsetSmall, behavior: 'smooth'});
 
-  if (isDialogOpen()) {
+  if (dialog.classList.contains('active')) {
     closeDialog();
   }
 }
@@ -33,8 +35,8 @@ function getAndViewBlob(path) {
 }
 
 window.openCV = function openCV() {
-  if (confirm("Open English version?")) { getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf`);
-  } else {
+  if (confirm("Open English version?")) { getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf`); }
+  else {
     if (confirm("Open Dutch version?")) { getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf`); }
   }
 }
@@ -42,42 +44,40 @@ window.openCV = function openCV() {
 window.onLogoClick = function onLogoClick() {
   window.history.pushState(null, null, window.location.origin);
   closeDialog();
-  scrollToTop();
-}
-
-window.scrollToTop = function scrollToTop() {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-function collapseNavBar() {
-  if (!navBar.classList.contains('shown')) {
-    if (window.scrollY > topOffsetBig) {
-      if (!navIsCollapsed) {
-        document.getElementById('navbar').classList.add('collapsed');
+function collapseNavBar(force = false) {
+  if (!navBar.classList.contains('open')) {
+    if (force && window.scrollY === 0) { // When dialog is forced open and window scrolled to top
+      window.scroll({top: topOffsetBig, behavior: 'smooth'});
+    }
+
+    if (window.scrollY >= topOffsetBig) {
+      if (!navBar.classList.contains('collapsed')) {
+        navBar.classList.add('collapsed');
       }
-      navIsCollapsed = true;
     } else {
-      if (navIsCollapsed) {
-        document.getElementById('navbar').classList.remove('collapsed');
+      if (navBar.classList.contains('collapsed')) {
+        navBar.classList.remove('collapsed');
       }
-      navIsCollapsed = false;
     }
   }
 }
 
 window.showMenu = function showMenu() {
-  navBar.classList.toggle('shown');
-  if (!navBar.classList.contains('shown')) {
+  navBar.classList.toggle('open');
+  if (!navBar.classList.contains('open')) {
     window.onscroll();
   }
 }
 
 function showLoader()  {
-  document.getElementById('loader').classList.add('active');
+  loader.classList.add('active');
 }
 
 function hideLoader()  {
-  document.getElementById('loader').classList.remove('active');
+  loader.classList.remove('active');
 }
 
 function buildDialogContent (data) {
@@ -85,12 +85,12 @@ function buildDialogContent (data) {
   doc.querySelectorAll('[alt]:not([alt=""])').forEach(e => { e.classList.add(e.getAttribute('alt').split(' ')[0]); }); // set classnames from first alt attribute value
   doc.querySelectorAll('img.flex').forEach( e => { e.parentElement.classList.add('flex'); }); // Set flex attribute for flex images parent
   doc.querySelectorAll('details').forEach((e) => { new Accordion(e); }); // Set Accordion animation for all details tags
-  document.getElementById('dialog-content').innerHTML = ''; // Clear dialog
-  document.getElementById('dialog-content').appendChild(doc); // Fill dialog with data
+  dialogContent.innerHTML = ''; // Clear dialog
+  dialogContent.appendChild(doc); // Fill dialog with data
   document.querySelector('.dialog__content-wrapper').scrollTop = 0; // Scroll dialog to top
   hljs.highlightAll(); // Highlight code blocks with Highlight.js
+  collapseNavBar(true); // Force navBar to collapse (if at top of page scroll down first)
   openDialog();
-  collapseNavBar();
 }
 
 function getDialogContent(projectName) {
@@ -105,17 +105,13 @@ function getDialogContent(projectName) {
 function openDialog() {
   hideLoader();
   document.body.classList.add('scroll_disabled');
-  document.getElementById('dialog').classList.add('active');
+  dialog.classList.add('active');
 }
 
 window.closeDialog = function closeDialog() {
   if (window.location.pathname !== '/') { window.history.pushState(null, null, window.location.origin); }
   document.body.classList.remove('scroll_disabled');
-  document.getElementById('dialog').classList.remove('active');
-}
-
-function isDialogOpen() {
-  return document.getElementById('dialog').classList.contains('active');
+  dialog.classList.remove('active');
 }
 
 function openDialogFromPathname(pathname) {
@@ -127,8 +123,8 @@ function openDialogFromPathname(pathname) {
 }
 
 window.onProjectClick = function onProjectClick(projectName) {
-    getDialogContent(projectName);
-    if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName); }
+  getDialogContent(projectName);
+  if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName); }
 }
 
 function init() {
