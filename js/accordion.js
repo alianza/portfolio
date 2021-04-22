@@ -4,6 +4,8 @@ export default class Accordion {
     this.summary = el.querySelector('summary');
     this.content = el.querySelector('div');
 
+    this.contentPadding = 16;
+
     this.animation = null;
     this.isClosing = false;
     this.isExpanding = false;
@@ -20,13 +22,13 @@ export default class Accordion {
   shrink() {
     this.isClosing = true;
 
-    const startHeight = `${this.el.offsetHeight}px`;
+    const startHeight = `${this.el.offsetHeight - this.contentPadding}px`;
     const endHeight = `${this.summary.offsetHeight}px`;
 
     if (this.animation) { this.animation.cancel(); }
 
     this.animation = this.el.animate({ height: [startHeight, endHeight] }, {
-      duration: 500,
+      duration: this.el.offsetHeight,
       easing: 'ease-in-out'
     });
 
@@ -45,12 +47,12 @@ export default class Accordion {
   expand() {
     this.isExpanding = true;
     const startHeight = `${this.el.offsetHeight}px`;
-    const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
+    const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight + this.contentPadding}px`; // + 16px (1em) for padding
 
     if (this.animation) { this.animation.cancel(); }
 
     this.animation = this.el.animate({ height: [startHeight, endHeight] }, {
-      duration: 400,
+      duration: this.content.offsetHeight,
       easing: 'ease-out'
     });
 
