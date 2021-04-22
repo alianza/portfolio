@@ -518,6 +518,8 @@ button, .button {
     width: 90%; }
     #dialog .dialog__content-wrapper h1, #dialog .dialog__content-wrapper h2, #dialog .dialog__content-wrapper h3, #dialog .dialog__content-wrapper h4, #dialog .dialog__content-wrapper h5, #dialog .dialog__content-wrapper h6, #dialog .dialog__content-wrapper summary, #dialog .dialog__content-wrapper #screens {
       text-align: center; }
+    #dialog .dialog__content-wrapper p a:not(:last-of-type) button {
+      margin-bottom: 1em; }
     #dialog .dialog__content-wrapper button {
       width: 100%; } }
 

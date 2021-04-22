@@ -558,6 +558,10 @@ button, .button {
         text-align: center;
       }
 
+      p a:not(:last-of-type) button {
+          margin-bottom: 1em;
+      } // Per paragraph all buttons except last get margin-bottom
+
       button {
         width: 100%;
       }
