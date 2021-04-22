@@ -4,7 +4,8 @@ export default class Accordion {
     this.summary = el.querySelector('summary');
     this.content = el.querySelector('div');
 
-    this.contentPadding = 16;
+    this.contentPadding = 16; // (px)
+    this.animDuration = 500; // (ms)
 
     this.animation = null;
     this.isClosing = false;
@@ -28,7 +29,7 @@ export default class Accordion {
     if (this.animation) { this.animation.cancel(); }
 
     this.animation = this.el.animate({ height: [startHeight, endHeight] }, {
-      duration: this.el.offsetHeight,
+      duration: this.animDuration,
       easing: 'ease-in-out'
     });
 
@@ -52,7 +53,7 @@ export default class Accordion {
     if (this.animation) { this.animation.cancel(); }
 
     this.animation = this.el.animate({ height: [startHeight, endHeight] }, {
-      duration: this.content.offsetHeight,
+      duration: this.animDuration,
       easing: 'ease-out'
     });
 
