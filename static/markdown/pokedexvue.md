@@ -109,7 +109,7 @@ export default PokemonService;
 
 ## Check out the project
 
-[<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/pokedex_vue)
+[<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/pokedexvue)
 [<button>Visit Site</button>](https://pokedexvue.jwvbremen.nl/)
 
 ---
