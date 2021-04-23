@@ -133,6 +133,7 @@ button, .button {
   box-shadow: black 0 0 12px;
   transition: max-height $transition_out;
   z-index: 4;
+  .navbar {
 
   &.collapsed {
     max-height: $navbar_collapsed_height;
@@ -142,25 +143,25 @@ button, .button {
     transition: max-height $transition_out;
     max-height: 500px;
 
-    #menu {
+    .navbar__menu {
       transition: opacity $transition_out, transform $transition_out;
       opacity: 1;
       transform: translateX(0px);
       pointer-events: all;
     }
-  }
 
-  & #logo {
-    cursor: pointer;
-    transition: transform $transition_out;
+    .navbar__logo {
+      cursor: pointer;
+      transition: transform $transition_out;
 
-    &:hover {
-      transform: scale(1.1);
-      transition: transform $transition_in;
+      &:hover {
+        transform: scale(1.1);
+        transition: transform $transition_in;
+      }
     }
   }
 
-  & #menu {
+  &__menu {
     display: flex;
     max-width: 480px;
     flex-basis: 100%;
@@ -182,7 +183,7 @@ button, .button {
     }
   }
 
-  #mobile_menu {
+  &__mobile {
     display: none;
     cursor: pointer;
     transition: transform $transition_out;
@@ -194,16 +195,27 @@ button, .button {
     }
   }
 }
+}
 
 #cover {
+  .cover {
 
-  video {
-    margin: $navbar_height auto auto;
-    width: 100%;
-    height: calc(100vh - #{$navbar_height});
-    object-fit: cover;
-    box-shadow: $main_color 0px -32px 0px 0px, rgba(0, 0, 0, .2) 0 0 6px;
-    pointer-events: none;
+    &__title {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: whitesmoke;
+    }
+
+    &__video {
+      margin: $navbar_height auto auto;
+      width: 100%;
+      height: calc(100vh - #{$navbar_height});
+      object-fit: cover;
+      box-shadow: $main_color 0px -32px 0px 0px, rgba(0, 0, 0, .2) 0 0 6px;
+      pointer-events: none;
+    }
   }
 }
 
@@ -268,11 +280,8 @@ button, .button {
   }
 
   #about_me {
-
     .container {
-
       .wrapper {
-
         .col {
           max-width: none;
         }
@@ -281,9 +290,7 @@ button, .button {
   }
 
   #experiences {
-
     .col {
-
       h3 {
         text-align: center;
       }
@@ -373,29 +380,32 @@ button, .button {
   padding: 1em;
   background-color: $main_color;
   color: whitesmoke;
+  width: 100%;
 
-  .social_media {
-    display: inline-block;
+  .footer {
 
-    a {
+    &__author {
+      padding: 0 .5em;
+    }
+
+    &__social-media {
+      display: inline-block;
+
+      a {
         color: whitesmoke;
         cursor: pointer;
         text-decoration: underline solid transparent;
         transition: text-decoration-color $transition_out;
         white-space: nowrap;
+        padding: 0 .5em;
 
         &:hover {
           text-decoration-color: whitesmoke;
           transition: text-decoration-color $transition_in;
         }
+      }
     }
   }
-
-  & a, span {
-    padding: 0 .5em;
-  }
-
-  width: 100%;
 }
 
 #dialog {
@@ -519,19 +529,21 @@ button, .button {
 
 @media screen and (max-width: $small) {
   #navbar {
+    .navbar {
 
-    #menu {
-      transition: opacity $transition_in, transform $transition_in;;
-      opacity: 0;
-      transform: translateX(50px);
-      pointer-events: none;
-      width: auto;
-      flex-direction: column;
-      align-items: flex-end;
-    }
+      &__menu {
+        transition: opacity $transition_in, transform $transition_in;;
+        opacity: 0;
+        transform: translateX(50px);
+        pointer-events: none;
+        width: auto;
+        flex-direction: column;
+        align-items: flex-end;
+      }
 
-    #mobile_menu {
-      display: block;
+      &__mobile {
+        display: block;
+      }
     }
   }
 
@@ -559,8 +571,10 @@ button, .button {
       }
 
       p a:not(:last-of-type) button {
-          margin-bottom: 1em;
-      } // Per paragraph all buttons except last get margin-bottom
+        margin-bottom: 1em;
+      }
+
+      // Per paragraph all buttons except last get margin-bottom
 
       button {
         width: 100%;

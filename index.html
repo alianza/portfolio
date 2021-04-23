@@ -18,20 +18,24 @@
 <body>
 
 <nav id="navbar">
-  <div id="logo">
+  <div class="navbar__logo">
     <h1 onclick="onLogoClick()">J.W.</h1>
   </div>
-  <div id="menu">
+  <div class="navbar__menu">
     <span onclick="handleMenuClick(this)" data-link-to="about_me">About me</span>
     <span onclick="handleMenuClick(this)" data-link-to="experiences">Experiences</span>
     <span onclick="openCV()" data-link-to="curriculum_vitae">Curriculum Vitae</span>
     <span onclick="handleMenuClick(this)" data-link-to="contact">Contact</span>
   </div>
-  <div id="mobile_menu" onclick="showMenu()"><h1>☰</h1></div>
+  <div class="navbar__mobile" onclick="showMenu()"><h1>☰</h1></div>
 </nav>
 
 <header id="cover">
-  <video id="video" autoplay muted loop playsinline>
+<div class="cover__title">
+  <h1>Jan-Willem van Bremen</h1>
+  <h3>Software developer Skateboarder Model</h3>
+</div>
+  <video class="cover__video" id="vid" autoplay muted loop playsinline>
     <source src="img/VID-20210228-161035292.webm" type="video/webm">
     <source src="img/VID-20210228-161035292.mp4" type="video/mp4">
   </video>
@@ -131,8 +135,8 @@
 </main>
 
 <footer id="footer">
-  <span id="author">Jan-Willem van Bremen</span>
-  <div class="social_media">
+  <span class="footer__author">Jan-Willem van Bremen</span>
+  <div class="footer__social-media">
     <a href="https://www.facebook.com/janwillem.van.bremen.9/">Facebook</a>
     <a href="https://www.instagram.com/jan_willem.van.bremen/">Instagram</a>
     <a href="mailto:janwillemvanbremen@live.nl">Email</a>

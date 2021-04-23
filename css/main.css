@@ -169,48 +169,55 @@ button, .button {
   box-shadow: black 0 0 12px;
   transition: max-height 0.35s;
   z-index: 4; }
-  #navbar.collapsed {
+  #navbar .navbar.collapsed {
     max-height: 3em; }
-  #navbar.open {
+  #navbar .navbar.open {
     transition: max-height 0.35s;
     max-height: 500px; }
-    #navbar.open #menu {
+    #navbar .navbar.open .navbar__menu {
       transition: opacity 0.35s, transform 0.35s;
       opacity: 1;
       transform: translateX(0px);
       pointer-events: all; }
-  #navbar #logo {
-    cursor: pointer;
-    transition: transform 0.35s; }
-    #navbar #logo:hover {
-      transform: scale(1.1);
-      transition: transform 0.1s; }
-  #navbar #menu {
+    #navbar .navbar.open .navbar__logo {
+      cursor: pointer;
+      transition: transform 0.35s; }
+      #navbar .navbar.open .navbar__logo:hover {
+        transform: scale(1.1);
+        transition: transform 0.1s; }
+  #navbar .navbar__menu {
     display: flex;
     max-width: 480px;
     flex-basis: 100%;
     width: 100%;
     justify-content: space-around;
     transition: opacity 1s; }
-    #navbar #menu span, #navbar #menu a {
+    #navbar .navbar__menu span, #navbar .navbar__menu a {
       color: whitesmoke;
       cursor: pointer;
       text-decoration: underline solid transparent;
       transition: text-decoration-color 0.35s;
       white-space: nowrap; }
-      #navbar #menu span:hover, #navbar #menu a:hover {
+      #navbar .navbar__menu span:hover, #navbar .navbar__menu a:hover {
         text-decoration-color: whitesmoke;
         transition: text-decoration-color 0.1s; }
-  #navbar #mobile_menu {
+  #navbar .navbar__mobile {
     display: none;
     cursor: pointer;
     transition: transform 0.35s;
     margin-left: 1em; }
-    #navbar #mobile_menu:hover {
+    #navbar .navbar__mobile:hover {
       transform: scale(1.2);
       transition: transform 0.1s; }
 
-#cover video {
+#cover .cover__title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: whitesmoke; }
+
+#cover .cover__video {
   margin: 5em auto auto;
   width: 100%;
   height: calc(100vh - 5em);
@@ -399,19 +406,20 @@ button, .button {
   background-color: #222;
   color: whitesmoke;
   width: 100%; }
-  #footer .social_media {
+  #footer .footer__author {
+    padding: 0 .5em; }
+  #footer .footer__social-media {
     display: inline-block; }
-    #footer .social_media a {
+    #footer .footer__social-media a {
       color: whitesmoke;
       cursor: pointer;
       text-decoration: underline solid transparent;
       transition: text-decoration-color 0.35s;
-      white-space: nowrap; }
-      #footer .social_media a:hover {
+      white-space: nowrap;
+      padding: 0 .5em; }
+      #footer .footer__social-media a:hover {
         text-decoration-color: whitesmoke;
         transition: text-decoration-color 0.1s; }
-  #footer a, #footer span {
-    padding: 0 .5em; }
 
 #dialog {
   opacity: 0;
@@ -498,7 +506,7 @@ button, .button {
     width: 100%; }
 
 @media screen and (max-width: 480px) {
-  #navbar #menu {
+  #navbar .navbar__menu {
     transition: opacity 0.1s, transform 0.1s;
     opacity: 0;
     transform: translateX(50px);
@@ -506,7 +514,7 @@ button, .button {
     width: auto;
     flex-direction: column;
     align-items: flex-end; }
-  #navbar #mobile_menu {
+  #navbar .navbar__mobile {
     display: block; }
   #content section .container {
     padding: .2em; }
