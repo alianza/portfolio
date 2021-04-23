@@ -128,7 +128,7 @@ window.onProjectClick = function onProjectClick(projectName) {
 }
 
 function init() {
-  document.getElementById('video').playbackRate = .5;
+  document.getElementById('vid').playbackRate = .5;
 
   window.onscroll = function () { collapseNavBar(); };
 
