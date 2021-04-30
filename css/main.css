@@ -169,20 +169,20 @@ button, .button {
   box-shadow: black 0 0 12px;
   transition: max-height 0.35s;
   z-index: 4; }
-  #navbar .navbar.collapsed {
+  #navbar.collapsed {
     max-height: 3em; }
-  #navbar .navbar.open {
+  #navbar.open {
     transition: max-height 0.35s;
     max-height: 500px; }
-    #navbar .navbar.open .navbar__menu {
+    #navbar.open .navbar__menu {
       transition: opacity 0.35s, transform 0.35s;
       opacity: 1;
       transform: translateX(0px);
       pointer-events: all; }
-    #navbar .navbar.open .navbar__logo {
+    #navbar.open .navbar__logo {
       cursor: pointer;
       transition: transform 0.35s; }
-      #navbar .navbar.open .navbar__logo:hover {
+      #navbar.open .navbar__logo:hover {
         transform: scale(1.1);
         transition: transform 0.1s; }
   #navbar .navbar__menu {
@@ -215,7 +215,10 @@ button, .button {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  color: whitesmoke; }
+  color: whitesmoke;
+  width: 80%; }
+  #cover .cover__title h1 {
+    font-size: 4em; }
 
 #cover .cover__video {
   margin: 5em auto auto;

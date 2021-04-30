@@ -133,7 +133,6 @@ button, .button {
   box-shadow: black 0 0 12px;
   transition: max-height $transition_out;
   z-index: 4;
-  .navbar {
 
   &.collapsed {
     max-height: $navbar_collapsed_height;
@@ -160,6 +159,8 @@ button, .button {
       }
     }
   }
+
+  .navbar {
 
   &__menu {
     display: flex;
@@ -206,6 +207,11 @@ button, .button {
       top: 50%;
       transform: translate(-50%, -50%);
       color: whitesmoke;
+      width: 80%;
+
+      h1 {
+        font-size: 4em;
+      }
     }
 
     &__video {
