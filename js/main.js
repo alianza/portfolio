@@ -5,6 +5,7 @@ import Accordion from './accordion';
 
 // Init
 hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript')); // separately require languages
+hljs.registerLanguage('kotlin', require('highlight.js/lib/languages/kotlin')); // separately require languages
 
 // Variables
 const topOffsetBig = 80;
