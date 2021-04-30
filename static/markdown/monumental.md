@@ -64,15 +64,52 @@ taken in which the landmark was detected can be viewed again.
 <details>
   <summary>Code Snippets</summary>
 <div>
+The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, consice and powerful code.
+
+**ViewModel for the Landmark fragment**\
+All communication between the View and Model is done through the ViewModel according to the MVVM architecture as is demonstrated throughout the project.
 
 ```
-  loadTypes = () => {
-      Loader.showLoader();
-      PokémonService.getTypes().then(json => {
-      this.setState({jsonData: json});
-      Loader.hideLoader();
-    });
-  }
+package com.example.monumental.viewModel.landmark
+
+class LandmarksViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val landmarkRepository = LandmarkRepository(application.applicationContext)
+    private val journeyRepository = JourneyRepository(application.applicationContext)
+    private val bitmapHelper = BitmapHelper()
+    private val mediaFileHelper = MediaFileHelper()
+
+    private val mainScope = CoroutineScope(Dispatchers.Main)
+
+    /**Inserts new Landmark
+     * @return Long ID of inserted journey */
+    fun createLandmark(landmark: Landmark) { mainScope.launch {
+    landmarkRepository.insertLandmark(landmark) } }
+    /**Gets all Landmarks of Journey
+     * @param journeyId ID of Landmark to get Landmarks of
+     * @return List of Landmarks */
+    fun getLandmarksByJourney(journeyId: Int): LiveData<List<Landmark>?> {
+    return landmarkRepository.getLandmarksByJourney(journeyId) }
+    /**Sets the active Journey, unset all other journeys
+     * @param journey Journey to set to active */
+    fun setActiveJourney(journey: Journey) { mainScope.launch { journeyRepository.setActiveJourney(journey) } }
+    /**Gets a Bitmap from the device storage
+     * @param contentResolver ContentResolver class provides applications access to the content model
+     * @param imageUri Uri image to retrieve
+     * @return Bitmap that's retrieved */
+    fun getBitmap(contentResolver: ContentResolver?, imageUri: Uri): Bitmap? {
+    return bitmapHelper.getBitmap(contentResolver!!, imageUri) }
+    /** Creates a File for saving an image
+     * @return File */
+    fun getOutputMediaFile(): File? { return mediaFileHelper.getOutputMediaFile() }
+    /**Creates a file Uri for saving an image
+     * @return Uri from File */
+    fun getOutputMediaFileUri(): Uri { return mediaFileHelper.getOutputMediaFileUri() }
+    /**Removes a Landmark
+     * @param landmark Landmark to remove */
+    fun deleteLandmark(landmark: Landmark): Int = runBlocking {
+    return@runBlocking landmarkRepository.deleteLandmark(landmark) }
+}
 ```
 </div>
 </details>
