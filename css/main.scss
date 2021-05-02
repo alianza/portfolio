@@ -39,16 +39,6 @@ $button_color: #efefef;
   filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, .2));
 }
 
-@mixin tech-logo {
-  @include logo;
-  left: 1.5em;
-}
-
-@mixin team-logo {
-  @include logo;
-  right: 1.5em;
-}
-
 body {
 
   &.scroll_disabled {

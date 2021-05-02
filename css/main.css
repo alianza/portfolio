@@ -355,6 +355,18 @@ button, .button {
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
     right: 1.5em;
     background-image: url(../static/logos/team/team.png); }
+  #content #experiences .col[data-team="pro"]:after {
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+    top: 1.5em;
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.2));
+    right: 1.5em;
+    background-image: url(../static/logos/team/pro.png); }
   #content #contact .container {
     max-width: 768px; }
     #content #contact .container .wrapper {

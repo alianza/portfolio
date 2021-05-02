@@ -64,9 +64,10 @@ taken in which the landmark was detected can be viewed again.
 <details>
   <summary>Code Snippets</summary>
 <div>
-The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, consice and powerful code.
 
-**ViewModel for the Landmark fragment**\
+The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, consice and powerful code. _(Code has been compacted)_
+
+**ViewModel for the Landmarks fragment**\
 All communication between the View and Model is done through the ViewModel according to the MVVM architecture as is demonstrated throughout the project.
 
 ```
@@ -111,6 +112,38 @@ class LandmarksViewModel(application: Application) : AndroidViewModel(applicatio
     return@runBlocking landmarkRepository.deleteLandmark(landmark) }
 }
 ```
+
+**Journeys fragment delete operation**\
+These methods demonstrate the builder design pattern and, object-oriented and effective functional programming approach and proper use of the Kotlin programming language.
+
+```
+/**When Journey delete button is clicked
+ * Builds dialog for delete confirmation
+ * @param journey Journey to delete */
+private fun journeyDelete(journey: Journey) {
+    val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+        .setTitle("Remove ${journey.name}?")
+        .setMessage("Are you sure?")
+        .setPositiveButton("Yes") { dialog, _ ->
+            deleteJourney(journey)
+            dialog.dismiss() }
+        .setNegativeButton("No") { dialog, _ -> dialog.dismiss() }
+    val alert: AlertDialog = builder.create()
+    alert.show() }
+
+/** Deleted journey from database and alerts user of opreration success
+ * @param journey Journey to update */
+private fun deleteJourney(journey: Journey) {
+    if (viewModel.deleteJourney(journey) == 1) { // Returns number of affected rows
+        Toast.makeText(requireContext(), getString(R.string.journey_deleted, journey.name),
+            Toast.LENGTH_SHORT).show()
+    } else {
+        Toast.makeText(requireContext(), getString(R.string.journey_not_deleted, journey.name),
+            Toast.LENGTH_SHORT).show()
+    }
+}
+```
+
 </div>
 </details>
 

@@ -1,3 +1,13 @@
+@mixin tech-logo {
+  @include logo;
+  left: 1.5em;
+}
+
+@mixin team-logo {
+  @include logo;
+  right: 1.5em;
+}
+
 // Tech Logo's
 
 .col[data-tech="android"]:before {
@@ -36,3 +46,9 @@
   @include team-logo;
   background-image: url(../static/logos/team/team.png);
 }
+
+.col[data-team="pro"]:after {
+  @include team-logo;
+  background-image: url(../static/logos/team/pro.png);
+}
+
