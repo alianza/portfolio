@@ -16,7 +16,8 @@ $container_max_width: 768px;
 
 // Screen sizes
 $small: 480px;
-$medium: 900px;
+$medium: 768px;
+$large: 900px;
 
 // Transition timings
 $transition_in: .1s;
@@ -138,15 +139,15 @@ button, .button {
       transform: translateX(0px);
       pointer-events: all;
     }
+  }
 
-    .navbar__logo {
-      cursor: pointer;
-      transition: transform $transition_out;
+  .navbar__logo {
+    cursor: pointer;
+    transition: transform $transition_out;
 
-      &:hover {
-        transform: scale(1.1);
-        transition: transform $transition_in;
-      }
+    &:hover {
+      transform: scale(1.1);
+      transition: transform $transition_in;
     }
   }
 
@@ -238,7 +239,7 @@ button, .button {
           max-width: 450px;
 
           &.clickable {
-            transition: transform $transition_out ease-in-out;
+            transition: transform $transition_in ease-in-out;
 
             &:hover {
               transition: transform $transition_in ease-in-out;
@@ -523,7 +524,7 @@ button, .button {
   }
 }
 
-@media screen and (max-width: $small) {
+@media screen and (max-width: $small) { // Mobile query
   #navbar {
     .navbar {
 
@@ -548,6 +549,16 @@ button, .button {
     section {
       .container {
         padding: .2em;
+
+        .wrapper {
+          .col {
+            &.clickable {
+              &:hover {
+                transform: scale(1.01);
+              }
+            }
+          }
+        }
       }
     }
 
@@ -557,7 +568,7 @@ button, .button {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $medium) { // Tablet query
   #dialog .dialog {
     &__content-wrapper {
       width: 90%;
