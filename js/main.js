@@ -10,20 +10,31 @@ hljs.registerLanguage('kotlin', require('highlight.js/lib/languages/kotlin')); /
 // Variables
 const topOffsetBig = 80;
 const topOffsetSmall = 48;
+const smallWidth = 480;
+const mediumWidth = 768;
+const largeWidth = 900;
 
 // Elements
 const navBar = document.getElementById('navbar');
 const loader = document.getElementById('loader');
 const dialog = document.getElementById('dialog');
 const dialogContent = document.getElementById('dialog-content');
+const logo = document.getElementById('logo');
 
-window.handleMenuClick = function handleMenuClick(elem) {
-  const targetElem = document.getElementById(elem.dataset.linkTo);
-  window.scrollTo({top: targetElem.offsetTop - topOffsetSmall, behavior: 'smooth'});
+function init() {
+  document.getElementById('vid').playbackRate = .5;
 
-  if (dialog.classList.contains('active')) {
-    closeDialog();
-  }
+  window.onscroll = function () { onScroll(); };
+  window.onresize = function () { onResize(); };
+
+  openDialogFromPathname(window.location.pathname);
+
+  window.onpopstate = function (event) {
+    openDialogFromPathname(event.path[0].location.pathname);
+  };
+
+  onScroll();
+  onResize();
 }
 
 function getAndViewBlob(path) {
@@ -35,41 +46,33 @@ function getAndViewBlob(path) {
   });
 }
 
-window.openCV = function openCV() {
-  if (confirm("Open English version?")) { getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf`); }
-  else {
-    if (confirm("Open Dutch version?")) { getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf`); }
-  }
+function expandNavbar() {
+  navBar.classList.remove('collapsed');
 }
 
-window.onLogoClick = function onLogoClick() {
-  window.history.pushState(null, null, window.location.origin);
-  closeDialog();
-  window.scrollTo({top: 0, behavior: 'smooth'});
+function collapseNavBar() {
+  navBar.classList.add('collapsed');
 }
 
-function collapseNavBar(force = false) {
-  if (!navBar.classList.contains('open')) {
-    if (force && window.scrollY === 0) { // When dialog is forced open and window scrolled to top
-      window.scroll({top: topOffsetBig, behavior: 'smooth'});
+function onScroll() {
+  if (window.scrollY >= topOffsetBig) {
+    if (!navBar.classList.contains('collapsed')) {
+      collapseNavBar()
     }
-
-    if (window.scrollY >= topOffsetBig) {
-      if (!navBar.classList.contains('collapsed')) {
-        navBar.classList.add('collapsed');
-      }
-    } else {
-      if (navBar.classList.contains('collapsed')) {
-        navBar.classList.remove('collapsed');
-      }
+  } else {
+    if (navBar.classList.contains('collapsed')) {
+      expandNavbar()
     }
   }
 }
 
-window.showMenu = function showMenu() {
-  navBar.classList.toggle('open');
-  if (!navBar.classList.contains('open')) {
-    window.onscroll();
+function onResize() {
+  if (window.innerWidth >= largeWidth) {
+    logo.innerText = "Jan-Willem van Bremen";
+  } else if (window.innerWidth >= mediumWidth) {
+    logo.innerText = "J.W. van Bremen";
+  } else if (window.innerWidth >= smallWidth) {
+    logo.innerText = "J.W.";
   }
 }
 
@@ -90,7 +93,7 @@ function buildDialogContent (data) {
   dialogContent.appendChild(doc); // Fill dialog with data
   document.querySelector('.dialog__content-wrapper').scrollTop = 0; // Scroll dialog to top
   hljs.highlightAll(); // Highlight code blocks with Highlight.js
-  collapseNavBar(true); // Force navBar to collapse (if at top of page scroll down first)
+  collapseNavBar(); // Force navBar to collapse (if at top of page scroll down first)
   openDialog();
 }
 
@@ -99,7 +102,7 @@ function getDialogContent(projectName) {
   fetch(`/markdown/${projectName}.md`).then(response => response.text()).then(data => { // Get markdown for project
     data = marked(data); // Convert markdown to HTML
     if (!data.toString().includes('<!doctype html>')) { buildDialogContent(data); } // If successful
-        else { getDialogContent('404'); } // Else retrieve 404 page
+    else { getDialogContent('404'); } // Else retrieve 404 page
   }).catch((error) => { console.error('Error:', error); });
 }
 
@@ -109,6 +112,36 @@ function openDialog() {
   dialog.classList.add('active');
 }
 
+window.openCV = function openCV() {
+  if (confirm("Open English version?")) {
+    getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf`);
+  } else {
+    if (confirm("Open Dutch version?")) {
+      getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf`);
+    }
+  }
+}
+
+window.onLogoClick = function onLogoClick() {
+  window.history.pushState(null, null, window.location.origin);
+  closeDialog();
+  navBar.classList.remove('open');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+window.handleMenuClick = function handleMenuClick(elem) {
+  const targetElem = document.getElementById(elem.dataset.linkTo);
+  window.scrollTo({top: targetElem.offsetTop - topOffsetSmall, behavior: 'smooth'});
+
+  if (dialog.classList.contains('active')) {
+    closeDialog();
+  }
+}
+
+window.onMenuButtonClick = function onMenuButtonClick() {
+  navBar.classList.toggle('open');
+}
+
 window.closeDialog = function closeDialog() {
   if (window.location.pathname !== '/') { window.history.pushState(null, null, window.location.origin); }
   document.body.classList.remove('scroll_disabled');
@@ -116,8 +149,8 @@ window.closeDialog = function closeDialog() {
 }
 
 function openDialogFromPathname(pathname) {
-  if (pathname !== '/') {
-    getDialogContent(window.location.pathname.replace('/', ''));
+  if (pathname !== '/') { // If not on root page
+    getDialogContent(window.location.pathname.replace('/', '')); // Open dialog from path (projectName)
   } else {
     closeDialog();
   }
@@ -126,20 +159,6 @@ function openDialogFromPathname(pathname) {
 window.onProjectClick = function onProjectClick(projectName) {
   getDialogContent(projectName);
   if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName); }
-}
-
-function init() {
-  document.getElementById('vid').playbackRate = .5;
-
-  window.onscroll = function () { collapseNavBar(); };
-
-  openDialogFromPathname(window.location.pathname);
-
-  collapseNavBar();
-
-  window.onpopstate = function (event) {
-    openDialogFromPathname(event.path[0].location.pathname);
-  };
 }
 
 init();
