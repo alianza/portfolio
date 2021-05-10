@@ -19,7 +19,7 @@
 
 <nav id="navbar">
   <div class="navbar__logo">
-    <h1 onclick="onLogoClick()">J.W.</h1>
+    <h1 id="logo" onclick="onLogoClick()">J.W.</h1>
   </div>
   <div class="navbar__menu">
     <span onclick="handleMenuClick(this)" data-link-to="about_me">About me</span>
@@ -27,7 +27,7 @@
     <span onclick="openCV()" data-link-to="curriculum_vitae">Curriculum Vitae</span>
     <span onclick="handleMenuClick(this)" data-link-to="contact">Contact</span>
   </div>
-  <div class="navbar__mobile" onclick="showMenu()"><h1>☰</h1></div>
+  <div class="navbar__mobile" onclick="onMenuButtonClick()"><h1>☰</h1></div>
 </nav>
 
 <header id="cover">
