@@ -124,7 +124,7 @@ function openDialogFromPathname(pathname) {
   }
 }
 
-window.openCV = function openCV() {
+export function openCV() {
   if (confirm("Open English version?")) {
     getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf`);
   } else {
@@ -134,14 +134,14 @@ window.openCV = function openCV() {
   }
 }
 
-window.onLogoClick = function onLogoClick() {
+export function onLogoClick() {
   window.history.pushState(null, null, window.location.origin);
   closeDialog();
   navBar.classList.remove('open');
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-window.handleMenuClick = function handleMenuClick(elem) {
+export function handleMenuClick(elem) {
   const targetElem = document.getElementById(elem.dataset.linkTo);
   window.scrollTo({top: targetElem.offsetTop - topOffsetSmall, behavior: 'smooth'});
 
@@ -150,25 +150,17 @@ window.handleMenuClick = function handleMenuClick(elem) {
   }
 }
 
-window.onMenuButtonClick = function onMenuButtonClick() {
+export function onMenuButtonClick() {
   navBar.classList.toggle('open');
 }
 
-window.closeDialog = function closeDialog() {
+export function closeDialog() {
   if (window.location.pathname !== '/') { window.history.pushState(null, null, window.location.origin); }
   document.body.classList.remove('scroll_disabled');
   dialog.classList.remove('active');
 }
 
-function openDialogFromPathname(pathname) {
-  if (pathname !== '/') { // If not on root page
-    getDialogContent(window.location.pathname.replace('/', '')); // Open dialog from path (projectName)
-  } else {
-    closeDialog();
-  }
-}
-
-window.onProjectClick = function onProjectClick(projectName) {
+export function onProjectClick(projectName) {
   getDialogContent(projectName);
   if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName); }
 }
