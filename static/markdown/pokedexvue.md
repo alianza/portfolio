@@ -24,7 +24,7 @@ The application allows you to brows through pages of Pokémons on the homepage. 
 Every Pokémon can be opened and viewed in detail with its detail page. There the Pokémon's profile, types and statistics are displayed.
 From here you are also able to view other Pokémons from the same type(s).
 
-The Application is fully routed so deeplinking to any page is supported. The UI is fully responsive and all css is writtes in Sass.
+The Application is fully routed so deeplinking to any page is supported. The UI is fully responsive and all css is written in Sass.
 API endpoints have separated interfaces, so the architecture is loosely coupled. The biggest file is for styling, and the largest component is 173 lines of code.
 
 ---
