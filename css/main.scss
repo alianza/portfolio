@@ -146,7 +146,7 @@ button, .button {
     transition: transform $transition_out;
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       transition: transform $transition_in;
     }
   }
