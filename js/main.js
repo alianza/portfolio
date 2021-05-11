@@ -51,6 +51,10 @@ function expandNavbar() {
 }
 
 function collapseNavBar() {
+  if (window.scrollY === 0) { // When at the top of the page scroll down first
+    window.scroll({top: topOffsetBig, behavior: 'smooth'});
+  }
+
   navBar.classList.add('collapsed');
 }
 
@@ -110,6 +114,14 @@ function openDialog() {
   hideLoader();
   document.body.classList.add('scroll_disabled');
   dialog.classList.add('active');
+}
+
+function openDialogFromPathname(pathname) {
+  if (pathname !== '/') { // If not on root page
+    getDialogContent(window.location.pathname.replace('/', '')); // Open dialog from path (projectName)
+  } else {
+    closeDialog();
+  }
 }
 
 window.openCV = function openCV() {
