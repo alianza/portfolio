@@ -124,7 +124,7 @@ function openDialogFromPathname(pathname) {
   }
 }
 
-export function openCV() {
+window.openCV = function openCV() {
   if (confirm("Open English version?")) {
     getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf`);
   } else {
@@ -134,14 +134,14 @@ export function openCV() {
   }
 }
 
-export function onLogoClick() {
+window.onLogoClick = function onLogoClick() {
   window.history.pushState(null, null, window.location.origin);
   closeDialog();
   navBar.classList.remove('open');
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-export function handleMenuClick(elem) {
+window.handleMenuClick = function handleMenuClick(elem) {
   const targetElem = document.getElementById(elem.dataset.linkTo);
   window.scrollTo({top: targetElem.offsetTop - topOffsetSmall, behavior: 'smooth'});
 
@@ -150,17 +150,17 @@ export function handleMenuClick(elem) {
   }
 }
 
-export function onMenuButtonClick() {
+window.onMenuButtonClick = function onMenuButtonClick() {
   navBar.classList.toggle('open');
 }
 
-export function closeDialog() {
+window.closeDialog = function closeDialog() {
   if (window.location.pathname !== '/') { window.history.pushState(null, null, window.location.origin); }
   document.body.classList.remove('scroll_disabled');
   dialog.classList.remove('active');
 }
 
-export function onProjectClick(projectName) {
+window.onProjectClick = function onProjectClick(projectName) {
   getDialogContent(projectName);
   if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName); }
 }
