@@ -1,0 +1,17 @@
+&[data-name*="portrait"] > .img:before {
+  background-image: url('../static/portrait.png');
+}
+
+&[data-name*="pokedexreact"] > .img:before {
+background-image: url('../static/projects/pokedexreact/pokedexreact.png');
+}
+
+&[data-name*="pokedexvue"] > .img:before {
+  background-image: url('../static/projects/pokedexvue/pokedexvue.png');
+}
+
+&[data-name*="monumental"] > .img:before {
+  background-image: url('../static/projects/monumental/monumental_2.png');
+}
+
+
