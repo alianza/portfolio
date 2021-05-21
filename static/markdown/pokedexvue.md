@@ -1,6 +1,6 @@
 # PokéDex - Vue
 
-![homepage](../projects/pokedexvue/pokedexvue.png)
+![homepage](../projects/pokedexvue/pokedexvue.webp)
 
 As you know by now I like to experiment with the [*PokéApi*](https://pokeapi.co/). This project is the second Pokémon related application I have built.
 This time built using the [*VueJS*](https://vuejs.org/) web framework. This was my first ever *VueJS* application I have created.
@@ -31,8 +31,8 @@ API endpoints have separated interfaces, so the architecture is loosely coupled.
 
 ## Screens
 
-![flex screenshot](../projects/pokedexvue/pokedexvue_1.png)
-![flex screenshot](../projects/pokedexvue/pokedexvue_2.png)
+![flex screenshot](../projects/pokedexvue/pokedexvue_1.webp)
+![flex screenshot](../projects/pokedexvue/pokedexvue_2.webp)
 
 ---
 

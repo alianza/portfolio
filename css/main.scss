@@ -261,6 +261,9 @@ button, .button {
           @import "image_bindings";
 
           .img {
+            box-shadow: rgba(0, 0, 0, .2) 0 0 12px;
+            border-radius: 1em;
+
             &:before {
               display: block;
               content: "";
@@ -271,7 +274,7 @@ button, .button {
               background-position: center;
               box-shadow: rgba(0, 0, 0, .2) 0 0 12px;
               border-radius: 1em;
-              background-image: url('../static/tile.png');
+              background-image: url('../static/tile.webp');
             }
           }
 
