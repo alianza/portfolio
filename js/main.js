@@ -1,31 +1,33 @@
-const hljs = require('highlight.js/lib/core');  // require only the core library
-const marked = require('marked');
 import 'highlight.js/styles/xcode.css';
 import Accordion from './accordion';
+import { collapseNavBar } from "./navBar";
+import { hideLoader, showLoader } from "./loader";
+import { escapeKeyListener } from "./escapeKeyListener";
+import hljs from 'highlight.js/lib/core.js';
+import marked from 'marked';
+
+import javascript from 'highlight.js/lib/languages/javascript';
+import kotlin from 'highlight.js/lib/languages/kotlin';
+import * as constants from "./constants";
+import { calculateYearsSinceDate } from "./calculateYearsSinceDate";
+import { onResize, onScroll } from "./windowCallBacks";
+import { getAndViewBlob } from "./blob";
 
 // Init
-hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript')); // separately require languages
-hljs.registerLanguage('kotlin', require('highlight.js/lib/languages/kotlin')); // separately require languages
-
-// Variables
-const topOffsetBig = 80;
-const topOffsetSmall = 48;
-const smallWidth = 480;
-const mediumWidth = 768;
-const largeWidth = 900;
-
-// Elements
-const navBar = document.getElementById('navbar');
-const loader = document.getElementById('loader');
-const dialog = document.getElementById('dialog');
-const dialogContent = document.getElementById('dialog-content');
-const logo = document.getElementById('logo');
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('kotlin', kotlin);
 
 function init() {
-  document.getElementById('vid').playbackRate = .5;
+  // document.getElementById('vid').playbackRate = .5; // Slow motion main video
+
+  document.getElementById('age').innerHTML = calculateYearsSinceDate(new Date('10-10-1998'));
+  document.getElementById('years').innerHTML = calculateYearsSinceDate(new Date('1-7-2011'));
 
   window.onscroll = function () { onScroll(); };
   window.onresize = function () { onResize(); };
+
+  onScroll();
+  onResize();
 
   openDialogFromPathname(window.location.pathname);
 
@@ -33,73 +35,7 @@ function init() {
     openDialogFromPathname(event.path[0].location.pathname);
   };
 
-  onScroll();
-  onResize();
-
   document.onkeydown = escapeKeyListener;
-}
-
-function escapeKeyListener(evt) {
-  evt = evt || window.event;
-  let isEscape;
-  if ("key" in evt) {
-    isEscape = (evt.key === "Escape" || evt.key === "Esc");
-  } else {
-    isEscape = (evt.keyCode === 27);
-  }
-  if (isEscape) {
-    closeDialog()
-  }
-}
-
-function getAndViewBlob(path) {
-  fetch(path).then(response => {
-    response.blob().then(blob => {
-      const fileURL = URL.createObjectURL(blob);
-      window.open(fileURL);
-    });
-  });
-}
-
-function expandNavbar() {
-  navBar.classList.remove('collapsed');
-}
-
-function collapseNavBar() {
-  if (window.scrollY === 0) { // When at the top of the page scroll down first
-    window.scroll({top: topOffsetBig, behavior: 'smooth'});
-  }
-  navBar.classList.add('collapsed');
-}
-
-function onScroll() {
-  if (window.scrollY >= topOffsetBig) {
-    if (!navBar.classList.contains('collapsed')) {
-      collapseNavBar()
-    }
-  } else {
-    if (navBar.classList.contains('collapsed')) {
-      expandNavbar()
-    }
-  }
-}
-
-function onResize() {
-  if (window.innerWidth >= largeWidth) {
-    logo.innerText = "Jan-Willem van Bremen";
-  } else if (window.innerWidth >= mediumWidth) {
-    logo.innerText = "J.W. van Bremen";
-  } else if (window.innerWidth >= smallWidth) {
-    logo.innerText = "J.W.";
-  }
-}
-
-function showLoader()  {
-  loader.classList.add('active');
-}
-
-function hideLoader()  {
-  loader.classList.remove('active');
 }
 
 function buildDialogContent (data) {
@@ -107,8 +43,9 @@ function buildDialogContent (data) {
   doc.querySelectorAll('[alt]:not([alt=""])').forEach(e => { e.classList.add(e.getAttribute('alt').split(' ')[0]); }); // set classnames from first alt attribute value
   doc.querySelectorAll('img.flex').forEach( e => { e.parentElement.classList.add('flex'); }); // Set flex attribute for flex images parent
   doc.querySelectorAll('details').forEach((e) => { new Accordion(e); }); // Set Accordion animation for all details tags
-  dialogContent.innerHTML = ''; // Clear dialog
-  dialogContent.appendChild(doc); // Fill dialog with data
+  doc.querySelectorAll('a').forEach((e) => { e.setAttribute('target', '_blank') }); // Open all links in new tabs
+  constants.dialogContent.innerHTML = ''; // Clear dialog
+  constants.dialogContent.appendChild(doc); // Fill dialog with data
   document.querySelector('.dialog__content-wrapper').scrollTop = 0; // Scroll dialog to top
   hljs.highlightAll(); // Highlight code blocks with Highlight.js
   collapseNavBar(); // Force navBar to collapse (if at top of page scroll down first)
@@ -127,7 +64,7 @@ function getDialogContent(projectName) {
 function openDialog() {
   hideLoader();
   document.body.classList.add('scroll_disabled');
-  dialog.classList.add('active');
+  constants.dialog.classList.add('active');
 }
 
 function openDialogFromPathname(pathname) {
@@ -138,7 +75,7 @@ function openDialogFromPathname(pathname) {
   }
 }
 
-window.openCV = function openCV() {
+window.openCV = function openCV() { // Ask for language preference and open CV pdf blob
   if (confirm("Open English version?")) {
     getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf`);
   } else {
@@ -151,27 +88,27 @@ window.openCV = function openCV() {
 window.onLogoClick = function onLogoClick() {
   window.history.pushState(null, null, window.location.origin);
   closeDialog();
-  navBar.classList.remove('open');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  constants.navBar.classList.remove('open');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 window.handleMenuClick = function handleMenuClick(elem) {
   const targetElem = document.getElementById(elem.dataset.linkTo);
-  window.scrollTo({top: targetElem.offsetTop - topOffsetSmall, behavior: 'smooth'});
+  window.scrollTo({top: targetElem.offsetTop - constants.topOffsetSmall, behavior: 'smooth'});
 
-  if (dialog.classList.contains('active')) {
+  if (constants.dialog.classList.contains('active')) {
     closeDialog();
   }
 }
 
 window.onMenuButtonClick = function onMenuButtonClick() {
-  navBar.classList.toggle('open');
+  constants.navBar.classList.toggle('open');
 }
 
 window.closeDialog = function closeDialog() {
   if (window.location.pathname !== '/') { window.history.pushState(null, null, window.location.origin); }
   document.body.classList.remove('scroll_disabled');
-  dialog.classList.remove('active');
+  constants.dialog.classList.remove('active');
 }
 
 window.onProjectClick = function onProjectClick(projectName) {
