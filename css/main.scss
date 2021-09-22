@@ -27,19 +27,6 @@ $transition_out: .35s;
 $main_color: #222;
 $button_color: #efefef;
 
-// Mixins
-@mixin logo {
-  content: "";
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 48px;
-  height: 48px;
-  top: 1.5em;
-  position: absolute;
-  transition: all $transition_out ease-in-out;
-  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, .2));
-}
-
 body {
 
   &.scroll_disabled {
@@ -202,6 +189,11 @@ button, .button {
 
       h1 {
         font-size: 4em;
+        margin-bottom: 0;
+      }
+
+      h2 {
+        margin-top: .2em;
       }
     }
 
@@ -281,6 +273,11 @@ button, .button {
           h3 {
             text-decoration: underline solid transparent;
             transition: text-decoration-color $transition_out;
+            margin-bottom: 0;
+          }
+
+          p {
+            margin-top: .2em;
           }
         }
       }
@@ -308,6 +305,13 @@ button, .button {
   }
 
   #contact {
+
+    @import "balloon";
+
+    h3 {
+      margin-bottom: 2em;
+    }
+
     .container {
       max-width: $container_max_width;
 
@@ -331,16 +335,18 @@ button, .button {
             flex-direction: column;
             justify-content: space-between;
 
+            & span:first-of-type {
+              margin-bottom: 2.2em;
+            }
+
             & input {
               display: block;
               width: 100%;
               border: none;
-              box-shadow: rgba(0, 0, 0, .5) 0 0 6px;
               border-radius: 2px;
-              padding: .5em;
 
-              &:first-of-type {
-                margin-bottom: 1em;
+              &:focus {
+                box-shadow: rgba(0, 0, 0, .5) 0 0 6px;
               }
             }
           }
@@ -349,14 +355,21 @@ button, .button {
             flex-grow: 1;
             padding: 1em;
 
+            span {
+              height: 100%;
+            }
+
             & textarea {
               display: inline-block;
               width: 100%;
               height: 100%;
               border: none;
-              box-shadow: rgba(0, 0, 0, .5) 0 0 6px;
               border-radius: 2px;
               padding: .5em;
+
+              &:focus {
+                box-shadow: rgba(0, 0, 0, .5) 0 0 6px;
+              }
             }
           }
 
@@ -478,12 +491,14 @@ button, .button {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        gap: 1em;
       }
 
       img, video {
         box-shadow: rgba(0, 0, 0, .2) 0 0 12px;
         width: 100%;
         border-radius: 1em;
+        object-fit: contain;
 
         &:not(.icon) {
           display: block;
@@ -492,10 +507,9 @@ button, .button {
 
           &.flex {
             min-width: 250px;
-            margin: 1em;
             flex-basis: 0;
             flex-grow: 1;
-            max-width: 350px;
+            //max-width: 350px;
           }
         }
 

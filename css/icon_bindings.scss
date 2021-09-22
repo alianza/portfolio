@@ -1,3 +1,15 @@
+@mixin logo {
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+  top: 1.5em;
+  position: absolute;
+  transition: all $transition_out ease-in-out;
+  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, .2));
+}
+
 @mixin tech-logo {
   @include logo;
   left: 1.5em;
@@ -8,7 +20,7 @@
   right: 1.5em;
 }
 
-// Tech Logo's
+/** Tech Logo's **/
 
 .col[data-tech="android"]:before {
   @include tech-logo;
@@ -35,7 +47,8 @@
   background-image: url(../static/logos/tech/java.png);
 }
 
-// Team Logo's
+/** Team Logo's **/
+
 .col[data-team="solo"]:after {
   @include team-logo;
   background-image: url(../static/logos/team/solo.png);
