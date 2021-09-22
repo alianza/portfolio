@@ -44,7 +44,7 @@ taken in which the landmark was detected can be viewed again.
 ![flex screenshot](../projects/monumental/monumental_1.webp)
 ![flex screenshot](../projects/monumental/monumental_2.webp)
 ![flex screenshot](../projects/monumental/monumental_3.webp)
-<video class="flex" autoplay muted loop playsinline controls src="../projects/monumental/monumental_demo.mp4"></video>
+<video class="flex" autoplay muted loop playsinline controls src="../projects/monumental/monumental_demo.webm"></video>
 
 ---
 
