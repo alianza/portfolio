@@ -418,6 +418,7 @@ button, .button {
         text-decoration: underline solid transparent;
         transition: text-decoration-color $transition_out;
         white-space: nowrap;
+        margin: 1em .5em;
         padding: 1em .5em;
 
         &:hover {

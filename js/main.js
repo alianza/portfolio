@@ -49,6 +49,7 @@ function buildDialogContent (data) {
   document.querySelector('.dialog__content-wrapper').scrollTop = 0; // Scroll dialog to top
   hljs.highlightAll(); // Highlight code blocks with Highlight.js
   collapseNavBar(); // Force navBar to collapse (if at top of page scroll down first)
+  constants.navBar.classList.remove('open'); // Collapse mobile nav bar menu
   openDialog();
 }
 
