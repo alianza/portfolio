@@ -38,9 +38,10 @@ function init() {
   document.onkeydown = escapeKeyListener;
 
   Object.entries(projects).forEach(([name, project]) => { // Iterate through projects and append to dom
+    // noinspection HtmlDeprecatedAttribute
     document.querySelector('#experiences .wrapper').insertAdjacentHTML('beforeend',
   `<div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="${name}" data-team="${project.team}" data-tech="${project.tech}">
-          <div class="img"></div>
+          <img class="img" alt="${name} project" src="../projects/${name}/${name}.webp" onerror="this.src='../tile.webp'"/>
           <h3>${project.title}</h3>
         </div>`)
   });
