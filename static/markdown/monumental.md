@@ -8,7 +8,7 @@
 
 - Android Framework [![icon](../logos/tech/android.png)](https://developer.android.com/)
 - Kotlin programming language [![icon](../logos/tech/kotlin.png)](https://kotlinlang.org/)
-- Firebase [![icon](../logos/tech/firebase.png)](https://firebase.google.com/)
+- Google Firebase [![icon](../logos/tech/firebase.png)](https://firebase.google.com/)
 
 ---
 
