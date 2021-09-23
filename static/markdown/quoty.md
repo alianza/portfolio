@@ -190,8 +190,9 @@ function QuoteCard(props) {
 
 ---
 
-## Check out the App
+## Check out the project
 
-[<button>![icon](../projects/quoty/quoty.webp) Open the App</button>](https://quotes.jwvbremen.nl/)
+[<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/quoty-quotes-network)
+[<button>![icon](../projects/quoty/quoty.webp) Visit Site</button>](https://quotes.jwvbremen.nl/)
 
 ---
