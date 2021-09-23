@@ -8,7 +8,7 @@
 
 - Next.js (Commerce) Framework [![icon](../logos/tech/nextjs.png)](https://nextjs.org/commerce)
 - React.js web framework [![icon](../logos/tech/react.png)](https://reactjs.org/)
-- Shopify headless e-commerce platform [![icon](../logos/tech/shopify.png)](https://shopify.com/)
+- Shopify [![icon](../logos/tech/shopify.png)](https://shopify.com/)
 - TypeScript [![icon](../logos/tech/typescript.png)](https://www.typescriptlang.org/)
 - GraphQL [![icon](../logos/tech/graphql.png)](https://www.graphql.org/)
 - TailwindCSS [![icon](../logos/tech/tailwindcss.png)](https://tailwindcss.com/)

@@ -14,6 +14,8 @@ The goal of this project was to teach myself the workings of the *VueJS* framewo
 - VueJS [![icon](../logos/tech/vue.png)](https://vuejs.org/)
 - Vue-Router [![icon](../logos/tech/vue-router.png)](https://router.vuejs.org/)
 - Sass [![icon](../logos/tech/sass.png)](https://sass-lang.com/)
+- Netlify [![icon](../logos/tech/netlify.png)](https://netlify.com/)
+
 
 ---
 
@@ -26,6 +28,8 @@ From here you are also able to view other Pokémons from the same type(s).
 
 The Application is fully routed so deeplinking to any page is supported. The UI is fully responsive and all css is written in Sass.
 API endpoints have separated interfaces, so the architecture is loosely coupled. The biggest file is for styling, and the largest component is 173 lines of code.
+The application is hosted using the Netlify deployment platform.
+
 
 ---
 

@@ -14,6 +14,9 @@ The goal of this project was to teach myself the workings of the *ReactJS* frame
 - ReactJS [![icon](../logos/tech/react.png)](https://reactjs.org/)
 - React-Router [![icon](../logos/tech/react-router.png)](https://reactrouter.com/)
 - Sass [![icon](../logos/tech/sass.png)](https://sass-lang.com/)
+- Node.js [![icon](../logos/tech/nodejs.png)](https://www.nodejs.org/)
+- Git(hub) [![icon](../logos/tech/github.png)](https://www.github.com/)
+- Netlify [![icon](../logos/tech/netlify.png)](https://netlify.com/)
 
 ---
 
@@ -27,7 +30,8 @@ On top of that every Pokémon can be _'Caught'_ from the detail page which when 
 
 The Application is fully routed so deeplinking to any page is supported. The UI is fully responsive and all css is written in Sass.
 _'Caught'_ Pokémons are saved in local storage so loading is fast and persistent. All API endpoints have separated interfaces, so the architecture is loosely coupled.
-The biggest file is for styling, and the largest component is 173 lines of code.
+The biggest file is for styling, and the largest component is 173 lines of code. The application is hosted using the Netlify deployment platform.
+
 
 ---
 
