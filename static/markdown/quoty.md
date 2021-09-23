@@ -27,7 +27,8 @@ The goal of this project was to improve my understanding of the workings of the 
 The Quoty Quotes Network is a Progressive Web Application and social network aimed at sharing ratings on different Quotes.
 The Quotes are retrieved from the [*StormConsultancy Quotes API*](http://quotes.stormconsultancy.co.uk/). The application allows
 anonymous users to view (random) Quotes and see the average ratings from other users on it. They are also able to share Quotes
-on different social media platforms.
+on different social media platforms. Data like (average) ratings on quotes are updated in realtime without having to refresh the page.
+This is achieved with the [*Google Firebase Realtime Database*](https://firebase.google.com/docs/database) and the data Snapshots functionality.
 
 Users that log-in using an email and password combination or via their Google account gain the ability to rate Quotes based on stars.
 Logged-in users can also view their account information and previously rated Quotes. The application also has the ability to
