@@ -63,6 +63,11 @@ button, .button {
         text-decoration: none;
         color: currentColor;
     }
+
+    &.load-more {
+        margin: 1em auto;
+        display: block;
+    }
 }
 
 #loader {

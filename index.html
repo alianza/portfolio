@@ -73,10 +73,11 @@
 
     <section id="experiences">
         <div class="container">
-            <h1>Experiences</h1>
+            <h1>Experiences & Projects</h1>
             <div class="wrapper">
-            <!-- Experiences to be added by js -->
+            <!-- Experiences to be added dynamically by js -->
             </div>
+            <button class="button load-more" onclick="document.querySelectorAll('#experiences .clickable').forEach(e => { e.classList.remove('hidden') }); console.log(this.remove())">Load more projects...</button>
         </div>
     </section>
 
