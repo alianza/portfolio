@@ -1,0 +1,62 @@
+{
+  "kabisa": {
+    "title": "Kabisa B.V. - Graduation Internship",
+    "team": "pro",
+    "tech": ""
+  },
+  "winc": {
+    "title": "Winc Academy - Part-time Job",
+    "team": "pro",
+    "tech": ""
+  },
+  "botenloods": {
+    "title": "Botenloods - Part-time Job",
+    "team": "pro",
+    "tech": ""
+  },
+  "pokedexreact": {
+    "title": "PokéDex - React",
+    "team": "solo",
+    "tech": "react"
+  },
+  "pokedexvue": {
+    "title": "PokéDex - Vue",
+    "team": "solo",
+    "tech": "vue"
+  },
+  "monumental": {
+    "title": "Monumental - Android",
+    "team": "solo",
+    "tech": "android"
+  },
+  "vittles": {
+    "title": "Vittles - Android",
+    "team": "team",
+    "tech": "android"
+  },
+  "pokedexandroid": {
+    "title": "PokéDex - Android",
+    "team": "solo",
+    "tech": "android"
+  },
+  "usmedia": {
+    "title": "UsMedia - Internship",
+    "team": "pro",
+    "tech": ""
+  },
+  "fys": {
+    "title": "Faster Your Seatbelts - Java(FX)",
+    "team": "team",
+    "tech": "java"
+  },
+  "24i": {
+    "title": "24i Media - Internship",
+    "team": "pro",
+    "tech": ""
+  },
+  "timewizard": {
+    "title": "TimeWizard - PHP",
+    "team": "solo",
+    "tech": "php"
+  }
+}

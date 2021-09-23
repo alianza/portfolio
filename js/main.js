@@ -6,12 +6,14 @@ import { escapeKeyListener } from "./escapeKeyListener";
 import hljs from 'highlight.js/lib/core.js';
 import marked from 'marked';
 
-import javascript from 'highlight.js/lib/languages/javascript';
-import kotlin from 'highlight.js/lib/languages/kotlin';
 import * as constants from "./constants";
 import { calculateYearsSinceDate } from "./calculateYearsSinceDate";
 import { onResize, onScroll } from "./windowCallBacks";
 import { getAndViewBlob } from "./blob";
+import projects from "../static/projects/projects.json"
+
+import javascript from 'highlight.js/lib/languages/javascript';
+import kotlin from 'highlight.js/lib/languages/kotlin';
 
 // Init
 hljs.registerLanguage('javascript', javascript);
@@ -34,6 +36,14 @@ function init() {
   window.onpopstate = event => { openDialogFromPathname(event.path[0].location.pathname) };
 
   document.onkeydown = escapeKeyListener;
+
+  Object.entries(projects).forEach(([name, project]) => { // Iterate through projects and append to dom
+    document.querySelector('#experiences .wrapper').insertAdjacentHTML('beforeend',
+  `<div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="${name}" data-team="${project.team}" data-tech="${project.tech}">
+          <div class="img"></div>
+          <h3>${project.title}</h3>
+        </div>`)
+  });
 }
 
 function buildDialogContent (data) {

@@ -2,184 +2,143 @@
 <html class="no-js" lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Jan-Willem van Bremen - Portfolio</title>
-  <meta name="description" content="Portfolio website Jan-Willem van Bremen - Software Engineer">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Jan-Willem van Bremen - Portfolio</title>
+    <meta name="description" content="Portfolio website Jan-Willem van Bremen - Software Engineer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="manifest" href="site.webmanifest">
+    <link rel="manifest" href="site.webmanifest">
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
 
-  <meta name="theme-color" content="#222">
+    <meta name="theme-color" content="#222">
 </head>
 
 <body>
 
 <nav id="navbar">
-  <div class="navbar__logo">
-    <h1 id="logo" onclick="onLogoClick()">J.W.</h1>
-  </div>
-  <div class="navbar__menu">
-    <span onclick="handleMenuClick(this)" data-link-to="about_me">About me</span>
-    <span onclick="handleMenuClick(this)" data-link-to="experiences">Experiences</span>
-    <span onclick="openCV()" data-link-to="curriculum_vitae">Curriculum Vitae</span>
-    <span onclick="handleMenuClick(this)" data-link-to="contact">Contact</span>
-  </div>
-  <div class="navbar__mobile" onclick="onMenuButtonClick()"><h1>☰</h1></div>
+    <div class="navbar__logo">
+        <h1 id="logo" onclick="onLogoClick()">J.W.</h1>
+    </div>
+    <div class="navbar__menu">
+        <span onclick="handleMenuClick(this)" data-link-to="about_me">About me</span>
+        <span onclick="handleMenuClick(this)" data-link-to="experiences">Experiences</span>
+        <span onclick="openCV()" data-link-to="curriculum_vitae">Curriculum Vitae</span>
+        <span onclick="handleMenuClick(this)" data-link-to="contact">Contact</span>
+    </div>
+    <div class="navbar__mobile" onclick="onMenuButtonClick()"><h1>☰</h1></div>
 </nav>
 
 <header id="cover">
-<div class="cover__title">
-  <h1>Jan-Willem van Bremen</h1>
-  <h2>Software developer, Skateboarder & Model!</h2>
-</div>
-  <video class="cover__video" id="vid" autoplay muted loop playsinline>
-    <source src="img/Instagram254.webm" type="video/webm">
-    <source src="img/Instagram254.mp4" type="video/mp4">
-  </video>
+    <div class="cover__title">
+        <h1>Jan-Willem van Bremen</h1>
+        <h2>Software developer, Skateboarder & Model!</h2>
+    </div>
+    <video class="cover__video" id="vid" autoplay muted loop playsinline>
+        <source src="img/Instagram254.webm" type="video/webm">
+        <source src="img/Instagram254.mp4" type="video/mp4">
+    </video>
 </header>
 
 <main id="content">
-  <section id="about_me">
-    <div class="container">
-      <h1>About me!</h1>
-      <div class="wrapper">
-        <div class="col" data-name="portrait">
-          <div class="img"></div>
-          <h3>Who I am</h3>
-            <p>My name is Jan-Willem van Bremen. I'm a <span id="age"></span> year old software engineer, skateboarder and model from Amsterdam! I'm a very social, diligent and precise person who can concentrate for long periods of time.</p>
+    <section id="about_me">
+        <div class="container">
+            <h1>About me!</h1>
+            <div class="wrapper">
+                <div class="col" data-name="portrait">
+                    <div class="img"></div>
+                    <h3>Who I am</h3>
+                    <p>My name is Jan-Willem van Bremen. I'm a <span id="age"></span> year old software engineer,
+                        skateboarder and model from Amsterdam!  I'm a very social, diligent and precise person who can concentrate for long periods of time.</p>
+                </div>
+                <div class="col" data-name="professional">
+                    <video class="img" autoplay muted loop playsinline>
+                        <source src="static/professional.webm" type="video/webm">
+                        <source src="static/professional.mp4" type="video/mp4">
+                    </video>
+                    <h3>What I do professionally</h3>
+                    <p>Professionally I work as a Software Engineer focussing on full-stack, front-end, CI/CD,
+                        web-development and Android development. I do this using technologies like Type/JavaScript, HTML, (S)CSS, web frameworks (React, Vue, Angluar) and Git(hub).</p>
+                </div>
+                <div class="col" data-name="fun">
+                    <div class="img"></div>
+                    <h3>What I do for fun</h3>
+                    <p>For fun I have been practicing skateboarding for <span id="years"></span> years on an amateur level.
+                      During my skateboarding career I have been sponsored by different brands and shops. I also do model work for various street wear brands.</p>
+                </div>
+            </div>
         </div>
-        <div class="col" data-name="professional">
-          <div class="img"></div>
-          <h3>What I do professionally</h3>
-            <p>Professionally I work as a Software Engineer focussing on full-stack, front-end, CI/CD, web-development and Android development. I do this using technologies like Type/JavaScript, HTML, (S)CSS, web frameworks (React, Vue, Angluar) and Git(hub).</p>
-        </div>
-        <div class="col" data-name="fun">
-          <div class="img"></div>
-          <h3>What I do for fun</h3>
-            <p>For fun I have been practicing skateboarding for <span id="years"></span> years on an Amateur level. During my skateboarding career I have been sponsored by different brands and shops and also did model work for different street wear brands.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="experiences">
-    <div class="container">
-      <h1>Experiences</h1>
-      <div class="wrapper">
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="kabisa" data-team="pro">
-          <div class="img"></div>
-          <h3>kabisa B.V. - Graduation Internship</h3>
+    <section id="experiences">
+        <div class="container">
+            <h1>Experiences</h1>
+            <div class="wrapper">
+            <!-- Experiences to be added by js -->
+            </div>
         </div>
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="winc" data-team="pro">
-          <div class="img"></div>
-          <h3>Winc Academy - Part-time Job</h3>
-        </div>
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="botenloods" data-team="pro">
-          <div class="img"></div>
-          <h3>Botenloods - Part-time Job</h3>
-        </div>
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="pokedexreact" data-tech="react" data-team="solo">
-          <div class="img"></div>
-          <h3>PokéDex - React</h3>
-        </div>
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="pokedexvue" data-tech="vue" data-team="solo">
-          <div class="img"></div>
-          <h3>PokéDex - Vue</h3>
-        </div>
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="monumental" data-tech="android" data-team="solo">
-          <div class="img"></div>
-          <h3>Monumental - Android</h3>
-        </div>
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="vittles" data-tech="android" data-team="team">
-          <div class="img"></div>
-          <h3>Vittles - Android</h3>
-        </div>
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="pokedexandroid" data-tech="android" data-team="solo">
-          <div class="img"></div>
-          <h3>PokéDex - Android</h3>
-        </div>
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="usmedia" data-team="pro">
-          <div class="img"></div>
-          <h3>UsMedia - Internship</h3>
-        </div>
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="24i" data-team="pro">
-          <div class="img"></div>
-          <h3>24i Media - Internship</h3>
-        </div>
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="timewizard" data-tech="php" data-team="solo">
-          <div class="img"></div>
-          <h3>TimeWizard - PHP</h3>
-        </div>
-        <div class="col clickable" onclick="onProjectClick(this.dataset.name)" data-name="fys" data-tech="java" data-team="team">
-          <div class="img"></div>
-          <h3>Faster Your Seatbelts - Java(FX)</h3>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="container">
-      <h1>Contact me!</h1>
-      <div class="wrapper">
-        <div class="col">
-          <h3>Send me a message!</h3>
-          <form class="contact_form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
-            <div class="contact_form__left">
-              <span>
-                  <input id="name" class="balloon" type="text" placeholder="Your full name" name="name" required/>
-                <label for="name">Name</label>
-              </span>
-              <span>
-                  <input id="email" class="balloon" type="email" placeholder="Your Email address" name="email" required/>
-                <label for="email">Email</label>
-              </span>
+    <section id="contact">
+        <div class="container">
+            <h1>Contact me!</h1>
+            <div class="wrapper">
+                <div class="col">
+                    <h3>Send me a message!</h3>
+                    <form class="contact_form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                        <div class="contact_form__left">
+                            <span>
+                                <input id="name" class="balloon" type="text" placeholder="Your full name" name="name" required/>
+                              <label for="name">Name</label>
+                            </span>
+                            <span>
+                                <input id="email" class="balloon" type="email" placeholder="Your Email address" name="email" required/>
+                              <label for="email">Email</label>
+                            </span>
+                        </div>
+                        <div class="contact_form__right">
+                            <span>
+                             <textarea id="message" class="balloon balloon-big-indent" rows="5" type="text" placeholder="Your message to me :)" name="message" required></textarea>
+                              <label for="message">Message</label>
+                            </span>
+                        </div>
+                        <div class="contact_form__bottom">
+                            <button type="submit">Send</button>
+                            <div data-netlify-recaptcha="true"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col">
+                    <h3>Or, Email me directly! @ <a href="mailto:janwillemvanbremen@live.nl">janwillemvanbremen@live.nl</a></h3>
+                </div>
             </div>
-            <div class="contact_form__right">
-              <span>
-               <textarea id="message" class="balloon balloon-big-indent" rows="5" type="text" placeholder="Your message to me :)" name="message" required></textarea>
-                <label for="message">Message</label>
-              </span>
-            </div>
-            <div class="contact_form__bottom">
-              <button type="submit">Send</button>
-              <div data-netlify-recaptcha="true"></div>
-            </div>
-          </form>
         </div>
-        <div class="col">
-          <h3>Or, Email me directly! @ <a href="mailto:janwillemvanbremen@live.nl">janwillemvanbremen@live.nl</a></h3>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </main>
 
 <footer id="footer">
-  <span class="footer__author">Jan-Willem van Bremen</span>
-  <div class="footer__social-media">
-    <a href="https://www.facebook.com/janwillem.van.bremen.9/">Facebook</a>
-    <a href="https://www.instagram.com/jan_willem.van.bremen/">Instagram</a>
-    <a href="mailto:janwillemvanbremen@live.nl">📧 Email</a>
-    <a href="tel:+31657118462">📞 Phone</a>
-  </div>
+    <span class="footer__author">Jan-Willem van Bremen</span>
+    <div class="footer__social-media">
+        <a href="https://www.facebook.com/janwillem.van.bremen.9/">Facebook</a>
+        <a href="https://www.instagram.com/jan_willem.van.bremen/">Instagram</a>
+        <a href="mailto:janwillemvanbremen@live.nl">📧 Email</a>
+        <a href="tel:+31657118462">📞 Phone</a>
+    </div>
 </footer>
 
 <div id="loader">
-  <div></div>
+    <div></div>
 </div>
 
 <div id="dialog">
-  <div class="dialog__backdrop" onclick="closeDialog()"></div>
-  <div class="dialog__content-wrapper">
-    <div onclick="closeDialog()" class="dialog__close-button">✖</div>
-    <div class="dialog__container">
-      <div class="dialog__content" id="dialog-content"></div>
+    <div class="dialog__backdrop" onclick="closeDialog()"></div>
+    <div class="dialog__content-wrapper">
+        <div onclick="closeDialog()" class="dialog__close-button">✖</div>
+        <div class="dialog__container">
+            <div class="dialog__content" id="dialog-content"></div>
+        </div>
     </div>
-  </div>
 </div>
 
 <script defer src="js/main.js"></script>
