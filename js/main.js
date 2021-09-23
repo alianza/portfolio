@@ -23,17 +23,15 @@ function init() {
   document.getElementById('age').innerHTML = calculateYearsSinceDate(new Date('10-10-1998'));
   document.getElementById('years').innerHTML = calculateYearsSinceDate(new Date('1-7-2011'));
 
-  window.onscroll = function () { onScroll(); };
-  window.onresize = function () { onResize(); };
+  window.onscroll = onScroll;
+  window.onresize = onResize;
 
   onScroll();
   onResize();
 
   openDialogFromPathname(window.location.pathname);
 
-  window.onpopstate = function (event) {
-    openDialogFromPathname(event.path[0].location.pathname);
-  };
+  window.onpopstate = event => { openDialogFromPathname(event.path[0].location.pathname) };
 
   document.onkeydown = escapeKeyListener;
 }
@@ -76,24 +74,22 @@ function openDialogFromPathname(pathname) {
   }
 }
 
-window.openCV = function openCV() { // Ask for language preference and open CV pdf blob
+window.openCV = () => { // Ask for language preference and open CV pdf blob
   if (confirm("Open English version?")) {
     getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf`);
-  } else {
-    if (confirm("Open Dutch version?")) {
+  } else if (confirm("Open Dutch version?")) {
       getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf`);
-    }
   }
 }
 
-window.onLogoClick = function onLogoClick() {
+window.onLogoClick = () => {
   window.history.pushState(null, null, window.location.origin);
   closeDialog();
   constants.navBar.classList.remove('open');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-window.handleMenuClick = function handleMenuClick(elem) {
+window.handleMenuClick = (elem)=> {
   const targetElem = document.getElementById(elem.dataset.linkTo);
   window.scrollTo({top: targetElem.offsetTop - constants.topOffsetSmall, behavior: 'smooth'});
 
@@ -102,17 +98,17 @@ window.handleMenuClick = function handleMenuClick(elem) {
   }
 }
 
-window.onMenuButtonClick = function onMenuButtonClick() {
+window.onMenuButtonClick = () => {
   constants.navBar.classList.toggle('open');
 }
 
-window.closeDialog = function closeDialog() {
+window.closeDialog = () => {
   if (window.location.pathname !== '/') { window.history.pushState(null, null, window.location.origin); }
   document.body.classList.remove('scroll_disabled');
   constants.dialog.classList.remove('active');
 }
 
-window.onProjectClick = function onProjectClick(projectName) {
+window.onProjectClick = (projectName) => {
   getDialogContent(projectName);
   if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName); }
 }
