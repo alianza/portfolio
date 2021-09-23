@@ -1,5 +1,6 @@
 import { largeWidth, logo, mediumWidth, navBar, smallWidth, topOffsetBig } from "./constants";
 import { collapseNavBar, expandNavbar } from "./navBar";
+import * as constants from "./constants";
 
 function onScroll() {
     if (window.scrollY >= topOffsetBig) {
@@ -20,6 +21,7 @@ function onResize() {
         logo.innerText = "J.W. van Bremen";
     } else if (window.innerWidth >= smallWidth) {
         logo.innerText = "J.W.";
+        constants.navBar.classList.remove('open');
     }
 }
 
