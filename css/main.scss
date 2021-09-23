@@ -213,7 +213,7 @@ button, .button {
 
     section {
         .container {
-            padding: 1em;
+            padding: 1em 1em 0;
             max-width: $full_page_width;
             margin: auto;
 
@@ -250,25 +250,10 @@ button, .button {
                         }
                     }
 
-                    @import "image_bindings";
-
                     .img {
                         box-shadow: rgba(0, 0, 0, .2) 0 0 12px;
                         border-radius: 1em;
                         width: 100%;
-
-                        &:before {
-                            display: block;
-                            content: "";
-                            width: 100%;
-                            padding-top: (1 / 1) * 100%;
-                            background-size: cover;
-                            background-repeat: no-repeat;
-                            background-position: center;
-                            box-shadow: rgba(0, 0, 0, .2) 0 0 12px;
-                            border-radius: 1em;
-                            background-image: url('../static/tile.webp');
-                        }
                     }
 
                     h3 {
