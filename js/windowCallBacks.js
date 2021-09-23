@@ -7,10 +7,8 @@ function onScroll() {
         if (!navBar.classList.contains('collapsed')) {
             collapseNavBar()
         }
-    } else {
-        if (navBar.classList.contains('collapsed')) {
-            expandNavbar()
-        }
+    } else if (navBar.classList.contains('collapsed')) {
+        expandNavbar()
     }
 }
 
