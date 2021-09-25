@@ -152,7 +152,7 @@ private fun deleteJourney(journey: Journey) {
 ## Check out the project
 
 [<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/Monumental)
-[<button>APK Download</button>](https://google.com/)
-[<button>Technical Docs</button>](https://drive.google.com/file/d/162SAxWKRrIahK1M_R8Q7BtnR_OMhz13o/view?usp=sharing)
+[<button>📦 APK Download</button>](https://google.com/)
+[<button>📘 Technical Docs</button>](https://drive.google.com/file/d/162SAxWKRrIahK1M_R8Q7BtnR_OMhz13o/view?usp=sharing)
 
 ---

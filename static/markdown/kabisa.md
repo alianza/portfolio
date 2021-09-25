@@ -28,8 +28,12 @@ when which solution is applicable when it comes to an e-commerce system.
 Based on the initial research I gathered technical and client oriented requirements from within the Kabisa organisation for
 such an e-commerce system. Based on the collected requirements I compared potential headless e-commerce platforms and compatible
 front-end web frameworks to build headless e-commerce systems with. Based on the research results, the requirements from
-within the organisation and further knowledge of the market of the product owner a definitive combination of headless e-commerce
-platform and compatible front-end web framework was chosen to realize the proof of concept with.
+within the organisation and further knowledge of the e-commerce market of the product owner a definitive combination of headless e-commerce
+platform and compatible front-end web framework was chosen to realize the proof of concept with. Finally, an article was written
+summarizing the findings of the research on the [Kabisa](https://www.kabisa.nl/blog/de-kracht-achter-headless-e-commerce/) website.
+This article was also proposed and accepted by the popular dutch business and e-commerce website named 
+[Emerce](https://www.emerce.nl/achtergrond/overstappen-naar-een-headless-platform-of-niet-de-belangrijkste-afwegingen).
+There the article has racked up more than 25k reads.
 
 During the development phase of the proof of concept I adhered to an Agile Scrum methodology and worked on the product in
 4 sprints of 2 weeks during which I performed all development and scrum tasks like sprint plannings, demo's, retrospectives
@@ -255,7 +259,9 @@ export default function Home({
 ## Check out the project
 
 [<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/headless-commerce-poc)
-[<button>Visit site</button>](https://headless-commerce-poc-alianza.vercel.app/)
-[<button>Technical Docs (Thesis)</button>](https://docs.google.com/document/d/1W-4FWoPjWZSUVByhn2np7s_VtTp6RyAerCbf5TDcjEQ/edit?usp=sharing)
+[<button>🧪 Visit proof of concept</button>](https://headless-commerce-poc-alianza.vercel.app/)
+[<button>📘 Technical Docs (Thesis)</button>](https://docs.google.com/document/d/1W-4FWoPjWZSUVByhn2np7s_VtTp6RyAerCbf5TDcjEQ/edit?usp=sharing)
+[<button>📗 Read article (Kabisa.nl)</button>](https://www.kabisa.nl/blog/de-kracht-achter-headless-e-commerce/)
+[<button>📕 Read article (Emerce.nl)</button>](https://www.emerce.nl/achtergrond/overstappen-naar-een-headless-platform-of-niet-de-belangrijkste-afwegingen)
 
 ---
