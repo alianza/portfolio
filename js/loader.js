@@ -8,4 +8,4 @@ function hideLoader()  {
     loader.classList.remove('active');
 }
 
-export {showLoader, hideLoader}
+export { showLoader, hideLoader }

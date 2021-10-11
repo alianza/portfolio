@@ -399,13 +399,13 @@ button, .button {
     .footer {
 
         &__author {
-            padding: 0 .5em;
-            margin: auto 0;
+            padding: 1em;
         }
 
         &__social-media {
             display: flex;
             flex-wrap: wrap;
+            justify-content: end;
 
             a {
                 color: whitesmoke;
@@ -413,9 +413,7 @@ button, .button {
                 text-decoration: underline solid transparent;
                 transition: text-decoration-color $transition_out;
                 white-space: nowrap;
-                padding: 1em .5em;
-                flex-grow: 1;
-                text-align: right;
+                padding: 1em;
 
                 &:hover {
                     text-decoration-color: whitesmoke;
