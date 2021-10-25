@@ -1,6 +1,6 @@
-import { largeWidth, logo, mediumWidth, navBar, smallWidth, topOffsetBig } from "./constants";
+import { largeWidth, logo, mediumWidth, navBar, smallWidth, topOffsetBig } from "../constants";
 import { collapseNavBar, expandNavbar } from "./navBar";
-import * as constants from "./constants";
+import * as constants from "../constants";
 
 function onScroll() {
     if (window.scrollY >= topOffsetBig) {

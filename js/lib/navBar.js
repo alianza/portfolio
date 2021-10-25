@@ -1,4 +1,4 @@
-import { topOffsetBig } from "./constants";
+import { topOffsetBig } from "../constants";
 
 const navBar = document.getElementById('navbar');
 
