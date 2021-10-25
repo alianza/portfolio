@@ -1,6 +1,6 @@
 # Monumental - Android
 
-![homepage](../projects/monumental/monumental.webp)
+![homepage](../projects/Monumental/monumental.webp)
 
 ---
 
@@ -41,10 +41,10 @@ taken in which the landmark was detected can be viewed again.
 
 ## Screens
 
-![flex screenshot](../projects/monumental/monumental_1.webp)
-![flex screenshot](../projects/monumental/monumental_2.webp)
-![flex screenshot](../projects/monumental/monumental_3.webp)
-<video class="flex" autoplay muted loop playsinline controls src="../projects/monumental/monumental_demo.webm"></video>
+![flex screenshot](../projects/Monumental/monumental_1.webp)
+![flex screenshot](../projects/Monumental/monumental_2.webp)
+![flex screenshot](../projects/Monumental/monumental_3.webp)
+<video class="flex" autoplay muted loop playsinline controls src="../projects/Monumental/monumental_demo.webm"></video>
 
 ---
 
@@ -65,7 +65,7 @@ taken in which the landmark was detected can be viewed again.
   <summary>Code Snippets</summary>
 <div>
 
-The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, consice and powerful code. _(Code has been compacted)_
+The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, concise and powerful code. _(Code has been compacted)_
 
 **ViewModel for the Landmarks fragment**\
 All communication between the View and Model is done through the ViewModel according to the MVVM architecture as is demonstrated throughout the project.

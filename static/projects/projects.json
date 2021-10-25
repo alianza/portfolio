@@ -1,55 +1,60 @@
 {
-  "quoty": {
+  "WhoAmI": {
+    "title": "WhoAmI? - React",
+    "team": "solo",
+    "tech": "react"
+  },
+  "Quoty": {
     "title": "Quoty Quotes Network - React",
     "team": "solo",
     "tech": "react"
   },
-  "kabisa": {
+  "Kabisa": {
     "title": "Kabisa B.V. - Graduation Internship",
     "team": "pro",
     "tech": ""
   },
-  "winc": {
+  "Winc": {
     "title": "Winc Academy - Part-time Job",
     "team": "pro",
     "tech": ""
   },
-  "botenloods": {
+  "BotenLoods": {
     "title": "Botenloods - Part-time Job",
     "team": "pro",
     "tech": ""
   },
-  "pokedexreact": {
+  "PokedexReact": {
     "title": "PokéDex - React",
     "team": "solo",
     "tech": "react"
   },
-  "pokedexvue": {
+  "PokedexVue": {
     "title": "PokéDex - Vue",
     "team": "solo",
     "tech": "vue"
   },
-  "monumental": {
+  "Monumental": {
     "title": "Monumental - Android",
     "team": "solo",
     "tech": "android"
   },
-  "vittles": {
+  "Vittles": {
     "title": "Vittles - Android",
     "team": "team",
     "tech": "android"
   },
-  "pokedexandroid": {
+  "Pokedexandroid": {
     "title": "PokéDex - Android",
     "team": "solo",
     "tech": "android"
   },
-  "usmedia": {
+  "UsMedia": {
     "title": "UsMedia - Internship",
     "team": "pro",
     "tech": ""
   },
-  "fys": {
+  "FYS": {
     "title": "Faster Your Seatbelts - Java(FX)",
     "team": "team",
     "tech": "java"
@@ -59,7 +64,7 @@
     "team": "pro",
     "tech": ""
   },
-  "timewizard": {
+  "TimeWizard": {
     "title": "TimeWizard - PHP",
     "team": "solo",
     "tech": "php"

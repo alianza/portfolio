@@ -1,6 +1,6 @@
 # Quoty Quotes Network - React
 
-![homepage](../projects/quoty/quoty.webp)
+![homepage](../projects/Quoty/quoty.webp)
 
 As you know by now I like to experiment with different API's.
 This time built using the [*ReactJS*](https://reactjs.org/) web framework.
@@ -43,11 +43,11 @@ hosted using the Netlify deployment platform.
 
 ## Screens
 
-![flex screenshot](../projects/quoty/quoty_1.webp)
-![flex screenshot](../projects/quoty/quoty_2.webp)
-![flex screenshot](../projects/quoty/quoty_3.webp)
-![flex screenshot](../projects/quoty/quoty_4.webp)
-![flex screenshot](../projects/quoty/quoty_5.webp)
+![flex screenshot](../projects/Quoty/quoty_1.webp)
+![flex screenshot](../projects/Quoty/quoty_2.webp)
+![flex screenshot](../projects/Quoty/quoty_3.webp)
+![flex screenshot](../projects/Quoty/quoty_4.webp)
+![flex screenshot](../projects/Quoty/quoty_5.webp)
 
 ---
 
@@ -55,7 +55,7 @@ hosted using the Netlify deployment platform.
   <summary>Code Snippets</summary>
 <div>
 
-The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, consice and powerful code. _(Code has been compacted)_
+The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, concise and powerful code. _(Code has been compacted)_
 
 **App component**\
 The App component is responsible for housing the application content, getting logged-in user information from Google Firebase
@@ -194,6 +194,6 @@ function QuoteCard(props) {
 ## Check out the project
 
 [<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/quoty-quotes-network)
-[<button>![icon](../projects/quoty/quoty.webp) Visit Site</button>](https://quotes.jwvbremen.nl/)
+[<button>![icon](../projects/Quoty/quoty.webp) Visit Site</button>](https://quotes.jwvbremen.nl/)
 
 ---

@@ -1,6 +1,6 @@
 # PokéDex - Vue
 
-![homepage](../projects/pokedexvue/pokedexvue.webp)
+![homepage](../projects/PokedexVue/pokedexvue.webp)
 
 As you know by now I like to experiment with the [*PokéApi*](https://pokeapi.co/). This project is the second Pokémon related application I have built.
 This time built using the [*VueJS*](https://vuejs.org/) web framework. This was my first ever *VueJS* application I have created.
@@ -35,8 +35,8 @@ The application is hosted using the Netlify deployment platform.
 
 ## Screens
 
-![flex screenshot](../projects/pokedexvue/pokedexvue_1.webp)
-![flex screenshot](../projects/pokedexvue/pokedexvue_2.webp)
+![flex screenshot](../projects/PokedexVue/pokedexvue_1.webp)
+![flex screenshot](../projects/PokedexVue/pokedexvue_2.webp)
 
 ---
 
@@ -53,7 +53,7 @@ The application is hosted using the Netlify deployment platform.
 <summary>Code Snippets</summary>
 <div>
 
-The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, consice and powerful code.
+The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, concise and powerful code.
 
 **Retrieving Pokémon types**\
 Retrieving remote Pokémon types from the _PokéApi_ using the PokémonService interface and assigning it to the current state.

@@ -1,6 +1,6 @@
 # PokéDex - React
 
-![homepage](../projects/pokedexreact/pokedexreact.webp)
+![homepage](../projects/PokedexReact/pokedexreact.webp)
 
 As you know by now I like to experiment with the [*PokéApi*](https://pokeapi.co/). This project is the third Pokémon related application I have built.
 This time built using the [*ReactJS*](https://reactjs.org/) web framework. This was my first ever *ReactJS* application I have created.
@@ -37,8 +37,8 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 
 ## Screens
 
-![flex screenshot](../projects/pokedexreact/pokedexreact_1.webp)
-![flex screenshot](../projects/pokedexreact/pokedexreact_2.webp)
+![flex screenshot](../projects/PokedexReact/pokedexreact_1.webp)
+![flex screenshot](../projects/PokedexReact/pokedexreact_2.webp)
 
 ---
 
@@ -54,7 +54,7 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 <details>
   <summary>Code Snippets</summary>
 <div>
-The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, consice and powerful code.
+The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, concise and powerful code.
 
 **Retrieving Pokémon types**\
 Retrieving remote Pokémon types from the _PokéApi_ using the PokémonService interface and assigning it to the current state.

@@ -1,6 +1,6 @@
 # Winc Academy - Part-time Job
 
-![homepage](../projects/botenloods/botenloods_1.webp)
+![homepage](../projects/BotenLoods/botenloods_1.webp)
 
 ---
 
@@ -27,6 +27,6 @@ management system or update existing content.
 
 ## Check out the website
 
-[<button>![icon](../projects/botenloods/botenloods.webp) de Botenloods</button>](https://www.botenloods.nl/)
+[<button>![icon](../projects/BotenLoods/botenloods.webp) de Botenloods</button>](https://www.botenloods.nl/)
 
 ---

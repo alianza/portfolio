@@ -1,6 +1,6 @@
 # Winc Academy - Part-time Job
 
-![homepage](../projects/winc/winc.webp)
+![homepage](../projects/Winc/winc.webp)
 
 ---
 
@@ -33,6 +33,6 @@ colleagues was established with frequent video calls and textual communication.
 
 ## Check out the company
 
-[<button>![icon](../projects/winc/winc.webp) Winc Academy</button>](https://www.wincacademy.nl/)
+[<button>![icon](../projects/Winc/winc.webp) Winc Academy</button>](https://www.wincacademy.nl/)
 
 ---

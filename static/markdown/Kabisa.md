@@ -1,6 +1,6 @@
 # Kabisa - Graduation Internship
 
-![homepage](../projects/kabisa/kabisa.webp)
+![homepage](../projects/Kabisa/kabisa.webp)
 
 ---
 
@@ -46,10 +46,10 @@ techniques and technologies among which are Next.js, GraphQL, PWA and more!
 
 ## Screens
 
-![flex screenshot](../projects/kabisa/kabisa_1.webp)
-![flex screenshot](../projects/kabisa/kabisa_2.webp)
-![screenshot](../projects/kabisa/kabisa_3.webp)
-<video autoplay muted loop playsinline controls src="../projects/kabisa/kabisa.webm"></video>
+![flex screenshot](../projects/Kabisa/kabisa_1.webp)
+![flex screenshot](../projects/Kabisa/kabisa_2.webp)
+![screenshot](../projects/Kabisa/kabisa_3.webp)
+<video autoplay muted loop playsinline controls src="../projects/Kabisa/kabisa.webm"></video>
 
 ---
 
@@ -71,7 +71,7 @@ techniques and technologies among which are Next.js, GraphQL, PWA and more!
   <summary>Code Snippets</summary>
 <div>
 
-The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, consice and powerful code. _(Code has been compacted)_
+The following are some code snippets of pieces of code I'm proud of from this project. The snippets demonstrate clean, concise and powerful code. _(Code has been compacted)_
 
 **My Orders page**\
 The My Orders page is responsible for displaying all past orders to any logged-in user. The past orders are retrieved using
