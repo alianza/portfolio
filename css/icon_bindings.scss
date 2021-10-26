@@ -1,6 +1,6 @@
 @mixin logo {
   content: "";
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   width: 48px;
   height: 48px;
@@ -45,6 +45,11 @@
 .col[data-tech="java"]:before {
   @include tech-logo;
   background-image: url(../static/logos/tech/java.png);
+}
+
+.col[data-tech="javascript"]:before {
+  @include tech-logo;
+  background-image: url(../static/logos/tech/javascript.png);
 }
 
 /** Team Logo's **/
