@@ -34,6 +34,10 @@ The project is hosted using the [Netlify](https://netlify.com/) deployment platf
 ![flex screenshot](../projects/Portfolio/portfolio_2.webp)
 <video autoplay muted loop playsinline controls src="../projects/Portfolio/portfolio.webm"></video>
 
+## Lighthouse Audit Score ![icon](../logos/tech/lighthouse.png)
+
+![flex screenshot](../projects/Portfolio/lighthouse.png)
+
 ---
 
 <details>
