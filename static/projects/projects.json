@@ -24,6 +24,11 @@
     "team": "pro",
     "tech": ""
   },
+  "Portfolio": {
+    "title": "Portfolio website - Vanilla JS",
+    "team": "solo",
+    "tech": "javascript"
+  },
   "PokedexReact": {
     "title": "PokéDex - React",
     "team": "solo",
