@@ -163,5 +163,6 @@ init();
 
 [<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/portfolio)
 [<button>![icon](../projects/Portfolio/portfolio.webp) Visit Site</button>](https://jwvbremen.nl/) _You are already here :)_
+[<button>![icon](../logos/tech/lighthouse.png) Lighthouse audit</button>](https://jwvbremen.nl/projects/Portfolio/lighthouse.html)
 
 ---
