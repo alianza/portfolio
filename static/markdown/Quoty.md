@@ -37,7 +37,7 @@ and dark theme.
 
 The application is fully responsive and installable as a Progressive Web Application. The data storage and authentication
 is done using [*Google Firebase*](https://firebase.google.com/) Authentication and the Realtime Database. The application is
-hosted using the Netlify deployment platform.
+hosted using the [Netlify](https://netlify.com/) deployment platform.
 
 ---
 

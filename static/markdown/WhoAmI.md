@@ -30,7 +30,7 @@ These API's are [*Agify.io*](http://Agify.io/), [*Genderize.io*](http://Genderiz
 
 The application is fast, easy to use and looks good! Using TailwindCSS for styling the application was built in only two days!
 The user interface is fully responsive, fully routed and features transitions between pages. 
-The application is hosted using the Netlify deployment platform.
+The application is hosted using the [Netlify](https://netlify.com/) deployment platform.
 
 Try it out and enjoy!
 

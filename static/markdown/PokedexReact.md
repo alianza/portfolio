@@ -30,7 +30,7 @@ On top of that every Pokémon can be _'Caught'_ from the detail page which when 
 
 The Application is fully routed so deeplinking to any page is supported. The UI is fully responsive and all css is written in Sass.
 _'Caught'_ Pokémons are saved in local storage so loading is fast and persistent. All API endpoints have separated interfaces, so the architecture is loosely coupled.
-The biggest file is for styling, and the largest component is 173 lines of code. The application is hosted using the Netlify deployment platform.
+The biggest file is for styling, and the largest component is 173 lines of code. The application is hosted using the [Netlify](https://netlify.com/) deployment platform.
 
 
 ---
