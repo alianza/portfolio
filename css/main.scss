@@ -153,12 +153,13 @@ button, .button {
             justify-content: space-around;
             transition: opacity 1s;
 
-            span, a {
+            span {
                 color: whitesmoke;
                 cursor: pointer;
                 text-decoration: underline solid transparent;
                 transition: text-decoration-color $transition_out;
                 white-space: nowrap;
+                padding: 0.8em;
 
                 &:hover {
                     text-decoration-color: whitesmoke;
