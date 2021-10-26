@@ -159,7 +159,7 @@ button, .button {
                 text-decoration: underline solid transparent;
                 transition: text-decoration-color $transition_out;
                 white-space: nowrap;
-                padding: 0.8em;
+                padding: 0.8em 0;
 
                 &:hover {
                     text-decoration-color: whitesmoke;
@@ -557,6 +557,18 @@ button, .button {
                 width: auto;
                 flex-direction: column;
                 align-items: flex-end;
+
+                & span {
+                    padding: .2em;
+
+                    &:first-child {
+                        padding-top: 0;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                }
             }
 
             &__mobile {
