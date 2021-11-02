@@ -12,7 +12,7 @@
     "dev": "parcel index.html --open",
     "start": "npm run build && npm run dev",
     "build-css": "node-sass --include-path scss css/main.scss css/main.css",
-    "watch-scss": "nodemon -e scss -x \"npm run build-css\"",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "serve dist -p 3000 -s"
   },
