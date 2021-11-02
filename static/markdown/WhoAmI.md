@@ -107,12 +107,10 @@ function Result() {
         if (name && !countryCode) {
             ApiService.lookUpByName(name).then(result => {
                 setResult(result)
-                console.log(result)
             })
         } else if (name && countryCode) {
             ApiService.lookUpByNameAndCountry(name, countryCode).then(result => {
                 setResult(result)
-                console.log(result)
             })
         } else { history.replace('/') }
     }, [name, countryCode, history])
@@ -172,12 +170,10 @@ promise to be consumed by the application.
 ```
 const ApiService = {
     doLoad(url) { // Base method for doing http Get requests and returning the result
-        // console.log(url)
         return fetch(url).then(response => {
             if (response.status === 404) { return '' }
             if (response.status === 200) { return response.json() }})
             .then(data => {
-                // console.log(data)
                 return data
             })
     },
