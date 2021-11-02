@@ -16,8 +16,6 @@ import javascript from 'highlight.js/lib/languages/javascript';
 import kotlin from 'highlight.js/lib/languages/kotlin';
 
 function init() {
-  // document.getElementById('vid').playbackRate = .5; // Slow motion main video
-
   document.getElementById('age').innerHTML = calculateYearsSinceDate(new Date('10-10-1998'))
   document.getElementById('years').innerHTML = calculateYearsSinceDate(new Date('1-7-2011'))
 
@@ -31,7 +29,6 @@ function init() {
   openDialogFromPathname(window.location.pathname)
 
   Object.entries(projects).forEach(([name, project], index) => { // Iterate through projects and append to dom
-    // noinspection HtmlDeprecatedAttribute
     document.querySelector('#experiences .wrapper').insertAdjacentHTML('beforeend',
   `<div class="col clickable ${index > 5 ? 'hidden' : ''}" onclick="onProjectClick(this.dataset.name)" data-name="${name}" data-team="${project.team}" data-tech="${project.tech}">
           <img class="img" alt="${name} project" src="../projects/${name}/${name}.webp" onerror="this.src='../tile.webp'"/>
@@ -59,9 +56,9 @@ function buildDialogContent (data) {
 }
 
 function getDialogContent(projectName) {
-  showLoader();
+  showLoader()
   fetch(`/markdown/${projectName}.md`).then(response => response.text()).then(data => { // Get markdown for project
-    data = marked(data); // Convert markdown to HTML
+    data = marked(data) // Convert markdown to HTML
     if (!data.toString().includes('<!doctype html>')) { buildDialogContent(data) } // If successful
     else { getDialogContent('404') } // Else retrieve 404 page
   }).catch((error) => { console.error('Error:', error) })
@@ -70,25 +67,18 @@ function getDialogContent(projectName) {
 function openDialog() {
   hideLoader();
   document.body.classList.add('scroll_disabled')
-  constants.dialog.classList.add('active')
+  constants.dialog.setAttribute('open', '')
 }
 
 function openDialogFromPathname(pathname) {
   let projectName = pathname.replace('/', '')
-
-  if (pathname !== '/') { // If not on root page
-    getDialogContent(projectName) // Open dialog from path (projectName)
-  } else {
-    closeDialog()
-  }
+  if (pathname !== '/') { getDialogContent(projectName) } // If not on root page open dialog from path (projectName)
+  else { closeDialog() }
 }
 
 window.openCV = () => { // Ask for language preference and open CV pdf blob
-  if (confirm("Open English version?")) {
-    getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf`)
-  } else if (confirm("Open Dutch version?")) {
-    getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf`)
-  }
+  if (confirm("Open English version?")) { getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265 - English.pdf`) }
+  else if (confirm("Open Dutch version?")) { getAndViewBlob(`/cv/Curriculum Vitae Jan-Willem van Bremen 500779265.pdf`) }
 }
 
 window.onLogoClick = () => {
@@ -99,10 +89,9 @@ window.onLogoClick = () => {
 }
 
 window.handleMenuClick = (elem) => {
-  const targetElem = document.getElementById(elem.dataset.linkTo);
+  const targetElem = document.getElementById(elem.dataset.linkTo)
   window.scrollTo({top: targetElem.offsetTop - constants.topOffsetSmall, behavior: 'smooth'})
-
-  if (constants.dialog.classList.contains('active')) { closeDialog() }
+  if (constants.dialog.hasAttribute('open')) { closeDialog() }
 }
 
 window.onMenuButtonClick = () => { constants.navBar.classList.toggle('open') }
@@ -110,11 +99,11 @@ window.onMenuButtonClick = () => { constants.navBar.classList.toggle('open') }
 window.closeDialog = () => {
   if (window.location.pathname !== '/') { window.history.pushState(null, null, window.location.origin) }
   document.body.classList.remove('scroll_disabled')
-  constants.dialog.classList.remove('active')
+  constants.dialog.removeAttribute('open')
 }
 
 window.onProjectClick = (projectName) => {
-  getDialogContent(projectName);
+  getDialogContent(projectName)
   if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName) }
 }
 
