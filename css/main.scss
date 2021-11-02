@@ -20,7 +20,7 @@ $medium: 768px;
 $large: 900px;
 
 // Transition timings
-$transition_in: .1s;
+$transition_in: .2s;
 $transition_out: .35s;
 
 // Colors
@@ -237,7 +237,14 @@ button, .button {
                     max-width: 450px;
 
                     &.clickable {
-                        transition: transform $transition_in ease-in-out;
+                        transition: transform $transition_in ease-in-out, opacity $transition_in ease-in-out, visibility $transition_in ease-in-out;
+
+                        &.hidden {
+                            visibility: hidden;
+                            transform: scaleY(0);
+                            height: 0;
+                            padding: 0;
+                        }
 
                         &:hover {
                             transition: transform $transition_in ease-in-out;
@@ -359,6 +366,7 @@ button, .button {
                             border: 1px solid transparent;
                             border-radius: 2px;
                             padding: .5em;
+                            line-height: inherit;
 
                             &:focus {
                                 box-shadow: rgba(0, 0, 0, .5) 0 0 6px;
@@ -427,13 +435,14 @@ button, .button {
 
 #dialog {
     opacity: 0;
-    transition: opacity $transition_out;
-    pointer-events: none;
+    transition: opacity $transition_out, visibility $transition_out;
     position: relative;
+    visibility: hidden;
 
-    &.active {
+    &[open] {
+        transition: opacity $transition_in, visibility $transition_in;
         opacity: 1;
-        pointer-events: all;
+        visibility: visible;
     }
 
     .dialog {
@@ -635,5 +644,3 @@ button, .button {
 /* ==========================================================================
    End Author's custom styles
    ========================================================================== */
-
-@import "helpers.scss";

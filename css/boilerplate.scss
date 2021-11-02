@@ -9,6 +9,14 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
 html {
   color: #222;
   font-size: 1em;
@@ -37,6 +45,7 @@ html {
 /*
  * A better looking default horizontal rule
  */
+
 hr {
   display: block;
   height: 1px;
@@ -46,11 +55,22 @@ hr {
   padding: 0;
 }
 
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
+
 audio,
 canvas,
 iframe,
@@ -69,11 +89,36 @@ fieldset {
   padding: 0;
 }
 
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
 /*
  * Allow only vertical resizing of textareas.
  */
+
 textarea {
   resize: vertical;
+}
+
+/*
+ * Allow dialog to be transitioned
+ */
+
+dialog {
+  display: block;
 }
 
 /*
