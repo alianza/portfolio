@@ -45,7 +45,7 @@ function buildDialogContent (data) {
   doc.querySelectorAll('[alt]:not([alt=""])').forEach(e => { e.classList.add(e.getAttribute('alt').split(' ')[0]) }) // set classnames from first alt attribute value
   doc.querySelectorAll('img.flex').forEach( e => { e.parentElement.classList.add('flex') }) // Set flex attribute for flex images parent
   doc.querySelectorAll('details').forEach((e) => { new Accordion(e) }) // Set Accordion animation for all details tags
-  doc.querySelectorAll('a').forEach((e) => { e.setAttribute('target', '_blank') }) // Open all links in new tabs
+  doc.querySelectorAll('a').forEach((e) => {e.setAttribute('target', '_blank'); e.setAttribute('rel', 'noopener') }) // Open all links in new tabs
   constants.dialogContent.innerHTML = '' // Clear dialog
   constants.dialogContent.appendChild(doc) // Fill dialog with data
   document.querySelector('.dialog__content-wrapper').scrollTop = 0 // Scroll dialog to top
