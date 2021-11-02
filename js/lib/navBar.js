@@ -4,7 +4,7 @@ const navBar = document.getElementById('navbar');
 
 function collapseNavBar() {
     if (window.scrollY === 0) { // When at the top of the page scroll down first
-        window.scroll({top: topOffsetBig, behavior: 'smooth'});
+        window.scroll({ top: topOffsetBig, behavior: 'smooth' });
     }
     navBar.classList.add('collapsed');
 }
