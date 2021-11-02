@@ -73,6 +73,10 @@ NEWS         text
 readme       text
 *README*     text
 TODO         text
+# Avoid files in specified directory to contribute to GitHub language statistics
+# Apply override to all files in the directory
+static/projects/** linguist-documentation
+
 
 ## TEMPLATES
 *.dot        text
