@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -78,8 +78,9 @@
             <h1>Experiences & Projects</h1>
             <div class="wrapper">
             <!-- Experiences to be added dynamically by js -->
+                <h2>JavaScript is required to view Experiences & Projects...</h2>
             </div>
-            <button class="button load-more" onclick="document.querySelectorAll('#experiences .clickable').forEach(e => { e.classList.remove('hidden') }); this.remove()">Load more projects...</button>
+            <button class="button load-more hidden" onclick="document.querySelectorAll('#experiences .clickable').forEach(e => { e.classList.remove('hidden') }); this.remove()">Load more projects...</button>
         </div>
     </section>
 
@@ -102,7 +103,7 @@
                         </div>
                         <div class="contact_form__right">
                             <span>
-                             <textarea id="message" class="balloon balloon-big-indent" rows="5" type="text" placeholder="Your message to me :)" name="message" required></textarea>
+                             <textarea id="message" class="balloon balloon-big-indent" rows="5" placeholder="Your message to me :)" name="message" required></textarea>
                               <label for="message">Message</label>
                             </span>
                         </div>
