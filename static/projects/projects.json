@@ -2,57 +2,80 @@
   "WhoAmI": {
     "title": "WhoAmI? - React",
     "team": "solo",
-    "tech": "react"
+    "tech": "react",
+    "gitHub": "alianza/who_am_I",
+    "timestampFrom": 1613692800000,
+    "timestampTo":   1635206400000
   },
   "Quoty": {
     "title": "Quoty Quotes Network - React",
     "team": "solo",
-    "tech": "react"
+    "tech": "react",
+    "gitHub": "alianza/quoty-quotes-network",
+    "timestampFrom": 1626912000000,
+    "timestampTo":   1627862400000
   },
   "Kabisa": {
     "title": "Kabisa B.V. - Graduation Internship",
     "team": "pro",
-    "tech": ""
+    "tech": "",
+    "gitHub": "alianza/headless-commerce-poc",
+    "timestampFrom": 1612742400000,
+    "timestampTo":   1626998400000
   },
   "Winc": {
     "title": "Winc Academy - Part-time Job",
     "team": "pro",
-    "tech": ""
+    "tech": "",
+    "timestampFrom": 161369280000,
+    "timestampTo":   162155520000
   },
   "BotenLoods": {
     "title": "Botenloods - Part-time Job",
     "team": "pro",
-    "tech": ""
+    "tech": "",
+    "timestampFrom": 1621555200000,
+    "timestampTo":   0
   },
   "Portfolio": {
     "title": "Portfolio website - Vanilla JS",
     "team": "solo",
-    "tech": "javascript"
+    "tech": "javascript",
+    "gitHub": "alianza/portfolio",
+    "timestampFrom": 1611187200000,
+    "timestampTo":   0
   },
   "PokedexReact": {
     "title": "PokéDex - React",
     "team": "solo",
-    "tech": "react"
+    "tech": "react",
+    "gitHub": "alianza/pokedex_react"
   },
   "PokedexVue": {
     "title": "PokéDex - Vue",
     "team": "solo",
-    "tech": "vue"
+    "tech": "vue",
+    "gitHub": "alianza/pokedexVue"
   },
   "Monumental": {
     "title": "Monumental - Android",
     "team": "solo",
-    "tech": "android"
+    "tech": "android",
+    "gitHub": "alianza/Monumental",
+    "timestampFrom": 1614902400000,
+    "timestampTo":   1610409600000
   },
   "Vittles": {
     "title": "Vittles - Android",
     "team": "team",
-    "tech": "android"
+    "tech": "android",
+    "gitHub": "alianza/Vittles"
   },
   "Pokedexandroid": {
     "title": "PokéDex - Android",
     "team": "solo",
-    "tech": "android"
+    "tech": "android",
+    "gitHub": "alianza/PokeDex"
   },
   "UsMedia": {
     "title": "UsMedia - Internship",
