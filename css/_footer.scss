@@ -1,0 +1,35 @@
+#footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: $main_color;
+    color: whitesmoke;
+    width: 100%;
+
+    .footer {
+
+        &__author {
+            padding: 1em;
+        }
+
+        &__social-media {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: end;
+
+            a {
+                color: whitesmoke;
+                cursor: pointer;
+                text-decoration: underline solid transparent;
+                transition: text-decoration-color $transition_out;
+                white-space: nowrap;
+                padding: 1em;
+
+                &:hover {
+                    text-decoration-color: whitesmoke;
+                    transition: text-decoration-color $transition_in;
+                }
+            }
+        }
+    }
+}

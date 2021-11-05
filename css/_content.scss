@@ -1,0 +1,100 @@
+#content {
+    margin: auto;
+
+    section {
+        .container {
+            padding: 1em 1em 0;
+            max-width: $full_page_width;
+            margin: auto;
+
+            .wrapper {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                .col {
+                    position: relative;
+                    flex-grow: 1;
+                    flex-basis: 250px;
+                    max-width: 450px;
+                    padding: 1em;
+
+                    &.clickable {
+                        transition: transform $transition_in ease-in-out, opacity $transition_in ease-in-out, visibility $transition_in ease-in-out;
+
+                        &.hidden {
+                            visibility: hidden;
+                            transform: scaleY(0);
+                            height: 0;
+                            padding: 0;
+
+                            &:before, &:after {
+                                display: none;
+                            }
+                        }
+
+                        &:hover {
+                            transition: transform $transition_in ease-in-out;
+                            transform: scale(1.05);
+                            cursor: pointer;
+
+                            h3 {
+                                transition: text-decoration-color $transition_in;
+                                text-decoration-color: currentColor;
+                            }
+                        }
+
+                        &:active {
+                            transition: transform $transition_in;
+                            transform: scale(.99);
+                        }
+                    }
+
+                    .img {
+                        box-shadow: rgba(0, 0, 0, .2) 0 0 12px;
+                        border-radius: 1em;
+                        width: 100%;
+                    }
+
+                    h3 {
+                        text-decoration: underline solid transparent;
+                        transition: text-decoration-color $transition_out;
+                        margin-bottom: 0;
+                    }
+
+                    p {
+                        margin-top: .2em;
+                    }
+                }
+            }
+        }
+
+        @import 'icon_bindings';
+    }
+}
+
+@media screen and (max-width: $small) { // Mobile query
+
+    #content {
+        section {
+            .container {
+                padding: .2em;
+
+                .wrapper {
+                    .col {
+                        &.clickable {
+                            &:hover {
+                                transform: scale(1.01);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        h1 {
+            text-align: center;
+        }
+    }
+}

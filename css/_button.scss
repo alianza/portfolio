@@ -1,0 +1,24 @@
+button, .button {
+    background-color: $button_color;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+    transition: transform .35s, box-shadow .35s;
+
+    &:hover {
+        transform: translateY(-6px);
+        transition: transform .1s, box-shadow .1s;
+        box-shadow: black 0 6px;
+    }
+
+    &:active {
+        transform: translateY(-2px);
+        box-shadow: black 0 2px;
+        outline: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: currentColor;
+    }
+}
