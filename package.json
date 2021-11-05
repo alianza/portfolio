@@ -26,11 +26,15 @@
   },
   "dependencies": {
     "@parcel/plugin": "^2.0.0-alpha.3",
+    "babel-polyfill": "^6.26.0",
     "highlight.js": "^10.7.1",
     "marked": "^2.0.1"
   },
   "staticFiles": {
     "staticPath": "static",
     "watcherGlob": "**/*.md"
-  }
+  },
+  "browserslist": [
+    "since 2017-06"
+  ]
 }
