@@ -10,6 +10,7 @@
   "scripts": {
     "build": "npm run build-css && parcel build --no-content-hash index.html",
     "dev": "parcel index.html --open",
+    "dev:watch": "npm-run-all --parallel dev watch-css",
     "start": "npm run build && npm run dev",
     "build-css": "node-sass --include-path scss css/main.scss css/main.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
@@ -19,10 +20,11 @@
   "devDependencies": {
     "node-sass": "^6.0.1",
     "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-static-files-copy": "^2.5.1",
     "sass": "^1.32.5",
-    "serve": "^12.0.1"
+    "serve": "^13.0.2"
   },
   "dependencies": {
     "@parcel/plugin": "^2.0.0-alpha.3",
