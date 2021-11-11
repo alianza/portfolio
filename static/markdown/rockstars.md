@@ -25,8 +25,12 @@
 
 ## Screens
 
+![flex screenshot](../projects/rockstars/rockstars.webp)
 ![flex screenshot](../projects/rockstars/rockstars_1.webp)
+
 ![flex screenshot](../projects/rockstars/rockstars_2.webp)
+![flex screenshot](../projects/rockstars/rockstars_3.webp)
+
 <video autoplay muted loop playsinline controls src="../projects/rockstars/rockstars.webm"></video>
 
 ---
@@ -157,6 +161,7 @@ function Result() {
 ## Check out the project
 
 [<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/rockstars_static)
-[<button>![icon](../projects/rockstars/rockstars.webp) Visit Site</button>](https://rockstars-static.vercel.app/)
+[<button>![icon](../logos/tech/vercel.png) Visit Site</button>](https://rockstars-static.vercel.app/)
+[<button>![icon](../logos/tech/netlify.png) Visit Site (Netlify)</button>](https://rockstars.jwvbremen.nl/)
 
 ---
