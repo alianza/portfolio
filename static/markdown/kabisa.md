@@ -1,6 +1,6 @@
 # Kabisa - Graduation Internship
 
-![homepage](../projects/Kabisa/kabisa.webp)
+![homepage](../projects/kabisa/kabisa.webp)
 
 ---
 
@@ -46,10 +46,10 @@ techniques and technologies among which are Next.js, GraphQL, PWA and more!
 
 ## Screens
 
-![flex screenshot](../projects/Kabisa/kabisa_1.webp)
-![flex screenshot](../projects/Kabisa/kabisa_2.webp)
-![screenshot](../projects/Kabisa/kabisa_3.webp)
-<video autoplay muted loop playsinline controls src="../projects/Kabisa/kabisa.webm"></video>
+![flex screenshot](../projects/kabisa/kabisa_1.webp)
+![flex screenshot](../projects/kabisa/kabisa_2.webp)
+![screenshot](../projects/kabisa/kabisa_3.webp)
+<video autoplay muted loop playsinline controls src="../projects/kabisa/kabisa.webm"></video>
 
 ---
 

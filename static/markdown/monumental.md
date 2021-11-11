@@ -1,6 +1,6 @@
 # Monumental - Android
 
-![homepage](../projects/Monumental/monumental.webp)
+![homepage](../projects/monumental/monumental.webp)
 
 ---
 
@@ -41,10 +41,10 @@ taken in which the landmark was detected can be viewed again.
 
 ## Screens
 
-![flex screenshot](../projects/Monumental/monumental_1.webp)
-![flex screenshot](../projects/Monumental/monumental_2.webp)
-![flex screenshot](../projects/Monumental/monumental_3.webp)
-<video class="flex" autoplay muted loop playsinline controls src="../projects/Monumental/monumental_demo.webm"></video>
+![flex screenshot](../projects/monumental/monumental_1.webp)
+![flex screenshot](../projects/monumental/monumental_2.webp)
+![flex screenshot](../projects/monumental/monumental_3.webp)
+<video class="flex" autoplay muted loop playsinline controls src="../projects/monumental/monumental_demo.webm"></video>
 
 ---
 

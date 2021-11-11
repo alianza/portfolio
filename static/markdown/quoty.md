@@ -1,6 +1,6 @@
 # Quoty Quotes Network - React
 
-![homepage](../projects/Quoty/quoty.webp)
+![homepage](../projects/quoty/quoty.webp)
 
 As you know by now I like to experiment with different API's.
 This time built using the [*ReactJS*](https://reactjs.org/) web framework.
@@ -43,11 +43,11 @@ hosted using the [Netlify](https://netlify.com/) deployment platform.
 
 ## Screens
 
-![flex screenshot](../projects/Quoty/quoty_1.webp)
-![flex screenshot](../projects/Quoty/quoty_2.webp)
-![flex screenshot](../projects/Quoty/quoty_3.webp)
-![flex screenshot](../projects/Quoty/quoty_4.webp)
-![flex screenshot](../projects/Quoty/quoty_5.webp)
+![flex screenshot](../projects/quoty/quoty_1.webp)
+![flex screenshot](../projects/quoty/quoty_2.webp)
+![flex screenshot](../projects/quoty/quoty_3.webp)
+![flex screenshot](../projects/quoty/quoty_4.webp)
+![flex screenshot](../projects/quoty/quoty_5.webp)
 
 ---
 
@@ -194,6 +194,6 @@ function QuoteCard(props) {
 ## Check out the project
 
 [<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/quoty-quotes-network)
-[<button>![icon](../projects/Quoty/quoty.webp) Visit Site</button>](https://quotes.jwvbremen.nl/)
+[<button>![icon](../projects/quoty/quoty.webp) Visit Site</button>](https://quotes.jwvbremen.nl/)
 
 ---

@@ -1,46 +1,33 @@
-# WhoAmI? - React
+# Rockstars Static - Next.js
 
-![homepage](../projects/WhoAmI/whoami.webp)
+![homepage](../projects/rockstars/rockstars.webp)
 
-As you know by now I like to experiment with different API's. This time we are predicting properties of people based on their name!
-The application has been created for my own enjoyment and to improve my skills regarding quick prototyping, API data fetching
-and some minor animations. Built using the [*ReactJS*](https://reactjs.org/) web framework.
 ---
 
 ## Technologies & Frameworks
 
-- ReactJS [![icon](../logos/tech/react.png)](https://reactjs.org/)
-- React-Router [![icon](../logos/tech/react-router.png)](https://reactrouter.com/)
-- React-Router-Transition [![icon](../logos/tech/react-router.png)](http://maisano.github.io/react-router-transition/)
+- Next.js Framework [![icon](../logos/tech/nextjs.png)](https://nextjs.org/)
 - Sass [![icon](../logos/tech/sass.png)](https://sass-lang.com/)
 - Node.js [![icon](../logos/tech/nodejs.png)](https://www.nodejs.org/)
 - Git(hub) [![icon](../logos/tech/github.png)](https://www.github.com/)
 - Progressive Web Application [![icon](../logos/tech/pwa.png)](https://web.dev/progressive-web-apps/)
 - TailwindCSS [![icon](../logos/tech/tailwindcss.png)](https://tailwindcss.com/)
 - Netlify [![icon](../logos/tech/netlify.png)](https://netlify.com/)
+- Vercel [![icon](../logos/tech/vercel.png)](https://vercel.com/)
 
 ---
 
 ## Summary
 
-The WhoAmI application is a Progressive Web Application that is able to predict your age, gender and nationality based on your name. 
-It's also possible to supply your nationality to increase accuracy of the other metrics. The predictions are supplied by three
-different API endpoints that have different responsibilities. There is an API endpoint for the Age, Gender and Nationality predictions.
-These API's are [*Agify.io*](http://Agify.io/), [*Genderize.io*](http://Genderize.io/)  and [*Nationalize.io*](http://Nationalize.io/) respectively.
 
-The application is fast, easy to use and looks good! Using TailwindCSS for styling the application was built in only two days!
-The user interface is fully responsive, fully routed and features transitions between pages. 
-The application is hosted using the [Netlify](https://netlify.com/) deployment platform.
-
-Try it out and enjoy!
 
 ---
 
 ## Screens
 
-![flex screenshot](../projects/WhoAmI/whoami_1.webp)
-![flex screenshot](../projects/WhoAmI/whoami_2.webp)
-<video autoplay muted loop playsinline controls src="../projects/WhoAmI/whoami.webm"></video>
+![flex screenshot](../projects/rockstars/rockstars_1.webp)
+![flex screenshot](../projects/rockstars/rockstars_2.webp)
+<video autoplay muted loop playsinline controls src="../projects/rockstars/rockstars.webm"></video>
 
 ---
 
@@ -52,7 +39,7 @@ The following are some code snippets of pieces of code I'm proud of from this pr
 The largest file in the project is 80 lines of code which says something about the simplicity of the code.
 
 **App component**\
-The App component is responsible for housing the application layout & content and showing the correct pages based on route. 
+The App component is responsible for housing the application layout & content and showing the correct pages based on route.
 
 ```
 function App() {
@@ -162,71 +149,6 @@ function Result() {
 }
 ```
 
-**API Service**\
-This code snippet demonstrates the API Service JavaScript file. It performs API requests to each of the different endpoints
-based on a supplied name or name & nationality. It then performs and combined the different results of each API request into a single
-promise to be consumed by the application.
-
-```
-const ApiService = {
-    doLoad(url) { // Base method for doing http Get requests and returning the result
-        return fetch(url).then(response => {
-            if (response.status === 404) { return '' }
-            if (response.status === 200) { return response.json() }})
-            .then(data => {
-                return data
-            })
-    },
-
-    async lookUpByName(name) {
-        const [ageResult, genderResult, nationalityResult] = await Promise.all([
-            AgeService.getAgeByName(name),
-            GenderService.getGenderByName(name),
-            NationalityService.getNationalityByName(name)
-        ]);
-
-        return {ageResult, genderResult, nationalityResult}
-    },
-
-    async lookUpByNameAndCountry(name, countryCode) {
-        const [ageResult, genderResult] = await Promise.all([
-            AgeService.getAgeByNameAndCountry(name, countryCode),
-            GenderService.getGenderByNameAndCountry(name, countryCode)
-        ]);
-
-        return {ageResult, genderResult}
-    }
-}
-```
-
-**Age Service**\
-This code snippet demonstrates the Age Service JavaScript file. It performs API requests to the [*Agify.io*](http://Agify.io/) endpoint
-based on a supplied name or name & nationality. It then returns the results or catches and throws a user-friendly error.
-
-```
-const AgeService = {
-    baseUrl: "https://api.agify.io",
-
-    getAgeByName(name) {
-        return ApiService.doLoad(`${this.baseUrl}?name=${name}`).then(jsonData => {
-            return jsonData
-        }).catch(e => {
-            console.log('Error', e)
-            alert('Error retrieving age by name... \nPlease try again later!',)
-        })
-    },
-
-    getAgeByNameAndCountry(name, countryCode) {
-        return ApiService.doLoad(`${this.baseUrl}?name=${name}&country_id=${countryCode}`).then(jsonData => {
-            return jsonData
-        }).catch(e => {
-            console.log('Error', e)
-            alert('Error retrieving age by name and country... \nPlease try again later!',)
-        })
-    },
-}
-```
-
 </div>
 </details>
 
@@ -234,7 +156,7 @@ const AgeService = {
 
 ## Check out the project
 
-[<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/who_am_i)
-[<button>![icon](../projects/WhoAmI/whoami.webp) Visit Site</button>](https://whoami.jwvbremen.nl/)
+[<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/rockstars_static)
+[<button>![icon](../projects/rockstars/rockstars.webp) Visit Site</button>](https://rockstars-static.vercel.app/)
 
 ---

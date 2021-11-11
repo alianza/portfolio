@@ -1,6 +1,6 @@
 # Personal Portfolio Website - Vanilla JS
 
-![homepage](../projects/Portfolio/portfolio.webp)
+![homepage](../projects/portfolio/portfolio.webp)
 
 I built this Personal Portfolio Website to introduce myself as a software engineer, demonstrate some of my previous projects
 and experiences and as practice in vanilla web development (No frameworks). I update this website with new content as I
@@ -30,13 +30,13 @@ The project is hosted using the [Netlify](https://netlify.com/) deployment platf
 
 ## Screens
 
-![flex screenshot](../projects/Portfolio/portfolio_1.webp)
-![flex screenshot](../projects/Portfolio/portfolio_2.webp)
-<video autoplay muted loop playsinline controls src="../projects/Portfolio/portfolio.webm"></video>
+![flex screenshot](../projects/portfolio/portfolio_1.webp)
+![flex screenshot](../projects/portfolio/portfolio_2.webp)
+<video autoplay muted loop playsinline controls src="../projects/portfolio/portfolio.webm"></video>
 
 ## Lighthouse Audit Score ![icon](../logos/tech/lighthouse.png)
 
-![flex screenshot](../projects/Portfolio/lighthouse.png)
+![flex screenshot](../projects/portfolio/lighthouse.png)
 
 ---
 
@@ -155,7 +155,7 @@ init()
 ## Check out the project
 
 [<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/portfolio)
-[<button>![icon](../projects/Portfolio/portfolio.webp) Visit Site</button>](https://jwvbremen.nl/) _You are already here :)_
-[<button>![icon](../logos/tech/lighthouse.png) Lighthouse audit</button>](/projects/Portfolio/lighthouse.html)
+[<button>![icon](../projects/portfolio/portfolio.webp) Visit Site</button>](https://jwvbremen.nl/) _You are already here :)_
+[<button>![icon](../logos/tech/lighthouse.png) Lighthouse audit</button>](/projects/portfolio/lighthouse.html)
 
 ---

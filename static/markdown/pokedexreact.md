@@ -1,6 +1,6 @@
 # PokéDex - React
 
-![homepage](../projects/PokedexReact/pokedexreact.webp)
+![homepage](../projects/pokedexreact/pokedexreact.webp)
 
 As you know by now I like to experiment with the [*PokéApi*](https://pokeapi.co/). This project is the third Pokémon related application I have built.
 This time built using the [*ReactJS*](https://reactjs.org/) web framework. This was my first ever *ReactJS* application I have created.
@@ -37,8 +37,8 @@ The biggest file is for styling, and the largest component is 173 lines of code.
 
 ## Screens
 
-![flex screenshot](../projects/PokedexReact/pokedexreact_1.webp)
-![flex screenshot](../projects/PokedexReact/pokedexreact_2.webp)
+![flex screenshot](../projects/pokedexreact/pokedexreact_1.webp)
+![flex screenshot](../projects/pokedexreact/pokedexreact_2.webp)
 
 ---
 
