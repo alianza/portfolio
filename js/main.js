@@ -40,15 +40,20 @@ async function buildDialogContent (data, projectName) {
   const currentProject = projectsData[projectName]
   const doc = document.createRange().createContextualFragment(data.toString()) // Create HTML fragment from HTML string
   const title = doc.querySelector('h1')
-  if (currentProject?.timestampFrom && !currentProject?.timestampTo) { title.nextElementSibling.insertAdjacentHTML('beforebegin', `<p style="display: inline-block; margin: 0;"><b>To:</b> Present`) }
-  if (currentProject?.timestampTo) { title.nextElementSibling.insertAdjacentHTML('beforebegin',  `<p style="display: inline-block; margin: 0;"><b>To:</b> ${new Date(currentProject?.timestampTo).toDateString().replace(/^\S+\s/,'')}</p>`) }
-  if (currentProject?.timestampFrom) { title.nextElementSibling.insertAdjacentHTML('beforebegin', `<p style="display: inline-block; margin: 0 1em 0 0;"><b>From:</b> ${new Date(currentProject?.timestampFrom).toDateString().replace(/^\S+\s/,'')}</p>`) }
-  if (currentProject?.gitHub) { doc.querySelector('a[href^="https://github.com/alianza/"] button').insertAdjacentHTML('beforeend', ` <b>Last updated:</b> ${new Date(await getRepositoryLatestCommitDate(currentProject?.gitHub)).toDateString().replace(/^\S+\s/,'')}`) }
+
+  if (title) {
+    if (currentProject?.timestampFrom && !currentProject?.timestampTo) { title.nextElementSibling.insertAdjacentHTML('beforebegin', `<p style="display: inline-block; margin: 0;"><b>To:</b> Present`) }
+    if (currentProject?.timestampTo) { title.nextElementSibling.insertAdjacentHTML('beforebegin',  `<p style="display: inline-block; margin: 0;"><b>To:</b> ${new Date(currentProject?.timestampTo).toDateString().replace(/^\S+\s/,'')}</p>`) }
+    if (currentProject?.timestampFrom) { title.nextElementSibling.insertAdjacentHTML('beforebegin', `<p style="display: inline-block; margin: 0 1em 0 0;"><b>From:</b> ${new Date(currentProject?.timestampFrom).toDateString().replace(/^\S+\s/,'')}</p>`) }
+    title.style.marginBottom = '.2em' } // Set title style
+
+  if (currentProject?.gitHub) { doc.querySelector('a[href^="https://github.com/alianza/"] button')?.insertAdjacentHTML('beforeend', ` <b>Last updated:</b> ${new Date(await getRepositoryLatestCommitDate(currentProject?.gitHub)).toDateString().replace(/^\S+\s/,'')}`) }
+
   doc.querySelectorAll('[alt]:not([alt=""])').forEach(e => { e.classList.add(e.getAttribute('alt').split(' ')[0]) }) // set classnames from first alt attribute value
   doc.querySelectorAll('img.flex').forEach( e => { e.parentElement.classList.add('flex') }) // Set flex attribute for flex images parent
   doc.querySelectorAll('details').forEach((e) => { new Accordion(e) }) // Set Accordion animation for all details tags
   doc.querySelectorAll('a').forEach((e) => {e.setAttribute('target', '_blank'); e.setAttribute('rel', 'noopener') }) // Open all links in new tabs
-  title.style.marginBottom = '.2em' // Set title style
+
   constants.dialogContent.innerHTML = '' // Clear dialog
   constants.dialogContent.append(doc) // Fill dialog with data
   document.querySelector('.dialog__content-wrapper').scrollTop = 0 // Scroll dialog to top
@@ -87,7 +92,7 @@ function loadProjects() {
       document.querySelector('#experiences .wrapper').insertAdjacentHTML('beforeend',
       `<div class="col clickable ${index > 5 ? 'hidden' : ''}" onclick="onProjectClick(this.dataset.name)" data-name="${name}" data-team="${project.team}" data-tech="${project.tech}">
                 <img class="img" alt="${name} project" src="../projects/${name}/${name}.webp" onerror="this.src='../tile.webp'"/>
-            <h3>${project.title}</h3>
+            <h3>${project.name} - ${project.suffix}</h3>
           </div>`)
     })
     document.querySelector('.load-more').classList.remove('hidden')
