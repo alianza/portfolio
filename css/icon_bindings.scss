@@ -52,6 +52,16 @@
   background-image: url(../static/logos/tech/javascript.png);
 }
 
+.col[data-tech="nextjs"]:before {
+  @include tech-logo;
+  background-image: url(../static/logos/tech/nextjs.png);
+  height: 29px;
+  background-color: whitesmoke;
+  padding: 0.2em;
+  background-origin: content-box;
+  border-radius: 0.5em;
+}
+
 /** Team Logo's **/
 
 .col[data-team="solo"]:after {
