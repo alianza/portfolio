@@ -1,99 +1,123 @@
 {
-  "WhoAmI": {
-    "title": "WhoAmI? - React",
+  "rockstars": {
+    "name": "Rockstars",
+    "suffix": "Next.js",
+    "team": "solo",
+    "tech": "nextjs",
+    "gitHub": "alianza/rockstars_static",
+    "timestampFrom": 1636239600000,
+    "timestampTo": 1636498800000
+  },
+  "whoami": {
+    "name": "WhoAmI?",
+    "suffix": "React",
     "team": "solo",
     "tech": "react",
     "gitHub": "alianza/who_am_I",
     "timestampFrom": 1613692800000,
-    "timestampTo":   1635206400000
+    "timestampTo": 1635206400000
   },
-  "Quoty": {
-    "title": "Quoty Quotes Network - React",
+  "quoty": {
+    "name": "Quoty Quotes Network",
+    "suffix": "React",
     "team": "solo",
     "tech": "react",
     "gitHub": "alianza/quoty-quotes-network",
     "timestampFrom": 1626912000000,
-    "timestampTo":   1627862400000
+    "timestampTo": 1627862400000
   },
-  "Kabisa": {
-    "title": "Kabisa B.V. - Graduation Internship",
+  "kabisa": {
+    "name": "Kabisa B.V.",
+    "suffix": "Graduation Internship",
     "team": "pro",
     "tech": "",
     "gitHub": "alianza/headless-commerce-poc",
     "timestampFrom": 1612742400000,
-    "timestampTo":   1626998400000
+    "timestampTo": 1626998400000
   },
-  "Winc": {
-    "title": "Winc Academy - Part-time Job",
+  "winc": {
+    "name": "Winc Academy",
+    "suffix": "Part-time Job",
     "team": "pro",
     "tech": "",
     "timestampFrom": 161369280000,
-    "timestampTo":   162155520000
+    "timestampTo": 162155520000
   },
-  "BotenLoods": {
-    "title": "Botenloods - Part-time Job",
+  "botenloods": {
+    "name": "Botenloods",
+    "suffix": "Part-time Job",
     "team": "pro",
     "tech": "",
     "timestampFrom": 1621555200000,
-    "timestampTo":   0
+    "timestampTo": 0
   },
-  "Portfolio": {
-    "title": "Portfolio website - Vanilla JS",
+  "portfolio": {
+    "name": "Portfolio Website",
+    "suffix": "Vanilla JS",
     "team": "solo",
     "tech": "javascript",
     "gitHub": "alianza/portfolio",
     "timestampFrom": 1611187200000,
-    "timestampTo":   0
+    "timestampTo": 0
   },
-  "PokedexReact": {
-    "title": "PokéDex - React",
+  "pokedexreact": {
+    "name": "PokéDex",
+    "suffix": "React",
     "team": "solo",
     "tech": "react",
     "gitHub": "alianza/pokedex_react"
   },
-  "PokedexVue": {
-    "title": "PokéDex - Vue",
+  "pokedexvue": {
+    "name": "PokéDex",
+    "suffix": "Vue",
     "team": "solo",
     "tech": "vue",
     "gitHub": "alianza/pokedexVue"
   },
-  "Monumental": {
-    "title": "Monumental - Android",
+  "monumental": {
+    "name": "Monumental",
+    "suffix": "Android",
     "team": "solo",
     "tech": "android",
     "gitHub": "alianza/Monumental",
     "timestampFrom": 1614902400000,
-    "timestampTo":   1610409600000
+    "timestampTo": 1610409600000
   },
   "Vittles": {
-    "title": "Vittles - Android",
+    "name": "Vittles",
+    "suffix": "Android",
     "team": "team",
     "tech": "android",
     "gitHub": "alianza/Vittles"
   },
   "Pokedexandroid": {
-    "title": "PokéDex - Android",
+    "name": "PokéDex",
+    "suffix": "Android",
     "team": "solo",
     "tech": "android",
     "gitHub": "alianza/PokeDex"
   },
-  "UsMedia": {
-    "title": "UsMedia - Internship",
+  "usmedia": {
+    "name": "UsMedia",
+    "suffix": "Internship",
     "team": "pro",
     "tech": ""
   },
-  "FYS": {
-    "title": "Faster Your Seatbelts - Java(FX)",
+  "fys": {
+    "name": "Faster Your Seatbelts",
+    "suffix": "Java(FX)",
     "team": "team",
     "tech": "java"
   },
   "24i": {
-    "title": "24i Media - Internship",
+    "name": "24i Media",
+    "suffix": "Internship",
     "team": "pro",
     "tech": ""
   },
-  "TimeWizard": {
-    "title": "TimeWizard - PHP",
+  "timewizard": {
+    "name": "TimeWizard",
+    "suffix": "PHP",
     "team": "solo",
     "tech": "php"
   }
