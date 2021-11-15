@@ -59,7 +59,6 @@ Progressive Web Application.
 - [Cypress E2E testing](https://www.cypress.io/)
 - [Github Actions](https://www.github.com/features/actions)
 - [Lighthouse Audits](https://developers.google.com/web/tools/lighthouse/)
-- [Lighthouse Audits](https://developers.google.com/web/tools/lighthouse/)
 - [Compress-JSON](https://www.npmjs.com/package/compress-json)
 - [Prop-Types](https://www.npmjs.com/package/prop-types)
 - [Prop-Types](https://www.npmjs.com/package/prop-types)
