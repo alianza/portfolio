@@ -78,7 +78,7 @@ The following are some code snippets of pieces of code I'm proud of from this pr
 The snippets demonstrate clean, concise and powerful code following established best practices. _(Code has been compacted)_
 
 
-**Artists pages with Dynamic routing**
+**Artists pages with Dynamic routing**\
 This is the /artists/[artistName].js file. It is a dynamic route that is used to render the detail page for each artist. 
 All artist pages are rendered using the Next.js framework with data provided by the local JSON server ran at build-time.
 
@@ -149,7 +149,7 @@ export default function artist({ songs }) {
 }
 ```
 
-**All Songs page**
+**All Songs page**\
 This is the all songs page. It is a static route that is used to render the page that lists all songs. 
 It features advanced filtering on each property of a song and rudimentary sorting. 
 Song elements are dynamically rendered using the React.js framework.
