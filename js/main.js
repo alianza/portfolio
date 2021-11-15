@@ -12,9 +12,6 @@ import { collapseNavBar } from "./lib/navBar";
 import { hideLoader, showLoader } from "./lib/loader";
 import { escapeKeyListener } from "./lib/escapeKeyListener";
 
-import javascript from 'highlight.js/lib/languages/javascript';
-import kotlin from 'highlight.js/lib/languages/kotlin';
-
 let projectsData = {}
 
 function init() {
@@ -31,9 +28,6 @@ function init() {
 
   loadProjects()
   openDialogFromPathname(window.location.pathname)
-
-  hljs.registerLanguage('javascript', javascript)
-  hljs.registerLanguage('kotlin', kotlin)
 }
 
 async function buildDialogContent (data, projectName) {
@@ -65,6 +59,7 @@ async function buildDialogContent (data, projectName) {
 
 function getDialogContent(projectName) {
   showLoader()
+  registerHljsLanguages()
   fetch(`/markdown/${projectName}.md`).then(response => response.text()).then(data => { // Get markdown for project
     data = marked(data) // Convert markdown to HTML
     if (!data.toString().includes('<!doctype html>')) { buildDialogContent(data, projectName) } // If successful
@@ -97,6 +92,12 @@ function loadProjects() {
     })
     document.querySelector('.load-more').classList.remove('hidden')
   }).catch(error => { console.error('Error:', error); alert('Error loading projects...') })
+}
+
+function registerHljsLanguages() {
+  import('highlight.js/lib/languages/javascript.js').then(javascript => { hljs.registerLanguage('javascript', javascript) })
+  import('highlight.js/lib/languages/kotlin.js').then(kotlin => { hljs.registerLanguage('kotlin', kotlin) })
+  import('highlight.js/lib/languages/xml.js').then(xml => { hljs.registerLanguage('xml', xml) })
 }
 
 window.openCV = () => { // Ask for language preference and open CV pdf blob
