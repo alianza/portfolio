@@ -9,6 +9,7 @@
 - Wordpress [![icon](../logos/tech/wordpress.png)](https://www.wordpress.com/)
 - HTML [![icon](../logos/tech/html.png)](https://www.w3schools.com/)
 - (S)CSS [![icon](../logos/tech/css.png)](https://www.w3.org/Style/CSS/)
+- PHP [![icon](../logos/tech/php.png)](https://php.org/)
 
 ---
 

@@ -17,6 +17,7 @@ The goal of this project was to teach myself the workings of the *ReactJS* frame
 - Node.js [![icon](../logos/tech/nodejs.png)](https://www.nodejs.org/)
 - Git(hub) [![icon](../logos/tech/github.png)](https://www.github.com/)
 - Netlify [![icon](../logos/tech/netlify.png)](https://netlify.com/)
+- Progressive Web Application [![icon](../logos/tech/pwa.png)](https://web.dev/progressive-web-apps/)
 
 ---
 

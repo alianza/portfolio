@@ -15,7 +15,7 @@ The goal of this project was to teach myself the workings of the *VueJS* framewo
 - Vue-Router [![icon](../logos/tech/vue-router.png)](https://router.vuejs.org/)
 - Sass [![icon](../logos/tech/sass.png)](https://sass-lang.com/)
 - Netlify [![icon](../logos/tech/netlify.png)](https://netlify.com/)
-
+- Progressive Web Application [![icon](../logos/tech/pwa.png)](https://web.dev/progressive-web-apps/)
 
 ---
 

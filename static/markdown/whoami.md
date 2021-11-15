@@ -44,6 +44,12 @@ Try it out and enjoy!
 
 ---
 
+## Lighthouse Audit Score ![icon](../logos/tech/lighthouse.png)
+
+![flex screenshot](../projects/whoami/lighthouse.png)
+
+---
+
 <details>
   <summary>Code Snippets</summary>
 <div>
@@ -236,5 +242,6 @@ const AgeService = {
 
 [<button>![icon](../logos/tech/github.png) Github</button>](https://github.com/alianza/who_am_i)
 [<button>![icon](../projects/whoami/whoami.webp) Visit Site</button>](https://whoami.jwvbremen.nl/)
+[<button>![icon](../logos/tech/lighthouse.png) Lighthouse audit</button>](/projects/whoami/lighthouse.html)
 
 ---
