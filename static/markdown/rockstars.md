@@ -61,7 +61,6 @@ Progressive Web Application.
 - [Lighthouse Audits](https://developers.google.com/web/tools/lighthouse/)
 - [Compress-JSON](https://www.npmjs.com/package/compress-json)
 - [Prop-Types](https://www.npmjs.com/package/prop-types)
-- [Prop-Types](https://www.npmjs.com/package/prop-types)
 - [Nextjs-Progressbar](https://www.npmjs.com/package/nextjs-progressbar)
 
 ## Lighthouse Audit Score ![icon](../logos/tech/lighthouse.png)
