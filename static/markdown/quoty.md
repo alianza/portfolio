@@ -38,7 +38,7 @@ and dark theme.
 The application is fully responsive and installable as a Progressive Web Application. The data storage and authentication
 is done using [*Google Firebase*](https://firebase.google.com/) Authentication and the Realtime Database. The application is
 hosted using the [Netlify](https://netlify.com/) deployment platform. For performance optimization the application uses code splitting and lazy loads all pages using [`React.lazy()`](https://reactjs.org/docs/code-splitting.html).
-To keep track of the current logged in user the application uses the `[React Context API`](https://reactjs.org/docs/context.html) as well.
+To keep track of the current logged in user the application uses the [`React Context API`](https://reactjs.org/docs/context.html) as well.
 
 ---
 
