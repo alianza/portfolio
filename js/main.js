@@ -1,5 +1,4 @@
 import 'highlight.js/styles/xcode.css';
-import hljs from 'highlight.js/lib/core.js';
 
 import * as constants from "./constants";
 import { calculateYearsSinceDate } from "./lib/calculateYearsSinceDate";
@@ -10,6 +9,8 @@ import Accordion from './lib/accordion';
 import { collapseNavBar } from "./lib/navBar";
 import { hideLoader, showLoader } from "./lib/loader";
 import { escapeKeyListener } from "./lib/escapeKeyListener";
+
+let hljsCore
 
 let projectsData = {}
 
@@ -50,7 +51,7 @@ async function buildDialogContent (data, projectName) {
   constants.dialogContent.innerHTML = '' // Clear dialog
   constants.dialogContent.append(doc) // Fill dialog with data
   document.querySelector('.dialog__content-wrapper').scrollTop = 0 // Scroll dialog to top
-  hljs.highlightAll() // Highlight code blocks with Highlight.js
+  hljsCore.highlightAll() // Highlight code blocks with Highlight.js
   collapseNavBar() // Force navBar to collapse (if at top of page scroll down first)
   constants.navBar.classList.remove('open') // Collapse mobile nav bar menu
   openDialog()
@@ -64,7 +65,7 @@ async function getDialogContent(projectName) {
     data = marked(data) // Convert markdown to HTML
     if (!data.toString().includes('<!doctype html>')) { buildDialogContent(data, projectName) } // If successful
     else { getDialogContent('404') } // Else retrieve 404 page
-  }).catch(error => { console.error('Error:', error); alert('Error loading project...') })
+  }).catch(error => { console.error('Error:', error); alert(`Error loading project ${projectName}...`) })
 }
 
 function openDialog() {
@@ -95,9 +96,12 @@ function loadProjects() {
 }
 
 async function registerHljsLanguages() {
-  import('highlight.js/lib/languages/javascript.js').then(javascript => { hljs.registerLanguage('javascript', javascript) })
-  import('highlight.js/lib/languages/kotlin.js').then(kotlin => { hljs.registerLanguage('kotlin', kotlin) })
-  import('highlight.js/lib/languages/xml.js').then(xml => { hljs.registerLanguage('xml', xml) })
+  import('highlight.js/lib/core.js').then(hljs => {
+    hljsCore = hljs
+    import('highlight.js/lib/languages/javascript.js').then(javascript => { hljsCore.registerLanguage('javascript', javascript) })
+    import('highlight.js/lib/languages/kotlin.js').then(kotlin => { hljsCore.registerLanguage('kotlin', kotlin) })
+    import('highlight.js/lib/languages/xml.js').then(xml => { hljsCore.registerLanguage('xml', xml) })
+  })
 }
 
 window.openCV = () => { // Ask for language preference and open CV pdf blob
