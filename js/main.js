@@ -1,6 +1,5 @@
 import 'highlight.js/styles/xcode.css';
 import hljs from 'highlight.js/lib/core.js';
-import marked from 'marked';
 
 import * as constants from "./constants";
 import { calculateYearsSinceDate } from "./lib/calculateYearsSinceDate";
@@ -57,10 +56,11 @@ async function buildDialogContent (data, projectName) {
   openDialog()
 }
 
-function getDialogContent(projectName) {
+async function getDialogContent(projectName) {
   showLoader()
-  registerHljsLanguages()
-  fetch(`/markdown/${projectName}.md`).then(response => response.text()).then(data => { // Get markdown for project
+  await registerHljsLanguages()
+  fetch(`/markdown/${projectName}.md`).then(response => response.text()).then( async data => { // Get markdown for project
+    const marked = await import('marked') // Import marked
     data = marked(data) // Convert markdown to HTML
     if (!data.toString().includes('<!doctype html>')) { buildDialogContent(data, projectName) } // If successful
     else { getDialogContent('404') } // Else retrieve 404 page
@@ -68,7 +68,7 @@ function getDialogContent(projectName) {
 }
 
 function openDialog() {
-  hideLoader();
+  hideLoader()
   document.body.classList.add('scroll_disabled')
   constants.dialog.setAttribute('open', '')
 }
@@ -87,14 +87,14 @@ function loadProjects() {
       document.querySelector('#experiences .wrapper').insertAdjacentHTML('beforeend',
       `<div class="col clickable ${index > 5 ? 'hidden' : ''}" onclick="onProjectClick(this.dataset.name)" data-name="${name}" data-team="${project.team}" data-tech="${project.tech}">
                 <img class="img" alt="${name} project" src="../projects/${name}/${name}.webp" onerror="this.src='../tile.webp'"/>
-            <h3>${project.name} - ${project.suffix}</h3>
+            <h1>${project.name} - ${project.suffix}</h1>
           </div>`)
     })
     document.querySelector('.load-more').classList.remove('hidden')
   }).catch(error => { console.error('Error:', error); alert('Error loading projects...') })
 }
 
-function registerHljsLanguages() {
+async function registerHljsLanguages() {
   import('highlight.js/lib/languages/javascript.js').then(javascript => { hljs.registerLanguage('javascript', javascript) })
   import('highlight.js/lib/languages/kotlin.js').then(kotlin => { hljs.registerLanguage('kotlin', kotlin) })
   import('highlight.js/lib/languages/xml.js').then(xml => { hljs.registerLanguage('xml', xml) })
