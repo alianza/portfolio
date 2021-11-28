@@ -37,7 +37,8 @@ and dark theme.
 
 The application is fully responsive and installable as a Progressive Web Application. The data storage and authentication
 is done using [*Google Firebase*](https://firebase.google.com/) Authentication and the Realtime Database. The application is
-hosted using the [Netlify](https://netlify.com/) deployment platform.
+hosted using the [Netlify](https://netlify.com/) deployment platform. For performance optimization the application uses code splitting and lazy loads all pages using [`React.lazy()`](https://reactjs.org/docs/code-splitting.html).
+To keep track of the current logged in user the application uses the `[React Context API`](https://reactjs.org/docs/context.html) as well.
 
 ---
 
@@ -211,7 +212,7 @@ function QuoteCard(props) {
 }
 ```
           
-          **QuoteService.js**\
+**QuoteService.js**\
 This code snippet demonstrates the QuoteService JavaScript file. It is responsible for all communication with the StormConsultancy Quotes API like retrieving popular or particular Quotes using the fetch API. The Quotes API is not SSL protected so it is redirected to '/api' in production and redirected using Netlify redirects defined in the 'netlify.toml' file (See snippet below).
           
 ```
