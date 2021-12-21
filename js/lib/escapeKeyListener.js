@@ -11,4 +11,4 @@ function escapeKeyListener(evt) {
     }
 }
 
-export {escapeKeyListener}
+export { escapeKeyListener }
