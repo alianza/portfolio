@@ -92,11 +92,11 @@ function loadProjects() {
 }
 
 async function registerHljsLanguages() {
-  import('highlight.js/lib/core.js').then(hljs => {
+  import('highlight.js/lib/core').then(hljs => {
     hljsCore = hljs
-    import('highlight.js/lib/languages/javascript.js').then(javascript => { hljsCore.registerLanguage('javascript', javascript) })
-    import('highlight.js/lib/languages/kotlin.js').then(kotlin => { hljsCore.registerLanguage('kotlin', kotlin) })
-    import('highlight.js/lib/languages/xml.js').then(xml => { hljsCore.registerLanguage('xml', xml) })
+    import('highlight.js/lib/languages/javascript').then(javascript => { hljsCore.registerLanguage('javascript', javascript) })
+    import('highlight.js/lib/languages/kotlin').then(kotlin => { hljsCore.registerLanguage('kotlin', kotlin) })
+    import('highlight.js/lib/languages/xml').then(xml => { hljsCore.registerLanguage('xml', xml) })
   })
 }
 
