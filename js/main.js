@@ -1,6 +1,4 @@
 import 'highlight.js/styles/xcode.css';
-import hljs from 'highlight.js/lib/core.js';
-import marked from 'marked';
 
 import * as constants from "./constants";
 import { calculateYearsSinceDate } from "./lib/calculateYearsSinceDate";
@@ -12,8 +10,7 @@ import { collapseNavBar } from "./lib/navBar";
 import { hideLoader, showLoader } from "./lib/loader";
 import { escapeKeyListener } from "./lib/escapeKeyListener";
 
-import javascript from 'highlight.js/lib/languages/javascript';
-import kotlin from 'highlight.js/lib/languages/kotlin';
+let hljsCore
 
 let projectsData = {}
 
@@ -31,9 +28,6 @@ function init() {
 
   loadProjects()
   openDialogFromPathname(window.location.pathname)
-
-  hljs.registerLanguage('javascript', javascript)
-  hljs.registerLanguage('kotlin', kotlin)
 }
 
 async function buildDialogContent (data, projectName) {
@@ -57,23 +51,25 @@ async function buildDialogContent (data, projectName) {
   constants.dialogContent.innerHTML = '' // Clear dialog
   constants.dialogContent.append(doc) // Fill dialog with data
   document.querySelector('.dialog__content-wrapper').scrollTop = 0 // Scroll dialog to top
-  hljs.highlightAll() // Highlight code blocks with Highlight.js
+  hljsCore.highlightAll() // Highlight code blocks with Highlight.js
   collapseNavBar() // Force navBar to collapse (if at top of page scroll down first)
   constants.navBar.classList.remove('open') // Collapse mobile nav bar menu
   openDialog()
 }
 
-function getDialogContent(projectName) {
+async function getDialogContent(projectName) {
   showLoader()
-  fetch(`/markdown/${projectName}.md`).then(response => response.text()).then(data => { // Get markdown for project
+  await registerHljsLanguages()
+  fetch(`/markdown/${projectName}.md`).then(response => response.text()).then( async data => { // Get markdown for project
+    const marked = await import('marked') // Import marked
     data = marked(data) // Convert markdown to HTML
     if (!data.toString().includes('<!doctype html>')) { buildDialogContent(data, projectName) } // If successful
     else { getDialogContent('404') } // Else retrieve 404 page
-  }).catch(error => { console.error('Error:', error); alert('Error loading project...') })
+  }).catch(error => { console.error('Error:', error); alert(`Error loading project ${projectName}...`) })
 }
 
 function openDialog() {
-  hideLoader();
+  hideLoader()
   document.body.classList.add('scroll_disabled')
   constants.dialog.setAttribute('open', '')
 }
@@ -92,11 +88,20 @@ function loadProjects() {
       document.querySelector('#experiences .wrapper').insertAdjacentHTML('beforeend',
       `<div class="col clickable ${index > 5 ? 'hidden' : ''}" onclick="onProjectClick(this.dataset.name)" data-name="${name}" data-team="${project.team}" data-tech="${project.tech}">
                 <img class="img" alt="${name} project" src="../projects/${name}/${name}.webp" onerror="this.src='../tile.webp'"/>
-            <h3>${project.name} - ${project.suffix}</h3>
+            <h1>${project.name} - ${project.suffix}</h1>
           </div>`)
     })
     document.querySelector('.load-more').classList.remove('hidden')
   }).catch(error => { console.error('Error:', error); alert('Error loading projects...') })
+}
+
+async function registerHljsLanguages() {
+  import('highlight.js/lib/core.js').then(hljs => {
+    hljsCore = hljs
+    import('highlight.js/lib/languages/javascript.js').then(javascript => { hljsCore.registerLanguage('javascript', javascript) })
+    import('highlight.js/lib/languages/kotlin.js').then(kotlin => { hljsCore.registerLanguage('kotlin', kotlin) })
+    import('highlight.js/lib/languages/xml.js').then(xml => { hljsCore.registerLanguage('xml', xml) })
+  })
 }
 
 window.openCV = () => { // Ask for language preference and open CV pdf blob

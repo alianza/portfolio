@@ -65,6 +65,7 @@
                 flex-wrap: wrap;
                 justify-content: space-evenly;
                 gap: 1em;
+                align-items: flex-start;
             }
 
             img, video {
@@ -83,7 +84,7 @@
                         flex-basis: 0;
                         flex-grow: 1;
                         //max-width: 350px;
-                        height: min-content;
+                        height: auto;
                     }
                 }
 
