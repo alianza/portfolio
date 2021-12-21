@@ -65,7 +65,7 @@ async function getDialogContent(projectName) {
     data = marked(data) // Convert markdown to HTML
     if (!data.toString().includes('<!doctype html>')) { buildDialogContent(data, projectName) } // If successful
     else { getDialogContent('404') } // Else retrieve 404 page
-  }).catch(error => { console.error('Error:', error); alert(`Error loading project ${projectName}...`) })
+  }).catch(error => { console.error('Error:', error); alert(`Error loading project ${projectName}...`); hideLoader() })
 }
 
 function openDialog() {
@@ -85,11 +85,7 @@ function loadProjects() {
     projectsData = projects;
     document.querySelector('#experiences .wrapper').innerHTML = ''
     Object.entries(projectsData).forEach(([name, project], index) => { // Iterate through projects and append to dom
-      document.querySelector('#experiences .wrapper').insertAdjacentHTML('beforeend',
-      `<div class="col clickable ${index > 5 ? 'hidden' : ''}" onclick="onProjectClick(this.dataset.name)" data-name="${name}" data-team="${project.team}" data-tech="${project.tech}">
-                <img class="img" alt="${name} project" src="../projects/${name}/${name}.webp" onerror="this.src='../tile.webp'"/>
-            <h1>${project.name} - ${project.suffix}</h1>
-          </div>`)
+      document.querySelector('#experiences .wrapper').insertAdjacentHTML('beforeend', constants.projectFragment(name, project, index))
     })
     document.querySelector('.load-more').classList.remove('hidden')
   }).catch(error => { console.error('Error:', error); alert('Error loading projects...') })
@@ -118,7 +114,7 @@ window.onLogoClick = () => {
 
 window.handleMenuClick = (elem) => {
   const targetElem = document.getElementById(elem.dataset.linkTo)
-  window.scrollTo({top: targetElem.offsetTop - constants.topOffsetSmall, behavior: 'smooth'})
+  window.scrollTo({ top: targetElem.offsetTop - constants.topOffsetSmall, behavior: 'smooth' })
   if (constants.dialog.hasAttribute('open')) { closeDialog() }
 }
 
@@ -131,8 +127,10 @@ window.closeDialog = () => {
 }
 
 window.onProjectClick = (projectName) => {
-  getDialogContent(projectName)
-  if (!window.location.pathname.includes(projectName)) { window.history.pushState(null, projectName, '/' + projectName) }
+  getDialogContent(projectName).then(() => {
+    if (!window.location.pathname.includes(projectName)) {
+      window.history.pushState(null, projectName, '/' + projectName) }
+  })
 }
 
 init()
