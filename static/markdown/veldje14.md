@@ -35,6 +35,7 @@ using the Vercel deployment platform.
 
 ![flex screenshot](../projects/veldje14/veldje14.webp)
 ![flex screenshot](../projects/veldje14/veldje14_1.webp)
+
 ![flex screenshot](../projects/veldje14/veldje14_2.webp)
 ![flex screenshot](../projects/veldje14/veldje14_3.webp)
 
