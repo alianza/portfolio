@@ -1,4 +1,22 @@
 {
+  "nu.nl": {
+    "name": "Nu.nl Clone",
+    "suffix": "Next.js",
+    "team": "solo",
+    "tech": "nextjs",
+    "gitHub": "alianza/veldje14",
+    "timestampFrom": 1637539200000,
+    "timestampTo": 1637798400000
+  },
+  "veldje14": {
+    "name": "Veldje14 Website",
+    "suffix": "Next.js",
+    "team": "solo",
+    "tech": "nextjs",
+    "gitHub": "alianza/veldje14",
+    "timestampFrom": 1639008000000,
+    "timestampTo": 1639612800000
+  },
   "rockstars": {
     "name": "Rockstars",
     "suffix": "Next.js",
