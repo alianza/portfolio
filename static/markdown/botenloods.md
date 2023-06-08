@@ -1,4 +1,4 @@
-# Winc Academy - Part-time Job
+# Botenloods - Part-time Job
 
 ![homepage](../projects/botenloods/botenloods_1.webp)
 
